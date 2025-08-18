@@ -1,25 +1,95 @@
+/* Fonts and global styles */
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
 body {
-  background: url('https://external-media.spacehey.net/media/sAlL3yPAACs1k3bHRoGHfSH0yKEoqXnf0jZgdHxnupoc=/https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif') repeat;
   font-family: 'Tinos', serif;
-  color: #fff;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  background-image: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   padding: 20px;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-5/cur425.cur'), auto;
 }
 
 a {
-  color: #ffccff;
+  color: white;
   text-decoration: none;
 }
 
+a:hover {
+  color: brown;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-size: 150%;
+}
+
+/* Main header image */
+main:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 300px;
+  background-image: url('https://64.media.tumblr.com/e538561a1f7c6f29ec2c12e715613ef5/694ba97436fa97d6-da/s500x750/ee25f9bc6229efd8916a68cbb01ff389b0836bee.gifv');
+  background-position: center center;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+  main:before {
+    height: 200px;
+  }
+}
+
+/* Stamp grid */
 .stamp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 10px;
+  gap: 5px;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .stamp-grid img {
   width: 100px;
   height: auto;
-  border: 2px solid #fff;
+  border: 2px solid white;
+}
+
+/* Animated profile pic */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.profile-pic img {
+  border-radius: 50%;
+  animation: spin 7s infinite linear;
+}
+
+/* Overlay intro animation */
+body:before {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  background-image: url('https://64.media.tumblr.com/ba89da30c53cfe3b944071c79cbc8fae/5834635a10680fbc-aa/s540x810/e273c0da550e37d4019499c17065bc1d96bd4693.gifv');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fadeOut 3s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
 }
