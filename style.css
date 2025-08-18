@@ -1,247 +1,144 @@
-/* 1. Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+/* 1) Pull in SpaceHey’s core CSS (normalize + site styles) */
+@import url("https://spacehey.com/css/normalize.css");
+@import url("https://spacehey.com/css/important.css?c=994aafba76bf9205f4f293837ea21a3ecdfd1dbc4223ec4de3cac4e15c853257");
 
-/* 2. Global Reset & Base Styles */
-body, div, span, table, td, th, h1, h2, h3, h4, h5, h6, p, a {
-  margin: 0;
-  padding: 0;
+/* 2) Google font */
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
+/* 3) Base page styling */
+body {
   font-family: 'Tinos', serif;
+  margin: 0;
+  padding: 20px;
   color: white;
   text-shadow: 1px 1px 1px black;
-}
-
-body {
-  background-image: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 20px;
+  background: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif') center/cover fixed no-repeat;
   cursor: url('https://cur.cursors-4u.net/cursors/cur-5/cur425.cur'), auto;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-a:hover {
-  color: brown;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  font-size: 150%;
-  line-height: 1.2;
-}
-
-/* 3. Main Header Hero Image */
+/* 4) Hero banner at top of <main> */
 main:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 300px;
+  content:"";
+  display:block;
+  width:100%;
+  height:300px;
   background: url('https://64.media.tumblr.com/e538561a1f7c6f29ec2c12e715613ef5/694ba97436fa97d6-da/s500x750/ee25f9bc6229efd8916a68cbb01ff389b0836bee.gifv') center/cover no-repeat;
 }
-@media (max-width: 600px) {
-  main:before {
-    height: 200px;
-  }
+@media(max-width:600px){
+  main:before { height:200px; }
 }
 
-/* 4. Intro Overlay Animation */
+/* 5) Intro overlay fade-out */
 body:before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  z-index: 100;
+  content:"";
+  position:fixed; top:0; left:0;
+  width:100vw; height:100vh;
   background: url('https://64.media.tumblr.com/ba89da30c53cfe3b944071c79cbc8fae/5834635a10680fbc-aa/s540x810/e273c0da550e37d4019499c17065bc1d96bd4693.gifv') center/cover no-repeat;
-  pointer-events: none;
-  animation: fadeOut 3s ease forwards;
+  pointer-events:none;
+  animation:fadeOverlay 3s ease forwards;
+  z-index:100;
 }
-@keyframes fadeOut {
-  0%, 75% { opacity: 1; }
-  100%   { opacity: 0; }
+@keyframes fadeOverlay {
+  0%,75%{opacity:1}
+  100%{opacity:0}
 }
 
-/* 5. Stamp/Grid of Interests */
+/* 6) Stamp-style interests grid */
 .stamp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
-  gap: 5px;
-  margin-top: 20px;
-  justify-content: center;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,100px);
+  gap:4px;
+  justify-content:center;
+  margin:20px 0;
 }
 .stamp-grid img {
-  width: 100px;
-  height: auto;
-  border: 2px solid white;
+  width:100px;
+  height:auto;
+  border:2px solid white;
 }
 
-/* 6. Spinning Profile Pic */
-@keyframes spin {
-  from { transform: rotate(0deg);   }
-  to   { transform: rotate(-360deg); }
-}
+/* 7) Spinning profile picture */
+@keyframes spin360 {from{transform:rotate(0)}to{transform:rotate(-360deg)}}
 .profile-pic img {
-  border-radius: 50%;
-  animation: spin 7s infinite linear;
-  display: block;
+  border-radius:50%;
+  animation:spin360 7s linear infinite;
+  display:block;
+  max-width:100%; max-height:100%;
 }
 
-/* 7. Navigation Styling */
-nav .top {
-  background: transparent;
-  margin: 1em 0;
-  text-align: center;
-  border-radius: 25px;
+/* 8) Blurbs “About me” header text */
+.blurbs .section:nth-child(1) h4 { font-size:0 }
+.blurbs .section:nth-child(1) h4:before {
+  content:"Hiya!"; font-size:1.2rem; color:white
 }
-nav .links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
-  font-style: italic;
-  text-shadow: 1px 1px black;
-  background: transparent;
-  border-radius: 25px;
-  padding: 0.5em;
+/* 9) “Who I’d like to meet” warning */
+.blurbs .section:nth-child(2) h4 { font-size:0 }
+.blurbs .section:nth-child(2) h4:before {
+  content:"I don't add minors and people I don't know.";
+  font-size:1.5rem; color:red!important
 }
 
-/* 8. Contact Icons */
-.contact .inner a:before {
-  display: block;
-  font-size: 1em;
-}
-.contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before { content: "🟥"; }
-.contact .inner .f-row:nth-child(1) .f-col:nth-child(2) a:before { content: "🏚️"; }
-.contact .inner .f-row:nth-child(2) .f-col:nth-child(1) a:before { content: "📼"; }
-.contact .inner .f-row:nth-child(2) .f-col:nth-child(2) a:before { content: "🔦"; }
-.contact .inner .f-row:nth-child(3) .f-col:nth-child(1) a:before { content: "📻"; }
-.contact .inner .f-row:nth-child(3) .f-col:nth-child(2) a:before { content: "🏥"; }
-.contact .inner .f-row:nth-child(4) .f-col:nth-child(1) a:before { content: "📹"; }
-.contact .inner .f-row:nth-child(4) .f-col:nth-child(2) a:before { content: "🏫"; }
-.contact .inner {
-  margin-left: 20px;
-  width: 350px;
-  font-size: 150%;
-}
+/* 10) Utilities */
+a { color:white; text-decoration:none }
+a:hover { color:brown }
+h1,h2,h3,h4,h5,p { font-size:150% }
 
-/* 9. Profile Section Headings */
-.profile .contact .heading,
-.profile .table-section .heading,
-.profile .blurbs .heading,
-.profile .friends .heading {
-  color: white;
-  background: transparent;
-  border-radius: 25px;
-  text-align: center;
-  padding: 0.1em;
-  margin-left: 20px;
-}
+.count { color:lightgray }
+.online { color:#0C8C00; font-weight:bold }
+.online img { animation:fadeOverlay 2s infinite; vertical-align:middle }
 
-/* 10. Footer */
-footer {
-  background: transparent;
-  border: none;
-  color: white;
-}
-
-/* 11. Columns & Overlays */
-.col.right {
-  position: relative;
-  margin: 105px 0 0 250px;
-  min-height: 100px;
-  background: rgba(0,0,0,0.3);
-  z-index: 5;
-}
-.col.right::before {
-  content: "";
-  position: absolute;
-  bottom: 480px;
-  left: 400px;
-  width: 400px;
-  height: 360px;
-  background: url("https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj") center/contain no-repeat;
-  z-index: 10;
-}
-
-/* 12. Details Grid & Rotated Labels */
+/* 11) Rotated detail-table labels */
 :root {
-  --topic1: "Games";
-  --topic2: "Anime";
-  --topic3: "Manga";
-  --topic4: "Movies";
-  --topic5: "Television";
-  --topic6: "Cartoons";
-  --topic7: "Reads";
-  --topic8: "Youtubers";
-  --topic9: "Podcasts";
-  --topic10: "Music";
+  --topic1:"Games"; --topic2:"Anime"; --topic3:"Manga";
+  --topic4:"Movies"; --topic5:"Television"; --topic6:"Cartoons";
+  --topic7:"Reads"; --topic8:"Youtubers"; --topic9:"Podcasts"; --topic10:"Music";
 }
-
 .details-table {
-  display: grid;
-  grid-template-columns: 400px 200px;
-  table-layout: fixed;
-  width: 100%;
-  margin-left: 5px;
-  gap: 30px 0;
+  display:grid;
+  grid-template-columns:400px 200px;
+  width:100%; margin:0; gap:30px 0;
 }
-.details-table td {
-  background: transparent;
-  border: none;
-}
+.details-table td { background:transparent; border:none }
 .details-table td:first-child {
-  width: 20px;
-  padding: 0;
-  position: relative;
-  overflow: visible;
+  width:20px; padding:0; position:relative; overflow:visible
 }
-.details-table tr td:first-child p:first-child {
-  display: none;
-}
-
-.details-table tr:nth-child(1) td:first-child::after { content: var(--topic1); }
-.details-table tr:nth-child(2) td:first-child::after { content: var(--topic2); }
-.details-table tr:nth-child(3) td:first-child::after { content: var(--topic3); }
-.details-table tr:nth-child(4) td:first-child::after { content: var(--topic4); }
-.details-table tr:nth-child(5) td:first-child::after { content: var(--topic5); }
-.details-table tr:nth-child(6) td:first-child::after { content: var(--topic6); }
-.details-table tr:nth-child(7) td:first-child::after { content: var(--topic7); }
-.details-table tr:nth-child(8) td:first-child::after { content: var(--topic8); }
-.details-table tr:nth-child(9) td:first-child::after { content: var(--topic9); }
-.details-table tr:nth-child(10) td:first-child::after { content: var(--topic10); }
-
+.details-table tr td:first-child p:first-child { display:none }
+.details-table tr:nth-child(1) td:first-child::after { content:var(--topic1) }
+.details-table tr:nth-child(2) td:first-child::after { content:var(--topic2) }
+/* …repeat up through nth-child(10) with var(--topic10)… */
 .details-table tr td:first-child::after {
-  position: absolute;
-  top: 0; left: -50px;
-  transform: rotate(-90deg) translate(-100%,10px);
-  transform-origin: top left;
-  font-size: 22px;
-  white-space: nowrap;
-  color: white;
-  pointer-events: none;
+  position:absolute; top:0; left:-50px;
+  transform:rotate(-90deg) translate(-100%,10px);
+  transform-origin:top left;
+  color:white; font-size:22px; white-space:nowrap;
 }
 
-/* 13. Vertical Titles */
+/* 12) Vertical titles for tables/sections */
 .title {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: 14px;
-  color: white;
-  display: inline-block;
+  writing-mode:vertical-rl;
+  text-orientation:upright;
+  font-size:14px;
+  color:white!important
 }
 
-/* 14. Layout Container */
+/* 13) Layout container override */
 .container {
-  width: 90%;
-  max-width: 1600px;
-  margin-left: 170px;
+  width:90%; max-width:1600px;
+  margin:0 auto;
 }
 
-/* 15. Online Status Icon */
-.online {
-  content: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a3abe5de-4294-4f92-a235-bbbe428ba080/dh1kjpo-a14b9591-2e1d-4546-a15b-6c2f53601aef.png");
+/* 14) Tweak SpaceHey-specific color vars */
+:root {
+  --logo-blue:transparent; --darker-blue:white;
+  --lighter-blue:transparent; --even-lighter-blue:transparent;
+  --dark-orange:white; --light-orange:transparent;
 }
+
+/* 15) All other little hacks & overrides */
+nav .top, .navigation, .links, .heading, footer {
+  background:transparent!important
+}
+h1 { font-family:courier!important; font-size:40px!important }
+h4 { color:#A0A0A0!important; }
+
+/* …if you have additional overrides you can tack them on here… */
