@@ -1,31 +1,25 @@
 body {
-  background: linear-gradient(to right, #ff99cc, #66ccff);
-  font-family: 'Comic Sans MS', cursive;
-  color: #000;
+  background: url('your-background.gif') repeat;
+  font-family: 'Tinos', serif;
+  color: #fff;
   margin: 0;
-  padding: 0;
-}
-
-.container {
-  display: flex;
   padding: 20px;
 }
 
-.sidebar {
-  width: 200px;
-  background-color: #fff;
-  padding: 10px;
-  border-right: 2px solid #000;
+a {
+  color: #ffccff;
+  text-decoration: none;
 }
 
-.main {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #f0f0f0;
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
 }
 
-marquee {
-  font-weight: bold;
-  color: #ff0000;
-  margin-bottom: 10px;
+.stamp-grid img {
+  width: 100px;
+  height: auto;
+  border: 2px solid #fff;
 }
