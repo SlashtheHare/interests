@@ -3,312 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teddy Gray</title>
+  <title>TeddyGray – Interests Tabs</title>
 
-  <!-- SpaceHey core styles for nav, tables, etc. -->
-  <link rel="stylesheet"
-        href="https://spacehey.com/css/important.css?c=994aafba76bf9205f4f293837ea21a3ecdfd1dbc4223ec4de3cac4e15c853257">
-
-  <!-- Your custom overrides -->
+  <!-- custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+  <!--
+    1) The main page background
+    2) A second “overlay” gif behind content
+  -->
+  <div class="overlay"></div>
 
-    <!-- NAVIGATION (copy-pasted from SpaceHey) -->
-    <nav>
-      <div class="top">
-        <div class="left">
-          <a href="https://spacehey.com/home">
-            <img class="logo logo-fallback"
-                 src="https://static.spacehey.net/img/logo_optimized.svg"
-                 alt="SpaceHey">
-          </a>
-        </div>
-        <div class="center">
-          <form action="https://spacehey.com/search" role="search">
-            <label for="q">Search Users:</label>
-            <div class="search-wrapper">
-              <input id="q" type="text" name="q" autocomplete="off">
-            </div>
-            <button type="submit">Search</button>
-          </form>
-        </div>
-        <div class="right">
-          <a href="https://spacehey.com/help" rel="help">Help</a> |
-          <form action="https://spacehey.com/logout" method="post" class="logout-form">
-            <button class="logout-btn" type="submit">LogOut</button>
-          </form>
-          <div class="support-right">
-            <a href="https://spacehey.com/support">
-              <small><img src="https://static.spacehey.net/icons2/heart.png" class="icon" alt=""></small>
-              Support us
-            </a>
-          </div>
-        </div>
-      </div>
-      <ul class="links">
-        <li class="active"><a href="https://spacehey.com/home">Home</a></li>
-        <li><a href="https://spacehey.com/browse">Browse</a></li>
-        <li><a href="https://spacehey.com/search">Search</a></li>
-        <li><a href="https://im.spacehey.com">Messages</a></li>
-        <li><a href="https://blog.spacehey.com">Blog</a></li>
-        <li><a href="https://spacehey.com/bulletins">Bulletins</a></li>
-        <li><a href="https://forum.spacehey.com/">Forum</a></li>
-        <li><a href="https://groups.spacehey.com">Groups</a></li>
-        <li><a href="https://layouts.spacehey.com">Layouts</a></li>
-        <li><a href="https://spacehey.com/favorites">Favs</a></li>
-        <li><a href="https://spacehey.com/invite">Invite</a></li>
-        <li><a href="https://spacehey.com/mobile" title="SpaceHey Mobile">App</a></li>
-        <li><a href="https://shop.spacehey.com/">Shop</a></li>
-        <li><a href="https://spacehey.com/about">About</a></li>
-      </ul>
-    </nav>
+  <!-- floating image top-right -->
+  <img id="floating-img"
+       src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
+       alt="floating art">
 
-    <!-- MAIN PROFILE CONTENT -->
-    <main>
+  <!-- header hero -->
+  <header class="hero"></header>
 
-      <div class="row profile" itemscope itemtype="https://schema.org/Person">
-        <meta itemprop="url" content="https://spacehey.com/giobrauer">
-        <meta itemprop="identifier" content="1886341">
+  <!-- row of social-media links -->
+  <nav class="social-nav">
+    <a href="https://giobrauer.com" target="_blank">🌐 Website</a>
+    <a href="https://bsky.app/profile/giobrauer.com" target="_blank">🦋 Bluesky</a>
+    <a href="https://www.furaffinity.net/user/giobrauer/" target="_blank">🐱 FurAffinity</a>
+    <a href="https://toyhou.se/TeddyGray" target="_blank">🏡 ToyHouse</a>
+    <a href="https://xcreativeclashx.net/profile/1382-teddygray/" target="_blank">🎨 CreativeClash</a>
+    <a href="https://aethy.com/@GioBrauer" target="_blank">🐘 Aethy</a>
+  </nav>
 
-        <div class="col w-40 left">
-          <h1 itemprop="name">Teddy Gray</h1>
-          <p class="edit-link">
-            [<a href="/settings">edit name</a>] 
-            [<a href="/editphoto">edit photo</a>]
-          </p>
-
-          <div class="general-about">
-            <div class="profile-pic">
-              <img class="pfp-fallback"
-                   src="https://cdn.spacehey.net/profilepics/1886341_aee81809e6a44731fa5c047a0674a3db.jpg"
-                   alt="Teddy Gray’s profile picture">
-            </div>
-            <div class="details">
-              <p itemprop="description">“Scratching my head”</p>
-              <p>25 yo // They/It/Xir</p>
-              <p class="online">
-                <img src="https://static.spacehey.net/img/green_person.svg" alt="Online icon">
-                ONLINE!
-              </p>
-            </div>
-          </div>
-
-          <div class="mood">
-            <p>
-              <b>Mood:</b> Exhausted 
-              <span class="edit-link">[<a href="/editstatus">edit</a>]</span>
-            </p>
-            <p>
-              <b>View my:
-                <a href="https://blog.spacehey.com/user?id=1886341">Blog</a> |
-                <a href="/userbulletins?id=1886341">Bulletins</a> |
-                <a href="https://forum.spacehey.com/user?id=1886341">Forum Topics</a>
-              </b>
-            </p>
-          </div>
-
-          <div class="contact">
-            <div class="heading"><h4>Contacting Teddy Gray</h4></div>
-            <div class="inner">
-              <div class="f-row">
-                <div class="f-col">
-                  <a href="/addfriend?id=1886341">
-                    <img src="https://static.spacehey.net/icons/add.png" class="icon" alt=""> Add to Friends
-                  </a>
-                </div>
-                <div class="f-col">
-                  <a href="/addfavorite?id=1886341">
-                    <img src="https://static.spacehey.net/icons/award_star_add.png" class="icon" alt=""> Add to Favorites
-                  </a>
-                </div>
-              </div>
-              <div class="f-row">
-                <div class="f-col">
-                  <a href="https://im.spacehey.com?user=1886341">
-                    <img src="https://static.spacehey.net/icons/comment.png" class="icon" alt=""> Send Message
-                  </a>
-                </div>
-                <div class="f-col">
-                  <a href="https://im.spacehey.com/new?text=https://spacehey.com/giobrauer">
-                    <img src="https://static.spacehey.net/icons/arrow_right.png" class="icon" alt=""> Forward to Friend
-                  </a>
-                </div>
-              </div>
-              <div class="f-row">
-                <div class="f-col">
-                  <a href="https://im.spacehey.com?user=1886341">
-                    <img src="https://static.spacehey.net/icons/email.png" class="icon" alt=""> Instant Message
-                  </a>
-                </div>
-                <div class="f-col">
-                  <a href="/block?id=1886341">
-                    <img src="https://static.spacehey.net/icons/exclamation.png" class="icon" alt=""> Block User
-                  </a>
-                </div>
-              </div>
-              <div class="f-row">
-                <div class="f-col">
-                  <a href="/soon?new">
-                    <img src="https://static.spacehey.net/icons/group_add.png" class="icon" alt=""> Add to Group
-                  </a>
-                </div>
-                <div class="f-col">
-                  <a href="/report?type=user&id=1886341">
-                    <img src="https://static.spacehey.net/icons/flag_red.png" class="icon" alt=""> Report User
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="url-info">
-            <p><b>SpaceHey URL:</b></p>
-            <p>
-              https://spacehey.com/giobrauer
-              <span class="edit-link">[<a href="/settings">edit</a>]</span>
-            </p>
-          </div>
-
-          <div class="table-section">
-            <div class="heading"><h4>Teddy Gray’s Interests</h4></div>
-            <div class="inner">
-              <table class="details-table" cellspacing="3" cellpadding="3">
-                <tbody>
-                  <!-- row 1 -->
-                  <tr>
-                    <td><p>General</p></td>
-                    <td>
-                      <div class="interests stamp-grid">
-                        <img src="https://i.postimg.cc/T3DM2Lj6/Portal.gif" loading="lazy">
-                        <img src="https://i.postimg.cc/135BMLtY/StanleyParable.gif" loading="lazy">
-                        <img src="https://i.postimg.cc/JnmG5W7s/l4d2.gif" loading="lazy">
-                        <!-- …and the rest of your GIF stamps… -->
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- row 2 -->
-                  <tr>
-                    <td><p>Music</p></td>
-                    <td>
-                      <div class="interests stamp-grid">
-                        <img src="https://i.postimg.cc/pVszKsjC/Another.gif" loading="lazy">
-                        <img src="https://i.postimg.cc/hGnfkmxh/Elfen-Lied.gif" loading="lazy">
-                        <!-- …and the rest of your GIF stamps… -->
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- add rows 3–10 the same way (Movies, Television, Cartoons, Reads, YouTubers, Podcasts, Books, Heroes) -->
-                </tbody>
-              </table>
-            </div>
-            <p class="edit-link right-side">[<a href="/edit">edit</a>]</p>
-          </div>
-
-          <div class="table-section">
-            <div class="heading"><h4>Teddy Gray’s Links</h4></div>
-            <div class="inner">
-              <table class="details-table" cellspacing="3" cellpadding="3">
-                <tbody>
-                  <!-- if you had custom links here, add rows -->
-                </tbody>
-              </table>
-            </div>
-            <p class="edit-link right-side">[<a href="/editlinks">edit</a>]</p>
-          </div>
-        </div>
-
-        <!-- Right-hand sidebar -->
-        <div class="col right">
-          <div class="profile-info">
-            <div class="inner">
-              <h3><a href="/edit">Edit Your Profile</a></h3>
-            </div>
-          </div>
-
-          <div class="blog-preview">
-            <h4>Your Latest Blog Entries [<a href="https://blog.spacehey.com/user?id=1886341">View Blog</a>]</h4>
-            <p><i>There are no Blog Entries yet.</i></p>
-          </div>
-
-          <div class="blurbs">
-            <div class="heading"><h4>Teddy Gray’s Blurbs</h4></div>
-            <div class="inner">
-              <div class="section">
-                <h4>About me:</h4>
-                <p>I'm a digital commission artist, focusing on gore, horror and the like.</p>
-                <p>🌐 <a href="https://giobrauer.com" rel="ugc">Website</a></p>
-                <p>🦋 <a href="https://bsky.app/profile/giobrauer.com" rel="ugc">Bluesky</a></p>
-                <p>🐱 <a href="https://www.furaffinity.net/user/giobrauer/" rel="ugc">Furaffinity</a></p>
-                <p>🏡 <a href="https://toyhou.se/TeddyGray" rel="ugc">ToyHouse</a></p>
-                <p>🎨 <a href="https://xcreativeclashx.net/profile/1382-teddygray/" rel="ugc">CreativeClash</a></p>
-                <p>🐘 <a href="https://aethy.com/@GioBrauer" rel="ugc">Aethy</a></p>
-              </div>
-              <div class="section">
-                <h4>Who I’d like to meet:</h4>
-                <!-- you had no text here -->
-              </div>
-            </div>
-          </div>
-
-          <div class="friends">
-            <div class="heading">
-              <h4>Teddy Gray’s Friend Space</h4>
-              <a class="more" href="/friends?id=1886341">[view all]</a>
-            </div>
-            <div class="inner">
-              <p><b>Teddy Gray has <span class="count">0</span> friends.</b></p>
-              <div class="friends-grid"><!-- no friends --></div>
-            </div>
-          </div>
-
-          <div class="friends" id="comments">
-            <div class="heading"><h4>Teddy Gray’s Friends Comments</h4></div>
-            <div class="inner">
-              <p>
-                <b>
-                  Displaying <span class="count">0</span> of <span class="count">0</span> comments
-                  ( <a href="/comments?id=1886341">View all</a> |
-                    <a href="/addcomment?id=1886341">Add Comment</a> )
-                </b>
-              </p>
-              <table class="comments-table" cellspacing="0" cellpadding="3" border="1">
-                <tbody><!-- no comments --></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>brought to you by <a href="https://tibush.com/labs">tibush labs</a></p>
-      <p><i>Disclaimer: This is a fan-based project and not affiliated with MySpace®.</i></p>
-      <ul class="links">
-        <li><a href="https://spacehey.com/about">About</a></li>
-        <li><a href="https://spacehey.com/news">News</a></li>
-        <li><a href="https://spacehey.com/rules">Rules</a></li>
-        <li><a href="https://spacehey.com/mobile">App</a></li>
-        <li><a href="https://spacehey.com/brand">Brand</a></li>
-        <li><a href="https://spacehey.com/credits">Credits</a></li>
-        <li><a href="https://rss.spacehey.com">RSS</a></li>
-        <li><a href="https://spacehey.com/tos">Terms</a></li>
-        <li><a href="https://spacehey.com/privacy">Privacy</a></li>
-        <li><a href="https://spacehey.com/imprint">Imprint</a></li>
-        <li><a href="mailto:support@spacehey.com?subject=SpaceHey.com">Contact</a></li>
-        <li><a href="https://spacehey.com/report">Report Abuse</a></li>
-        <li><a href="https://status.spacehey.com">Status</a></li>
-        <li><a href="https://shop.spacehey.com/">SpaceHey Shop</a></li>
-      </ul>
-      <p class="copyright">
-        <a href="https://spacehey.com/">©2020-2025 SpaceHey.com All Rights Reserved.</a>
-      </p>
-    </footer>
-
+  <!-- tab buttons -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="games">Games</button>
+    <button class="tab-btn" data-tab="movies">Movies</button>
+    <button class="tab-btn" data-tab="music">Music</button>
+    <button class="tab-btn" data-tab="anime">Anime</button>
+    <button class="tab-btn" data-tab="podcasts">Podcasts</button>
   </div>
+
+  <!-- tab contents -->
+  <section id="games" class="tab-content active">
+    <div class="stamp-grid">
+      <div class="stamp" data-title="Portal">
+        <img src="https://i.postimg.cc/T3DM2Lj6/Portal.gif" alt="Portal">
+      </div>
+      <div class="stamp" data-title="Stanley Parable">
+        <img src="https://i.postimg.cc/135BMLtY/StanleyParable.gif" alt="Stanley Parable">
+      </div>
+      <!-- add more .stamp blocks here -->
+    </div>
+  </section>
+
+  <section id="movies" class="tab-content">
+    <div class="stamp-grid">
+      <div class="stamp" data-title="Audition">
+        <img src="https://i.postimg.cc/RVRPm46R/Audition.gif" alt="Audition">
+      </div>
+      <div class="stamp" data-title="Vertigo">
+        <img src="https://i.postimg.cc/SsMTb9C2/Vertigo.gif" alt="Vertigo">
+      </div>
+      <!-- more stamps -->
+    </div>
+  </section>
+
+  <section id="music" class="tab-content">
+    <div class="stamp-grid">
+      <div class="stamp" data-title="Porter Robinson">
+        <img src="https://i.postimg.cc/05XtympB/KageDays.gif" alt="Porter Robinson">
+      </div>
+      <div class="stamp" data-title="Gorillaz">
+        <img src="https://i.postimg.cc/3wV3CWpr/Gorillaz.gif" alt="Gorillaz">
+      </div>
+      <!-- more stamps -->
+    </div>
+  </section>
+
+  <section id="anime" class="tab-content">
+    <div class="stamp-grid">
+      <div class="stamp" data-title="Higurashi">
+        <img src="https://i.postimg.cc/sxb2wGsj/Higurashi2.gif" alt="Higurashi">
+      </div>
+      <!-- more stamps -->
+    </div>
+  </section>
+
+  <section id="podcasts" class="tab-content">
+    <div class="stamp-grid">
+      <div class="stamp" data-title="The Archivist">
+        <img src="https://i.postimg.cc/J7xfcGjN/TMA.gif" alt="The Archivist">
+      </div>
+      <div class="stamp" data-title="Welcome to Night Vale">
+        <img src="https://i.postimg.cc/285PHrxP/WTNV.gif" alt="Welcome to Night Vale">
+      </div>
+      <!-- more stamps -->
+    </div>
+  </section>
+
+  <!-- tab-switching script -->
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // deactivate old
+        document.querySelector('.tab-btn.active').classList.remove('active');
+        document.querySelector('.tab-content.active').classList.remove('active');
+        // activate new
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
