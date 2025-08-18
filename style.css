@@ -12,21 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* secondary overlay behind elements */
-.overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: url('https://i.postimg.cc/tgjjqvxp/tumblr-e538561a1f7c6f29ec2c12e715613ef5-ee25f9bc-500.gif') center/cover no-repeat;
-  animation: fadeOverlay 3s ease-out forwards;
-  pointer-events: none;
-  z-index: -1;
-}
-@keyframes fadeOverlay {
-  0%,75% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 /* floating image top-right */
 #floating-img {
   position: fixed;
