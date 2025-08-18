@@ -30,7 +30,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;             /* top/right/bottom/left = 0 */
-  background: url('path/to/your-middle.gif') 
+  background: url('https://64.media.tumblr.com/19878c8a6b0d8e168448048e5bf0f287/278e46be764dd25e-2a/s500x750/f0ce246db3bab5f905a78a8f7d25fde19d834282.gif') 
               center center / cover no-repeat;
   opacity: 0.5;         /* tweak as needed */
   pointer-events: none; /* clicks pass through to buttons */
