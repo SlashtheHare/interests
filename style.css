@@ -21,6 +21,21 @@ body {
   z-index: 10;
 }
 
+.content-wrap {
+  position: relative;
+  z-index: 1;           /* your content sits above the GIF */
+}
+
+.content-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;             /* top/right/bottom/left = 0 */
+  background: url('path/to/your-middle.gif') 
+              center center / cover no-repeat;
+  opacity: 0.5;         /* tweak as needed */
+  pointer-events: none; /* clicks pass through to buttons */
+  z-index: -1;          /* pushes it behind everything in .content-wrap */
+}
 
 /* hero header gif */
 .hero {
