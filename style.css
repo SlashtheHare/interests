@@ -17,7 +17,7 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  background: url('https://64.media.tumblr.com/ba89da30c53cfe3b944071c79cbc8fae/5834635a10680fbc-aa/s540x810/e273c0da550e37d4019499c17065bc1d96bd4693.gifv') center/cover no-repeat;
+  background: url('https://i.postimg.cc/tgjjqvxp/tumblr-e538561a1f7c6f29ec2c12e715613ef5-ee25f9bc-500.gif') center/cover no-repeat;
   animation: fadeOverlay 3s ease-out forwards;
   pointer-events: none;
   z-index: -1;
