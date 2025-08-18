@@ -25,7 +25,7 @@ body {
 .hero {
   width: 100%;
   height: 300px;
-  background: url('https://64.media.tumblr.com/e538561a1f7c6f29ec2c12e715613ef5/694ba97436fa97d6-da/s500x750/ee25f9bc6229efd8916a68cbb01ff389b0836bee.gifv') center/cover no-repeat;
+  background: url('https://i.postimg.cc/tgjjqvxp/eyes.gif') center/cover no-repeat;
 }
 @media(max-width:600px){
   .hero { height: 200px; }
