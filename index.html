@@ -2,117 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TeddyGray – Interests Tabs</title>
-
-  <!-- custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <title>Background Test</title>
+  <style>
+    /* Stretch the GIF to cover the entire viewport */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: 
+        url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif')
+        center center / cover no-repeat fixed;
+    }
+  </style>
 </head>
 <body>
-
-  <!--
-    1) The main page background
-    2) A second “overlay” gif behind content
-  -->
-  <div class="overlay"></div>
-
-  <!-- floating image top-right -->
-  <img id="floating-img"
-       src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
-       alt="floating art">
-
-  <!-- header hero -->
-  <header class="hero"></header>
-
-  <!-- row of social-media links -->
-  <nav class="social-nav">
-    <a href="https://giobrauer.com" target="_blank">🌐 Website</a>
-    <a href="https://bsky.app/profile/giobrauer.com" target="_blank">🦋 Bluesky</a>
-    <a href="https://www.furaffinity.net/user/giobrauer/" target="_blank">🐱 FurAffinity</a>
-    <a href="https://toyhou.se/TeddyGray" target="_blank">🏡 ToyHouse</a>
-    <a href="https://xcreativeclashx.net/profile/1382-teddygray/" target="_blank">🎨 CreativeClash</a>
-    <a href="https://aethy.com/@GioBrauer" target="_blank">🐘 Aethy</a>
-  </nav>
-
-  <!-- tab buttons -->
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="games">Games</button>
-    <button class="tab-btn" data-tab="movies">Movies</button>
-    <button class="tab-btn" data-tab="music">Music</button>
-    <button class="tab-btn" data-tab="anime">Anime</button>
-    <button class="tab-btn" data-tab="podcasts">Podcasts</button>
-  </div>
-
-  <!-- tab contents -->
-  <section id="games" class="tab-content active">
-    <div class="stamp-grid">
-      <div class="stamp" data-title="Portal">
-        <img src="https://i.postimg.cc/T3DM2Lj6/Portal.gif" alt="Portal">
-      </div>
-      <div class="stamp" data-title="Stanley Parable">
-        <img src="https://i.postimg.cc/135BMLtY/StanleyParable.gif" alt="Stanley Parable">
-      </div>
-      <!-- add more .stamp blocks here -->
-    </div>
-  </section>
-
-  <section id="movies" class="tab-content">
-    <div class="stamp-grid">
-      <div class="stamp" data-title="Audition">
-        <img src="https://i.postimg.cc/RVRPm46R/Audition.gif" alt="Audition">
-      </div>
-      <div class="stamp" data-title="Vertigo">
-        <img src="https://i.postimg.cc/SsMTb9C2/Vertigo.gif" alt="Vertigo">
-      </div>
-      <!-- more stamps -->
-    </div>
-  </section>
-
-  <section id="music" class="tab-content">
-    <div class="stamp-grid">
-      <div class="stamp" data-title="Porter Robinson">
-        <img src="https://i.postimg.cc/05XtympB/KageDays.gif" alt="Porter Robinson">
-      </div>
-      <div class="stamp" data-title="Gorillaz">
-        <img src="https://i.postimg.cc/3wV3CWpr/Gorillaz.gif" alt="Gorillaz">
-      </div>
-      <!-- more stamps -->
-    </div>
-  </section>
-
-  <section id="anime" class="tab-content">
-    <div class="stamp-grid">
-      <div class="stamp" data-title="Higurashi">
-        <img src="https://i.postimg.cc/sxb2wGsj/Higurashi2.gif" alt="Higurashi">
-      </div>
-      <!-- more stamps -->
-    </div>
-  </section>
-
-  <section id="podcasts" class="tab-content">
-    <div class="stamp-grid">
-      <div class="stamp" data-title="The Archivist">
-        <img src="https://i.postimg.cc/J7xfcGjN/TMA.gif" alt="The Archivist">
-      </div>
-      <div class="stamp" data-title="Welcome to Night Vale">
-        <img src="https://i.postimg.cc/285PHrxP/WTNV.gif" alt="Welcome to Night Vale">
-      </div>
-      <!-- more stamps -->
-    </div>
-  </section>
-
-  <!-- tab-switching script -->
-  <script>
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        // deactivate old
-        document.querySelector('.tab-btn.active').classList.remove('active');
-        document.querySelector('.tab-content.active').classList.remove('active');
-        // activate new
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
-      });
-    });
-  </script>
+  <!-- nothing else here yet -->
 </body>
 </html>
