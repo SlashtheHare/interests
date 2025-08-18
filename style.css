@@ -93,6 +93,8 @@ body {
   grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
   gap: 6px;
   justify-content: center;
+  max-width: 640px;     /* ← adjust this to taste */
+  margin: 0 auto; 
 }
 .stamp {
   position: relative;
