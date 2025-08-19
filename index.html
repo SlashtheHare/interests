@@ -11,56 +11,10 @@
 </head>
 <body>
 
-  <!-- YouTube playlist iframe (invisible) -->
- <iframe
-  id="yt-player"
-  width="0" height="0"
-  src="https://www.youtube.com/embed/videoseries?list=PLoIQJyXr_UzTqDAXEIeG1wvY-thPGN9oJ_ID&enablejsapi=1&autoplay=0&loop=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen
-></iframe>
-
-
-  <!-- Spinning CD + Retro Player -->
-  <aside class="side-widget">
-    <div class="cd-wrapper">
-      <img
-        src="https://i.postimg.cc/2StLmJm3/harrymason.gif"
-        alt="CD Cover"
-      />
-    </div>
-
-    <div class="player">
-  <div class="controls-row">
-    <button id="back">⏮️</button>
-    <button id="play-pause">▶️</button>
-    <button id="forward">⏭️</button>
-  </div>
-
-  <div class="wave-knob-row">
-    <canvas id="waveform" width="300" height="50"></canvas>
-    <div id="volume-dial">
-      <input type="range" id="volume" min="0" max="100" value="50" />
-      <div class="tick-container">
-        <div class="dial-pointer"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="track-info">🚫 Not playing</div>
-</div>
-
-
-
-  </aside>
   
-  <!-- Floating artwork top-right -->
-  <img
-    id="floating-img"
-    src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
-    alt="floating art"
-  />
+
+
+
 
   <!-- Hero header with overlaid title -->
   <header class="hero">
@@ -71,6 +25,8 @@
       />
     </h1>
   </header>
+
+   
 
   <!-- row of social-media links -->
   <nav class="social-nav">
@@ -1243,6 +1199,18 @@
 </section>
 
 </div>
+
+
+
+  <!-- YouTube playlist iframe (invisible) -->
+ <iframe
+  id="yt-player"
+  width="0" height="0"
+  src="https://www.youtube.com/embed/videoseries?list=PLoIQJyXr_UzTqDAXEIeG1wvY-thPGN9oJ_ID&enablejsapi=1&autoplay=0&loop=1"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+></iframe>
   <!-- tab-switching script -->
   <script>
     document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1257,7 +1225,43 @@
     });
   </script>
   
+ <!-- Radio + Floating Art Wrapper -->
+<div class="radio-wrapper">
+  <aside class="side-widget">
+    <div class="cd-wrapper">
+      <img src="https://i.postimg.cc/2StLmJm3/harrymason.gif" alt="CD Cover" />
+    </div>
 
+    <div class="player">
+      <div class="controls-row">
+        <button id="back">⏮️</button>
+        <button id="play-pause">▶️</button>
+        <button id="forward">⏭️</button>
+      </div>
+
+      <div class="wave-knob-row">
+        <canvas id="waveform" width="300" height="50"></canvas>
+        <div id="volume-dial">
+          <input type="range" id="volume" min="0" max="100" value="50" />
+          <div class="tick-container">
+            <div class="dial-pointer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="track-info">🚫 Not playing</div>
+    </div>
+  </aside>
+
+  <img
+    id="floating-img"
+    src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
+    alt="floating art"
+  />
+</div>
 
 </body>
+
+
 </html>
+
