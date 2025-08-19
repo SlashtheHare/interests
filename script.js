@@ -40,6 +40,14 @@ function onPlayerReady(event) {
     }
   });
 
+  document.getElementById('back').addEventListener('click', () => {
+    ytPlayer.previousVideo();
+  });
+
+  document.getElementById('forward').addEventListener('click', () => {
+    ytPlayer.nextVideo();
+  });
+
   // Set initial volume and tick angle
   const initialVolume = parseInt(volumeSlider.value);
   ytPlayer.setVolume(initialVolume);
@@ -118,3 +126,30 @@ function onPlayerStateChange(event) {
     }
   }
 }
+
+// ——— Tab Highlight Logic ———
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const highlight = document.querySelector('.tab-highlight');
+
+  function moveHighlight(target) {
+    const rect = target.getBoundingClientRect();
+    const containerRect = target.parentElement.getBoundingClientRect();
+
+    highlight.style.width = `${rect.width}px`;
+    highlight.style.height = `${rect.height}px`;
+    highlight.style.left = `${rect.left - containerRect.left}px`;
+    highlight.style.top = `${rect.top - containerRect.top}px`;
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelector('.tab-btn.active')?.classList.remove('active');
+      tab.classList.add('active');
+      moveHighlight(tab);
+    });
+  });
+
+  const activeTab = document.querySelector('.tab-btn.active');
+  if (activeTab) moveHighlight(activeTab);
+});
