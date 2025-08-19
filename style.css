@@ -136,8 +136,8 @@ input, button, textarea, select {
 /* 8) Stamp grid & tooltips */
 .stamp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
+  gap: 7px;
   justify-content: center;
   max-width: 800px;
   margin: 0 auto;
