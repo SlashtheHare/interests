@@ -32,25 +32,25 @@
     </div>
 
     <div class="player">
-  <button id="prev" title="Previous">⏮️</button>
-  <button id="play-pause" title="Play/Pause">▶️</button>
-  <button id="next" title="Next">⏭️</button>
+  <div class="controls-row">
+    <button id="back">⏮️</button>
+    <button id="play-pause">▶️</button>
+    <button id="forward">⏭️</button>
+  </div>
 
-  <div class="radio-progress">
+  <div class="wave-knob-row">
     <canvas id="waveform" width="300" height="50"></canvas>
+    <div id="volume-dial">
+      <input type="range" id="volume" min="0" max="100" value="50" />
+      <div class="tick-container">
+        <div class="dial-pointer"></div>
+      </div>
+    </div>
   </div>
 
-<div id="volume-dial">
-  <div class="knob-wrapper">
-    <input type="range" id="volume" min="0" max="100" value="50" />
-    <div class="dial-pointer"></div>
-  </div>
+  <div id="track-info">🚫 Not playing</div>
 </div>
 
- 
-
-  <div id="track-info">Not playing</div> <!-- ⬅️ Moved here -->
-</div>
 
 
   </aside>
