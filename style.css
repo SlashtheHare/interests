@@ -59,7 +59,7 @@ input, button, textarea, select {
 
 .site-title img {
   display: block;
-  max-width: 80%;
+  width: 120%;
   height: auto;
 }
 
