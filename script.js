@@ -27,7 +27,6 @@ function onPlayerReady(event) {
   });
 
   const playBtn = document.getElementById('play-pause');
-  const trackInfo = document.getElementById('track-info');
   const volumeSlider = document.getElementById('volume');
   const tickContainer = document.querySelector('.tick-container');
 
@@ -106,23 +105,62 @@ function animateWaveform() {
   draw();
 }
 
+function updateTrackTitle(title) {
+  const scrollText = document.querySelector('#track-info .scroll-text');
+  if (!scrollText) return;
+
+  scrollText.innerHTML = title;
+  scrollText.classList.remove('scrollable', 'centered');
+
+  // Strip HTML tags for comparison
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = title;
+  const plainText = tempDiv.textContent || tempDiv.innerText || '';
+
+  const statusMessages = ['Paused', 'Finished', 'Not Playing'];
+
+  if (statusMessages.some(msg => plainText.includes(msg))) {
+    scrollText.classList.add('centered');
+    return;
+  }
+
+  // Measure actual text width
+  const tempSpan = document.createElement('span');
+  tempSpan.style.visibility = 'hidden';
+  tempSpan.style.position = 'absolute';
+  tempSpan.style.whiteSpace = 'nowrap';
+  tempSpan.style.fontSize = getComputedStyle(scrollText).fontSize;
+  tempSpan.style.fontFamily = getComputedStyle(scrollText).fontFamily;
+  tempSpan.textContent = plainText;
+
+  document.body.appendChild(tempSpan);
+  const textWidth = tempSpan.offsetWidth;
+  document.body.removeChild(tempSpan);
+
+  const containerWidth = scrollText.parentElement.clientWidth;
+
+  if (textWidth > containerWidth) {
+    scrollText.classList.add('scrollable');
+  }
+}
+
+
+
 function onPlayerStateChange(event) {
   console.log("🔄 Player state changed:", event.data);
-
-  const trackInfo = document.getElementById('track-info');
 
   if (event.data === YT.PlayerState.PLAYING) {
     isPlaying = true;
     const videoData = ytPlayer.getVideoData();
-    trackInfo.textContent = `🎵 Now Playing: ${videoData.title}`;
+    updateTrackTitle(`<i class="fas fa-compact-disc"></i> ${videoData.title}`);
   } else {
     isPlaying = false;
     if (event.data === YT.PlayerState.PAUSED) {
-      trackInfo.textContent = '⏸️ Paused';
+      updateTrackTitle('<i class="fas fa-pause"></i> Paused');
     } else if (event.data === YT.PlayerState.ENDED) {
-      trackInfo.textContent = '✅ Finished';
+      updateTrackTitle('<i class="fas fa-check-circle"></i> Finished');
     } else {
-      trackInfo.textContent = '🚫 Not playing';
+      updateTrackTitle('<i class="fas fa-ban"></i> Not Playing');
     }
   }
 }
@@ -131,6 +169,20 @@ function onPlayerStateChange(event) {
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll('.tab-btn');
   const highlight = document.querySelector('.tab-highlight');
+  const tabTitle = document.getElementById('tab-title');
+
+  const tabTitles = {
+    games: "Video games",
+    movies: "Movies",
+    music: "Singers, bands, voice synths",
+    anime: "Anime",
+    podcasts: "Podcasts",
+    tvshows: "TV shows",
+    youtubers: "Youtubers and Streamers",
+    manga: "Manga",
+    cartoons: "Cartoons",
+    reads: "Literature (Online & Books)"
+  };
 
   function moveHighlight(target) {
     const rect = target.getBoundingClientRect();
@@ -143,28 +195,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelector('.tab-btn.active')?.classList.remove('active');
-    tab.classList.add('active');
-    moveHighlight(tab);
+    tab.addEventListener('click', () => {
+      document.querySelector('.tab-btn.active')?.classList.remove('active');
+      tab.classList.add('active');
+      moveHighlight(tab);
 
-    // 🔊 Play tab click sound
-    const tabSound = document.getElementById('tab-sound');
-    tabSound.volume = 0.1; // Adjust volume here (0.0 to 1.0)
-    tabSound.currentTime = 0;
-    tabSound.play();
+      // 🔊 Play tab click sound
+      const tabSound = document.getElementById('tab-sound');
+      tabSound.volume = 0.1;
+      tabSound.currentTime = 0;
+      tabSound.play();
+
+      // 📝 Update tab title
+      const tabId = tab.getAttribute('data-tab');
+      if (tabTitle) {
+        tabTitle.textContent = tabTitles[tabId] || "Untitled";
+      }
+    });
   });
-});
 
   const activeTab = document.querySelector('.tab-btn.active');
-  if (activeTab) moveHighlight(activeTab);
-    // ——— Social Nav Click Sound ———
+  if (activeTab) {
+    moveHighlight(activeTab);
+    const initialTabId = activeTab.getAttribute('data-tab');
+    if (tabTitle) {
+      tabTitle.textContent = tabTitles[initialTabId] || "Untitled";
+    }
+  }
+
+  // ——— Social Nav Click Sound ———
   const socialLinks = document.querySelectorAll('.social-nav');
-  const socialSound = document.getElementById('social-sound'); // or 'tab-sound' if reusing
+  const socialSound = document.getElementById('social-sound');
 
   socialLinks.forEach(link => {
     link.addEventListener('click', () => {
-      socialSound.volume = 0.1; // Adjust to taste
+      socialSound.volume = 0.1;
       socialSound.currentTime = 0;
       socialSound.play();
     });
