@@ -6,7 +6,8 @@
   <title>TeddyGray’s Interests</title>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
  
 </head>
 <body>
@@ -56,7 +57,7 @@
   <button class="tab-btn" data-tab="podcasts">
     <img src="https://i.postimg.cc/g2Py60B3/Radio.gif" alt="Podcasts" title="Podcasts" />
   </button>
-  <button class="tab-btn" data-tab="tv-shows">
+  <button class="tab-btn" data-tab="tvshows">
     <img src="https://i.postimg.cc/Gm80YnS0/Gold-Med-Inventory.gif" alt="TV Shows" title="TV Shows" />
   </button>
   <button class="tab-btn" data-tab="youtubers">
@@ -74,7 +75,7 @@
   <div class="tab-highlight"></div>
 </div>
 
-
+<div id="tab-title" class="tab-title">Welcome</div>
 
   <!-- tab contents -->
   <!-- Games Tab Content -->
@@ -914,7 +915,7 @@
 
 
    
-<section id="tv-shows" class="tab-content">
+<section id="tvshows" class="tab-content">
   <div class="stamp-grid">
 
     <div class="stamp" data-title="Twin Peaks">
@@ -1248,39 +1249,55 @@
   </script>
   
  <!-- Radio + Floating Art Wrapper -->
+<!-- Floating image separated from radio wrapper -->
+<img
+  id="floating-img"
+  src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
+  alt="floating art"
+/>
+
 <div class="radio-wrapper">
+  <!-- Background image layer (optional) -->
+  <div class="radio-bg"></div>
+
   <aside class="side-widget">
+    <!-- CD Cover -->
     <div class="cd-wrapper">
       <img src="https://i.postimg.cc/2StLmJm3/harrymason.gif" alt="CD Cover" />
     </div>
 
-    <div class="player">
-      <div class="controls-row">
-        <button id="back">⏮️</button>
-        <button id="play-pause">▶️</button>
-        <button id="forward">⏭️</button>
-      </div>
+   
 
-      <div class="wave-knob-row">
-        <canvas id="waveform" width="300" height="50"></canvas>
-        <div id="volume-dial">
-          <input type="range" id="volume" min="0" max="100" value="50" />
-          <div class="tick-container">
-            <div class="dial-pointer"></div>
-          </div>
-        </div>
+     <!-- Volume knob (top left) -->
+  <div class="knob-zone">
+    <div id="volume-dial">
+      <input type="range" id="volume" min="0" max="100" value="50" />
+      <div class="tick-container">
+        <div class="dial-pointer"></div>
       </div>
-
-      <div id="track-info">🚫 Not playing</div>
     </div>
-  </aside>
+  </div>
 
-  <img
-    id="floating-img"
-    src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
-    alt="floating art"
-  />
+ <!-- Controls column (bottom left) -->
+  <div class="controls-column">
+    <button id="back"><i class="fas fa-backward"></i></button>
+    <button id="play-pause"><i class="fas fa-play"></i></button>
+    <button id="forward"><i class="fas fa-forward"></i></button>
+  </div>
+
+<div class="track-info-zone">
+  <div id="track-info">
+    <div class="scroll-text"><i class="fas fa-ban"></i> Not playing</div>
+  </div>
 </div>
+
+<!-- Waveform (positioned lower) -->
+<div class="waveform-zone">
+  <canvas id="waveform" width="300" height="50"></canvas>
+</div>
+  </aside>
+</div>
+
 
 <audio id="tab-sound" src="https://github.com/GioBrauer/teddygray/raw/refs/heads/main/SHMenuBlip02.mp3" preload="auto"></audio>
 
