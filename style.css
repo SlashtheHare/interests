@@ -18,6 +18,20 @@ body {
   overflow-x: hidden;
 }
 
+/* title */
+
+.site-title {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.site-title img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
 /* floating image top-right */
 #floating-img {
   position: fixed;
