@@ -21,7 +21,7 @@
 }
 
 html {
-  font-family: var(--track-font), "Times New Roman", Times, serif;
+  font-family: var(--track-font);
   line-height: 1.5;
   color: white;
 }
@@ -54,7 +54,7 @@ html, body {
 /* CD + Player */
 .radio-wrapper .side-widget {
   top: -650px;
-  left: 60px;
+  left: 70px;
   transform: translateY(-50%);
   width: 300px;
   display: flex;
@@ -123,7 +123,7 @@ html, body {
   background: none;
   border: 1px solid #555;
   color: #ddd;
-  font-family: monospace;
+  font-family: var(--track-font);
   font-size: 1.2rem;
   padding: 4px 8px;
   backdrop-filter: blur(2px);
@@ -420,6 +420,8 @@ html, body {
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s;
+  font-family: var(--track-font);
+  font-size: 16px;
 }
 
 .tab-btn.active,
