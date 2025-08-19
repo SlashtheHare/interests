@@ -18,6 +18,22 @@ body {
   overflow-x: hidden;
 }
 
+/* font */
+
+html {
+  font-family: 'Tinos', 'Times New Roman', Times, serif;
+  line-height: 1.5;
+  color: #222;
+}
+
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
 /* title */
 
 .site-title {
