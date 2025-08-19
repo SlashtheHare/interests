@@ -15,7 +15,7 @@ function onYouTubeIframeAPIReady() {
       autoplay: 0
     },
     events: {
-      onReady:      onPlayerReady,
+      onReady:       onPlayerReady,
       onStateChange: onPlayerStateChange
     }
   });
@@ -23,12 +23,19 @@ function onYouTubeIframeAPIReady() {
 
 // 3) Once the player’s ready, wire up your UI
 function onPlayerReady() {
-  const playBtn   = document.getElementById('play-pause');
-  const volSlider = document.getElementById('volume');
-  const progSlider= document.getElementById('progress');
+  const prevBtn    = document.getElementById('prev');
+  const playBtn    = document.getElementById('play-pause');
+  const nextBtn    = document.getElementById('next');
+  const volSlider  = document.getElementById('volume');
+  const progSlider = document.getElementById('progress');
+  const trackInfo  = document.getElementById('track-info');
 
-  // Sync initial volume (YT volume is 0–100, our slider 0–1)
+  // Sync initial volume (YT volume 0–100 → slider 0–1)
   volSlider.value = ytPlayer.getVolume() / 100;
+
+  // Previous / Next
+  prevBtn.addEventListener('click', () => ytPlayer.previousVideo());
+  nextBtn.addEventListener('click', () => ytPlayer.nextVideo());
 
   // Play / pause toggle
   playBtn.addEventListener('click', () => {
@@ -47,30 +54,43 @@ function onPlayerReady() {
 
   // Seek when user drags progress
   progSlider.addEventListener('input', () => {
-    const d = ytPlayer.getDuration();
-    if (d) {
-      ytPlayer.seekTo((progSlider.value / 100) * d, true);
+    const duration = ytPlayer.getDuration() || 0;
+    if (duration) {
+      ytPlayer.seekTo((progSlider.value / 100) * duration, true);
     }
   });
 
-  // Update progress bar & play/pause icon every 250ms
+  // Update UI every 250ms
   setInterval(() => {
-    const state = ytPlayer.getPlayerState();
-    // update play/pause icon
-    playBtn.textContent = (state === YT.PlayerState.PLAYING)
-      ? '⏸️'
-      : '▶️';
+    const state    = ytPlayer.getPlayerState();
+    const duration = ytPlayer.getDuration() || 0;
+    const current  = ytPlayer.getCurrentTime() || 0;
 
-    // update progress slider
-    const d = ytPlayer.getDuration();
-    const t = ytPlayer.getCurrentTime();
-    progSlider.value = d ? (t / d) * 100 : 0;
+    // 1) Play/Pause icon
+    playBtn.textContent = (state === YT.PlayerState.PLAYING) ? '⏸️' : '▶️';
+
+    // 2) Progress slider
+    progSlider.value = duration ? (current / duration) * 100 : 0;
+
+    // 3) Track title
+    if (state === YT.PlayerState.PLAYING) {
+      const { title } = ytPlayer.getVideoData();
+      trackInfo.textContent = title;
+    }
   }, 250);
 }
 
-// 4) When a video ends, jump back to the first in the playlist
+// 4) Loop playlist & refresh title on video end
 function onPlayerStateChange(event) {
   if (event.data === YT.PlayerState.ENDED) {
+    // Jump back to first video in the playlist
     ytPlayer.playVideoAt(0);
+  }
+
+  if (event.data === YT.PlayerState.PLAYING) {
+    // Ensure title is up to date upon start
+    const trackInfo = document.getElementById('track-info');
+    const { title } = ytPlayer.getVideoData();
+    trackInfo.textContent = title;
   }
 }
