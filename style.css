@@ -7,52 +7,60 @@
   --btn-hover: #e5cd6f;
   --slider-track: #444;
   --slider-thumb: #ffcc00;
-  --track-font: 'Tinos';
+  --track-font: 'Tinos', serif;
   --track-color: #fff;
   --track-size: 0.9rem;
   --gap: 0.5rem;
 }
 
-/* ——— 2. Reset & Base ——— */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-family: var(--track-font);
-  line-height: 1.5;
-  color: white;
-}
-
 body {
-  background: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif')
-              center/cover fixed no-repeat;
+  font-family: var(--track-font);
+  background: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif') center/cover fixed no-repeat;
+  color: white;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+/* Floating image now outside the wrapper */
+#floating-img {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 330px;
+  border-radius: 8px;
+  z-index: 10;
 }
 
-
-/* ——— 3. Spinning CD Widget + Floating Art Wrapper ——— */
+/* Radio wrapper */
 .radio-wrapper {
   position: relative;
-  height: 0;       /* prevents layout stretching */
   z-index: 1000;
 }
 
-.radio-wrapper .side-widget,
-.radio-wrapper #floating-img {
+/* Radio background */
+.radio-bg {
   position: absolute;
+  top: -520px;
+  left: 40px;
+  width: 360px;
+  height: 360px;
+  background: url('https://i.postimg.cc/wMcYb5Yh/sh1radio.png') center center no-repeat;
+  background-size: contain;
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* CD + Player */
-.radio-wrapper .side-widget {
+/* Side widget */
+.side-widget {
+  position: absolute;
   top: -650px;
   left: 85px;
   transform: translateY(-50%);
@@ -62,25 +70,15 @@ html, body {
   align-items: center;
 }
 
-/* Floating artwork */
-.radio-wrapper #floating-img {
-  top: -900px;
-  right: 0;
-  width: 330px;
-  border-radius: 8px;
-  z-index: 10;
-}
-
-
-/* ——— 4. CD Wrapper ——— */
+/* CD wrapper */
 .cd-wrapper {
   position: relative;
   width: 300px;
   height: 300px;
-  border: 2px solid rgba(0,0,0,0.2);
   border-radius: 50%;
   overflow: hidden;
   background: #fafafa;
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .cd-wrapper img {
@@ -89,17 +87,17 @@ html, body {
   object-fit: cover;
   border-radius: 50%;
   animation: spin 7s linear infinite;
-  transform-origin: center center;
 }
 
 .cd-wrapper::after {
   content: "";
   position: absolute;
-  top: 50%; left: 50%;
-  width: 40px; height: 40px;
-  background: radial-gradient(circle at center,
-              black 0%, black 60%, #333 61%, #333 70%, black 71%, black 100%);
-  border: 2px solid rgba(0,0,0,0.2);
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at center, black 0%, black 60%, #333 61%, #333 70%, black 71%, black 100%);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -107,11 +105,10 @@ html, body {
 
 @keyframes spin {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
+  to { transform: rotate(-360deg); }
 }
 
-
-/* ——— 5. Retro Player ——— */
+/* Player controls */
 .player {
   display: flex;
   flex-direction: column;
@@ -119,83 +116,134 @@ html, body {
   margin-top: 50px;
 }
 
+/* Controls column (bottom left) */
+.controls-column {
+  position: absolute;
+  bottom: -270px;
+  left: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+
+.controls-column button {
+  background: none;
+  color: #ddd;
+  font-size: 1.2rem;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
 .player button {
   background: none;
-  border: 1px solid #555;
   color: #ddd;
-  font-family: var(--track-font);
   font-size: 1.2rem;
   padding: 4px 8px;
-  backdrop-filter: blur(2px);
   cursor: pointer;
+  backdrop-filter: blur(2px);
 }
 
 .player button:hover {
   color: #fff;
-  border-color: #888;
 }
 
 .player button:active {
   border-style: inset;
 }
 
-.player .slider {
-  background: transparent;
+/* Track info zone */
+.track-info-zone {
+  position: absolute;
+  bottom: -180px; /* Adjust as needed */
+  left: 60px;
+  width: 180px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Track info */
+.radio-display {
+  margin-top: 12px;
+  text-align: center;
 }
 
 
-/* ——— 6. Waveform Progress Bar ——— */
-.radio-progress {
-  height: 100px;
-  overflow: visible;
-  position: relative;
-  background: #222;
-  border: 1px solid #444;
-  margin: 0 8px;
-  display: flex;
-  align-items: center;
+#track-info::-webkit-scrollbar {
+  width: 6px;
+}
+
+#track-info::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+#track-info::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+@keyframes titleFlicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 2px #fff; }
+  10%, 30% { opacity: 0.6; text-shadow: none; }
+  20%, 50% { opacity: 0.2; text-shadow: none; }
+  40%, 70% { opacity: 0.8; text-shadow: 0 0 1px #fff; }
+}
+
+
+/* Waveform and track info (bottom of red square) */
+.waveform-zone {
+  position: absolute;
+  bottom: -250px;
+  left: 67px;
+  width: 200px;
+  text-align: center;
+  z-index: 2;
 }
 
 #waveform {
-  display: block;
-  width: 70%;
-  height: 70%;
+  width: 180px;
+  height: 50px;
   background: rgba(203, 255, 203, 0.2);
   filter: brightness(160%) contrast(220%);
-  position: relative;
-  z-index: 10;
 }
 
 
-/* ——— 7. Volume Slider ——— */
+/* Volume knob (top left) */
+.knob-zone {
+  position: absolute;
+  top: 400px;
+  left: -25px;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+
+#volume-dial {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+}
+
 #volume {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: radial-gradient(circle at center, #222 0%, #111 100%);
   border: 2px solid #555;
   box-shadow: inset 0 0 10px #000;
   cursor: pointer;
-  transform-origin: center center;
   transform: rotate(0deg);
-  
-}
-
-#volume-dial {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  margin: auto;
+  appearance: none;
 }
 
 .tick-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
-  height: 80px;
-  transform-origin: center center;
+  width: 50px;
+  height: 50px;
   pointer-events: none;
 }
 
@@ -205,17 +253,12 @@ html, body {
   left: 50%;
   width: 4px;
   height: 20px;
-  background: #ffcc00;
+  background: #ff4a4a; 
   transform: translateX(-50%);
   transition: transform 0.1s ease-out;
 }
 
-.wave-knob-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
+/* Hide native slider appearance */
 #volume::-webkit-slider-thumb,
 #volume::-moz-range-thumb,
 #volume::-ms-thumb {
@@ -225,28 +268,8 @@ html, body {
   border: none;
 }
 
-/* Completely turn off the native range appearance */
-#volume {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-/* Hide the WebKit track */
-#volume::-webkit-slider-runnable-track {
-  background: transparent;
-  height: 0;
-  border: none;
-}
-
-/* Hide the Firefox track */
-#volume::-moz-range-track {
-  background: transparent;
-  height: 0;
-  border: none;
-}
-
-/* Hide the IE/Edge track */
+#volume::-webkit-slider-runnable-track,
+#volume::-moz-range-track,
 #volume::-ms-track {
   background: transparent;
   height: 0;
@@ -256,6 +279,7 @@ html, body {
 #volume:focus {
   outline: none;
 }
+
 
 /* 2. Hide every vendor’s thumb */
 #volume::-webkit-slider-thumb {
@@ -300,15 +324,45 @@ html, body {
 /* ——— 8. Track Info ——— */
 #track-info {
   position: relative;
-  color: #ccc;
-  font-family: var(--track-font);
-  font-size: 14px;
-  white-space: nowrap;
+  width: 150px;
+  height: 30px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  animation: titleFlicker 2.5s infinite;
-  margin-top: 12px;
+  white-space: nowrap;
+  font-size: 20px !important;
+  color: #fff;
+  padding-left: 4px;
+  line-height: 30px;
+  text-align: left;
+  left: 30px;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  
+}
+
+.scroll-text.scrollable {
+  animation: scroll-left 12s linear infinite;
+  animation-delay: 2s; /* Wait 2 seconds before scrolling */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-text.centered {
+  display: block;
+  width: 100%;
   text-align: center;
+  padding-right: 0; /* prevent extra space */
+  animation: none;  /* disable scrolling */
 }
 
 @keyframes titleFlicker {
@@ -428,6 +482,15 @@ position: relative;
 
 
 /* ——— 13. Tabs & Content ——— */
+
+.tab-title {
+  text-align: center;
+  font-size: 1.5rem;
+ 
+  color: #fff;
+  transition: opacity 0.3s ease;
+}
+
 .tabs {
   display: flex;
   justify-content: center;
@@ -439,7 +502,8 @@ position: relative;
 .tab-btn {
   position: relative;
   background: rgb(0, 0, 0);
-  border: 2px solid #706fb7; /* Light blue border */ 
+  border: none; /* Remove default border */
+  outline: none;
   color: white;
   padding: 0.5rem 1rem;
   font-family: var(--track-font);
@@ -451,9 +515,15 @@ position: relative;
   overflow: visible;
 }
 
+.tab-btn.active {
+  border: 2px solid #706fb7; /* Blue border for active tab */
+  border-radius: 0px; /* Optional: soften the edges */
+}
+
 .tab-btn.active,
 .tab-btn:hover {
   background: rgb(0, 0, 0);  
+  
 }
 
 /* Only show corner accents on active tab */
@@ -612,4 +682,3 @@ main, section {
   max-width: 1000px;
   margin: 0 auto;
 }
-
