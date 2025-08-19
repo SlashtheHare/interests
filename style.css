@@ -4,7 +4,7 @@
 :root {
   --player-bg: rgba(0, 0, 0, 0.6);
   --btn-color: #ffcc00;
-  --btn-hover: #ffe680;
+  --btn-hover: #e5cd6f;
   --slider-track: #444;
   --slider-thumb: #ffcc00;
   --track-font: 'Tinos';
@@ -347,7 +347,7 @@ html, body {
 .site-title {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 45.1%;
   transform: translate(-50%, -50%);
   z-index: 2;
   margin: 0;
@@ -391,17 +391,33 @@ html, body {
   gap: 1rem;
   padding: 0.5rem;
   background: rgba(0,0,0,0.4);
+ z-index: 2;
+}
+.social-nav a:hover {
+  text-decoration: underline;
 }
 
 .social-nav a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
+ /* make sure it’s inline-block so the gradient only spans the link text */
+  display: inline-block;
+
+
+  /* optional padding to give the line room to breathe */
+  padding: 0.25rem 0;
+ z-index: 3; 
+   
 }
 
-.social-nav a:hover {
-  text-decoration: underline;
+.social-nav::before {
+  display: none !important;
 }
+
+
+
+
 
 
 /* ——— 13. Tabs & Content ——— */
@@ -409,24 +425,24 @@ html, body {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin: 1rem 0;
+  margin: 1rem 0; 
 }
 
 .tab-btn {
-  background: rgba(255,255,255,0.2);
+  background: rgba(15, 15, 15, 0.82);
   border: none;
-  padding: 0.5rem 1rem;
-  color: white;
+  padding: 0.5rem 1rem;  
+  color: rgb(255, 255, 255);  
   cursor: pointer;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: background 0.3s; 
   font-family: var(--track-font);
   font-size: 16px;
 }
 
 .tab-btn.active,
 .tab-btn:hover {
-  background: rgba(255,255,255,0.4);
+  background: rgba(78, 78, 78, 0.4);
 }
 
 .tab-content {
