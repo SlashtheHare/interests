@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TeddyGray’s Interests</title>
 
-  <!-- your existing stylesheet -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- CD/player script -->
-  <script src="script.js" defer></script>
+ 
 </head>
 <body>
 
@@ -40,14 +37,9 @@
   <button id="next" title="Next">⏭️</button>
 
       
-  <input
-    type="range"
-    id="progress"
-    class="slider"
-    min="0"
-    max="100"
-    value="0"
-  />
+  <div class="radio-progress">
+  <canvas id="progressWave"></canvas>
+</div>
   <input
     type="range"
     id="volume"
@@ -1262,5 +1254,7 @@
       });
     });
   </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
 </body>
 </html>
