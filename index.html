@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TeddyGray's Interests</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TeddyGray’s Interests</title>
+
+  <!-- your existing stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CD/player script -->
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- floating image top-right -->
+  <!-- YouTube playlist iframe (invisible) -->
+  <iframe
+    id="yt-player"
+    width="0" height="0"
+    src="https://www.youtube.com/embed?listType=playlist
+      &list=PLoIQJyXr_UzTqDAXEIeG1wvY-thPGN9oJ
+      &loop=1
+      &autoplay=0
+      &enablejsapi=1"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+
+  <!-- Spinning CD + Retro Player -->
+  <aside class="side-widget">
+    <div class="cd-wrapper">
+      <img
+        src="https://i.postimg.cc/2StLmJm3/harrymason.gif"
+        alt="CD Cover"
+      />
+    </div>
+
+    <div class="player">
+     
+      <button id="play-pause" title="Play/Pause">▶️</button>
+      <input
+        type="range"
+        id="progress"
+        class="slider"
+        min="0"
+        max="100"
+        value="0"
+      />
+      <input
+        type="range"
+        id="volume"
+        class="slider"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+    </div>
+  </aside>
+
+  <!-- Floating artwork top-right -->
   <img
     id="floating-img"
     src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
     alt="floating art"
   />
 
-  <!-- hero header with title overlay -->
+  <!-- Hero header with overlaid title -->
   <header class="hero">
     <h1 class="site-title">
       <img
