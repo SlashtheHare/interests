@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap");
+
+html {
+  font-family: "Tinos", "Times New Roman", Times, serif;
+  /* Now every piece of text falls back gracefully to Times if Tinos isn’t available */
+}
 /*—————————————————————
   1) Global backgrounds
    —————————————————————*/
@@ -24,8 +30,9 @@ body {
 .content-wrap {
   position: relative;
   z-index: 1;                /* keep content above the GIF */
-  max-width: 800px;          /* limit how wide your block can grow */
+  max-width: 950px;          /* limit how wide your block can grow */
   width: 90%;                /* optional: fluid up to 800px */
+  height: 730px;
   margin: 0 auto;            /* centers the block horizontally */
 }
 
