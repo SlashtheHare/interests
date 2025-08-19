@@ -23,19 +23,20 @@ body {
 
 .content-wrap {
   position: relative;
-  z-index: 1;           /* your content sits above the GIF */
+  z-index: 1;                /* keep content above the GIF */
+  max-width: 800px;          /* limit how wide your block can grow */
+  width: 90%;                /* optional: fluid up to 800px */
+  margin: 0 auto;            /* centers the block horizontally */
 }
 
 .content-wrap::before {
   content: '';
   position: absolute;
-  inset: 0;             /* top/right/bottom/left = 0 */
-  background: url('https://64.media.tumblr.com/19878c8a6b0d8e168448048e5bf0f287/278e46be764dd25e-2a/s500x750/f0ce246db3bab5f905a78a8f7d25fde19d834282.gif') 
+  inset: 0;                  /* stretch exactly to .content-wrap’s edges */
+  background: url('https://64.media.tumblr.com/19878c8a6b0d8e168448048e5bf0f287/278e46be764dd25e-2a/s500x750/f0ce246db3bab5f905a78a8f7d25fde19d834282.gif')
               center center / cover no-repeat;
-  opacity: 1;         /* tweak as needed */
-  pointer-events: none; /* clicks pass through to buttons */
-  z-index: -1;          /* pushes it behind everything in .content-wrap */
-  max-width:800px;
+  pointer-events: none;      /* clicks still hit your buttons */
+  z-index: -1;               /* GIF sits behind your content */
 }
 
 /* hero header gif */
