@@ -54,7 +54,7 @@ html, body {
 /* CD + Player */
 .radio-wrapper .side-widget {
   top: -650px;
-  left: 70px;
+  left: 85px;
   transform: translateY(-50%);
   width: 300px;
   display: flex;
@@ -347,7 +347,7 @@ html, body {
 .site-title {
   position: absolute;
   top: 50%;
-  left: 47%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   margin: 0;
