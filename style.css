@@ -27,23 +27,52 @@ html {
 }
 
 body {
-  background: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif') center/cover fixed no-repeat;
+  background: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif')
+              center/cover fixed no-repeat;
   overflow-x: hidden;
 }
 
-/* ——— 3. Spinning CD Widget ——— */
-.side-widget {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ——— 3. Spinning CD Widget + Floating Art Wrapper ——— */
+.radio-wrapper {
   position: relative;
-  top: 1200px;
+  height: 0;       /* prevents layout stretching */
+  z-index: 1000;
+}
+
+.radio-wrapper .side-widget,
+.radio-wrapper #floating-img {
+  position: absolute;
+}
+
+/* CD + Player */
+.radio-wrapper .side-widget {
+  top: -650px;
   left: 40px;
   transform: translateY(-50%);
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1000;
 }
 
+/* Floating artwork */
+.radio-wrapper #floating-img {
+  top: -900px;
+  right: 0;
+  width: 330px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+
+/* ——— 4. CD Wrapper ——— */
 .cd-wrapper {
   position: relative;
   width: 300px;
@@ -68,7 +97,8 @@ body {
   position: absolute;
   top: 50%; left: 50%;
   width: 40px; height: 40px;
-  background: radial-gradient(circle at center, black 0%, black 60%, #333 61%, #333 70%, black 71%, black 100%);
+  background: radial-gradient(circle at center,
+              black 0%, black 60%, #333 61%, #333 70%, black 71%, black 100%);
   border: 2px solid rgba(0,0,0,0.2);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -80,12 +110,12 @@ body {
   to   { transform: rotate(-360deg); }
 }
 
-/* ——— 4. Retro Player ——— */
+
+/* ——— 5. Retro Player ——— */
 .player {
- display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
   margin-top: 50px;
 }
 
@@ -113,7 +143,8 @@ body {
   background: transparent;
 }
 
-/* ——— 5. Waveform Progress Bar ——— */
+
+/* ——— 6. Waveform Progress Bar ——— */
 .radio-progress {
   height: 100px;
   overflow: visible;
@@ -129,16 +160,14 @@ body {
   display: block;
   width: 70%;
   height: 70%;
-  background: transparent;
+  background: rgba(203, 255, 203, 0.2);
   filter: brightness(160%) contrast(220%);
-   position: relative;
+  position: relative;
   z-index: 10;
-  background: rgba(203, 255, 203, 0.2); /* light green */
 }
 
 
-/* ——— 6. Volume Slider ——— */
-
+/* ——— 7. Volume Slider ——— */
 #volume {
   position: relative;
   width: 80px;
@@ -150,6 +179,7 @@ body {
   cursor: pointer;
   transform-origin: center center;
   transform: rotate(0deg);
+  
 }
 
 #volume-dial {
@@ -165,7 +195,6 @@ body {
   left: 0;
   width: 80px;
   height: 80px;
-  transform: rotate(0deg);
   transform-origin: center center;
   pointer-events: none;
 }
@@ -181,40 +210,14 @@ body {
   transition: transform 0.1s ease-out;
 }
 
-
-.knob-wrapper {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  transform-origin: center center;
-  transform: rotate(0deg);
-
-}
-
 .wave-knob-row {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-#volume::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 0;
-  height: 0;
-  background: transparent;
-  border: none;
-}
-
-#volume::-moz-range-thumb {
-  width: 0;
-  height: 0;
-  background: transparent;
-  border: none;
-}
-
+#volume::-webkit-slider-thumb,
+#volume::-moz-range-thumb,
 #volume::-ms-thumb {
   width: 0;
   height: 0;
@@ -222,21 +225,90 @@ body {
   border: none;
 }
 
-/* ——— 7. Track Info ——— */
+/* Completely turn off the native range appearance */
+#volume {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Hide the WebKit track */
+#volume::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 0;
+  border: none;
+}
+
+/* Hide the Firefox track */
+#volume::-moz-range-track {
+  background: transparent;
+  height: 0;
+  border: none;
+}
+
+/* Hide the IE/Edge track */
+#volume::-ms-track {
+  background: transparent;
+  height: 0;
+  border: none;
+}
+
+#volume:focus {
+  outline: none;
+}
+
+/* 2. Hide every vendor’s thumb */
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 0;
+  height: 0;
+}
+
+#volume::-moz-range-thumb {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 0;
+  height: 0;
+}
+
+#volume::-ms-thumb {
+  background: transparent;
+  border: none;
+  width: 0;
+  height: 0;
+}
+
+/* 3. Hide IE/Edge fill pseudo-elements */
+#volume::-ms-fill-lower,
+#volume::-ms-fill-upper {
+  background: transparent;
+  border: none;
+}
+
+/* 4. (Optional) clean up Firefox track/progress */
+#volume::-moz-range-track,
+#volume::-moz-range-progress {
+  background: transparent;
+  border: none;
+  height: 0;
+}
+
+/* ——— 8. Track Info ——— */
 #track-info {
   position: relative;
   color: #ccc;
   font-family: var(--track-font);
-  font-size: 0.8rem;
+  font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   animation: titleFlicker 2.5s infinite;
   margin-top: 12px;
   text-align: center;
-  font-size: 14px;
-  
-  
 }
 
 @keyframes titleFlicker {
@@ -246,7 +318,8 @@ body {
   40%,70% { opacity: 0.8; text-shadow: 0 0 1px #fff; }
 }
 
-/* ——— 8. Hidden YouTube Player ——— */
+
+/* ——— 9. Hidden YouTube Player ——— */
 #yt-player {
   position: relative;
   z-index: 1;
@@ -255,17 +328,8 @@ body {
   overflow: hidden;
 }
 
-/* 3) Floating artwork */
-#floating-img {
-  position: relative;
-  top: 400px;
-  right: -1480px;
-  width: 330px;
-  border-radius: 8px;
-  z-index: 10;
-}
 
-/* 4) Hero + title overlay */
+/* ——— 10. Hero + Title Overlay ——— */
 .hero {
   position: relative;
   width: 100%;
@@ -273,6 +337,7 @@ body {
   background: url('https://i.postimg.cc/tgjjqvxp/eyes.gif')
               center/cover no-repeat;
 }
+
 @media (max-width: 600px) {
   .hero {
     height: 300px;
@@ -294,16 +359,18 @@ body {
   height: auto;
 }
 
-/* 5) Content wrapper with GIF overlay */
+
+/* ——— 11. Content Wrapper with GIF Overlay ——— */
 .content-wrap {
   position: relative;
   z-index: 1;
   max-width: 950px;
   min-height: 900px;
   width: 90%;
-  margin: 2rem auto;
-  margin-top: 0;     /* ← pulls the wrapper 50px higher */
+  margin: 0 auto;
+  margin-top: 0;
   padding-top: 5px;
+  flex: 1 0 auto; 
 }
 
 .content-wrap::before {
@@ -316,7 +383,8 @@ body {
   z-index: -1;
 }
 
-/* 6) Social links */
+
+/* ——— 12. Social Links ——— */
 .social-nav {
   display: flex;
   justify-content: center;
@@ -335,7 +403,8 @@ body {
   text-decoration: underline;
 }
 
-/* 7) Tabs & content */
+
+/* ——— 13. Tabs & Content ——— */
 .tabs {
   display: flex;
   justify-content: center;
@@ -367,7 +436,8 @@ body {
   display: block;
 }
 
-/* 8) Stamp grid & tooltips */
+
+/* ——— 14. Stamp Grid & Tooltips ——— */
 .stamp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
@@ -387,10 +457,8 @@ body {
   position: absolute;
   top: 6px;
   right: 6px;
-  display: block;
   font-size: 1rem;
-  line-height: 1;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   color: #fff;
   padding: 1px 3px;
   border-radius: 3px;
@@ -438,12 +506,29 @@ body {
 }
 
 
-/*—————————————————————
-  6) Simple reset for sections
-   —————————————————————*/
-body, h1,h2,h3,h4,h5,p,nav,header,section,footer {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;https://liveweave.com/images/css.svg
+/* ——— 15. Final Reset & Body Clean-up ——— */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
-main,section { width:90%; max-width:1000px; margin:0 auto; }
+
+.hero, .social-nav, .tabs {
+  flex: 0 0 auto;
+}
+/*-------------------------------------------------------------------
+  Simple reset for sections
+-------------------------------------------------------------------*/
+body, h1,h2,h3,h4,h5,p,nav,header,section,footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main, section {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
