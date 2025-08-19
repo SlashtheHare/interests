@@ -1,94 +1,88 @@
+/* 1) Import font once */
 @import url("https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap");
+
+/* 2) Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   font-family: "Tinos", "Times New Roman", Times, serif;
-  /* Now every piece of text falls back gracefully to Times if Tinos isn’t available */
+  line-height: 1.5;
+  color: white; /* or #222 if you switch to a light background later */
 }
-/*—————————————————————
-  1) Global backgrounds
-   —————————————————————*/
 
-/* page background */
 body {
-  margin: 0;
-  padding: 0;
-  background: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif') center/cover fixed no-repeat;
-  font-family: sans-serif;
-  color: white;
+  background: url('https://goombastomp.com/wp-content/uploads/2018/10/Dahlia-Gillespie.gif')
+              center/cover fixed no-repeat;
   overflow-x: hidden;
 }
 
-/* font */
-
-html {
-  font-family: 'Tinos', 'Times New Roman', Times, serif;
-  line-height: 1.5;
-  color: #222;
-}
-
-
-input,
-button,
-textarea,
-select {
+input, button, textarea, select {
   font-family: inherit;
 }
 
-/* title */
-
-.site-title {
-  text-align: center;
-  margin: 1rem auto;
-}
-
-.site-title img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* floating image top-right */
+/* 3) Floating artwork */
 #floating-img {
   position: fixed;
-  top: 20px; right: 20px;
+  top: 20px;
+  right: 20px;
   width: 200px;
   border-radius: 8px;
   z-index: 10;
 }
 
+/* 4) Hero + title overlay */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url('https://i.postimg.cc/tgjjqvxp/eyes.gif')
+              center/cover no-repeat;
+}
+@media (max-width: 600px) {
+  .hero {
+    height: 300px;
+  }
+}
+
+.site-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  margin: 0;
+}
+
+.site-title img {
+  display: block;
+  max-width: 80%;
+  height: auto;
+}
+
+/* 5) Content wrapper with GIF overlay */
 .content-wrap {
   position: relative;
-  z-index: 1;                /* keep content above the GIF */
-  max-width: 950px;          /* limit how wide your block can grow */
-  width: 90%;                /* optional: fluid up to 800px */
-  height: 730px;
-  margin: 0 auto;            /* centers the block horizontally */
+  z-index: 1;
+  max-width: 950px;
+  width: 90%;
+  margin: 2rem auto;
 }
 
 .content-wrap::before {
-  content: '';
+  content: "";
   position: absolute;
-  inset: 0;                  /* stretch exactly to .content-wrap’s edges */
+  inset: 0;
   background: url('https://64.media.tumblr.com/19878c8a6b0d8e168448048e5bf0f287/278e46be764dd25e-2a/s500x750/f0ce246db3bab5f905a78a8f7d25fde19d834282.gif')
-              center center / cover no-repeat;
-  pointer-events: none;      /* clicks still hit your buttons */
-  z-index: -1;               /* GIF sits behind your content */
+              center/cover no-repeat;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* hero header gif */
-.hero {
-  width: 100%;
-  height: 100px;
-  background: url('https://i.postimg.cc/tgjjqvxp/eyes.gif') center/cover no-repeat;
-}
-@media(max-width:600px){
-  .hero { height: 200px; }
-}
-
-/*—————————————————————
-  2) Social-links row
-   —————————————————————*/
+/* 6) Social links */
 .social-nav {
   display: flex;
   justify-content: center;
@@ -96,75 +90,74 @@ select {
   padding: 0.5rem;
   background: rgba(0,0,0,0.4);
 }
+
 .social-nav a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
+
 .social-nav a:hover {
   text-decoration: underline;
 }
 
-/*—————————————————————
-  3) Tabs styling
-   —————————————————————*/
+/* 7) Tabs & content */
 .tabs {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin: 1rem 0;
 }
+
 .tab-btn {
   background: rgba(255,255,255,0.2);
   border: none;
   padding: 0.5rem 1rem;
   color: white;
   cursor: pointer;
-  font-size: 1rem;
   border-radius: 4px;
   transition: background 0.3s;
 }
+
 .tab-btn.active,
 .tab-btn:hover {
   background: rgba(255,255,255,0.4);
 }
 
-/*—————————————————————
-  4) Tab contents
-   —————————————————————*/
 .tab-content {
   display: none;
   padding: 1rem;
 }
+
 .tab-content.active {
   display: block;
 }
 
-/*—————————————————————
-  5) Stamp grid & tooltips
-   —————————————————————*/
+/* 8) Stamp grid & tooltips */
 .stamp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
   gap: 6px;
   justify-content: center;
-  max-width: 800px;     /* ← adjust this to taste */
-  margin: 0 auto; 
+  max-width: 800px;
+  margin: 0 auto;
 }
+
 .stamp {
   position: relative;
   cursor: pointer;
 }
+
 .stamp img {
   display: block;
   width: 100px;
-  height: auto;
   transition: transform 0.3s;
 }
+
 .stamp:hover img {
   transform: scale(1.1);
 }
-/* tooltip */
+
 .stamp::after {
   content: attr(data-title);
   position: absolute;
@@ -181,9 +174,11 @@ select {
   border-radius: 3px;
   transition: opacity 0.2s;
 }
+
 .stamp:hover::after {
   opacity: 1;
 }
+
 
 /*—————————————————————
   6) Simple reset for sections
