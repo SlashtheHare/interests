@@ -1,87 +1,36 @@
-window.onYouTubeIframeAPIReady = function() {
-  console.log("API is ready");
-  // your existing player setup here
-};
-
-// 1) Dynamically inject the YouTube IFrame API
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-document.head.appendChild(tag);
-
 let ytPlayer;
+let isPlaying = false;
+let phase = 0;
+let amplitude = 20;
 
-// 2) Called by the API once it’s loaded
-function onYouTubeIframeAPIReady() {
-    console.log("YouTube API is ready");
+// Ensure the API callback is globally accessible
+window.onYouTubeIframeAPIReady = function () {
+  console.log("✅ YouTube API is ready");
+
   ytPlayer = new YT.Player('yt-player', {
-    playerVars: {
-      listType: 'playlist',
-      list:     'PLoIQJyXr_UzTqDAXEIeG1wvY-thPGN9oJ', // ← your playlist ID
-      loop:     0,    // we’ll manually loop below
-      autoplay: 0
-    },
     events: {
-      onReady:       onPlayerReady,
+      onReady: onPlayerReady,
       onStateChange: onPlayerStateChange
     }
   });
-}
+};
 
-// 3) Once the player’s ready, wire up your UI
-function onPlayerReady() {
-  const prevBtn    = document.getElementById('prev');
-  const playBtn    = document.getElementById('play-pause');
-  const nextBtn    = document.getElementById('next');
-  const volSlider  = document.getElementById('volume');
-  const progSlider = document.getElementById('progress');
-  const canvas      = document.getElementById('progressWave');
-  const ctx         = canvas.getContext('2d');
-  const trackInfo  = document.getElementById('track-info');
+function onPlayerReady(event) {
+  console.log("✅ Player is ready");
 
-  function resizeWave() {
-  const box = document.querySelector('.radio-progress');
-  canvas.width  = box.clientWidth;
-  canvas.height = box.clientHeight;
-}
-window.addEventListener('resize', resizeWave);
-resizeWave();
+  ytPlayer.cuePlaylist({
+    list: 'PLoIQJyXr_UzTqDAXEIeG1wvY-thPGN9oJ',
+    listType: 'playlist',
+    index: 0,
+    startSeconds: 0,
+    suggestedQuality: 'default'
+  });
 
-// draw a “static” wave each frame
-function drawWave() {
-  const w = canvas.width;
-  const h = canvas.height;
-  ctx.clearRect(0, 0, w, h);
-  ctx.lineWidth   = 2;
-  ctx.strokeStyle = 'white';
-  ctx.beginPath();
+  const playBtn = document.getElementById('play-pause');
+  const trackInfo = document.getElementById('track-info');
+  const volumeSlider = document.getElementById('volume');
+  const dialPointer = document.querySelector('.dial-pointer');
 
-  // generate a quick noise-jagged sine
-  const slices = 50;
-  let x = 0;
-  const dx = w / slices;
-  for (let i = 0; i <= slices; i++) {
-    const norm = i / slices;
-    const sine = Math.sin(norm * Math.PI * 2 + performance.now() * 0.002);
-    const noise = (Math.random() - 0.5) * 0.4;
-    const y = (h/2) + (sine * 0.5 + noise) * (h/2);
-    if (i === 0) ctx.moveTo(x, y);
-    else        ctx.lineTo(x, y);
-    x += dx;
-  }
-
-  ctx.stroke();
-  requestAnimationFrame(drawWave);
-}
-drawWave();
-
-  // Sync initial volume (YT volume 0–100 → slider 0–1)
-  volSlider.value = ytPlayer.getVolume() / 100;
-
-  // Previous / Next
-  prevBtn.addEventListener('click', () => ytPlayer.previousVideo());
-  nextBtn.addEventListener('click', () => ytPlayer.nextVideo());
-
-  // Play / pause toggle
   playBtn.addEventListener('click', () => {
     const state = ytPlayer.getPlayerState();
     if (state === YT.PlayerState.PLAYING) {
@@ -91,53 +40,81 @@ drawWave();
     }
   });
 
-  // Volume control
-  volSlider.addEventListener('input', () => {
-    ytPlayer.setVolume(volSlider.value * 100);
+  // Set initial volume and tick angle
+  const initialVolume = parseInt(volumeSlider.value);
+  ytPlayer.setVolume(initialVolume);
+  const initialAngle = (initialVolume / 100) * 270 - 135;
+  dialPointer.style.transform = `rotate(${initialAngle}deg) translateY(-40px)`;
+
+  // Update volume and rotate tick on input
+  volumeSlider.addEventListener('input', () => {
+    const volume = parseInt(volumeSlider.value);
+    ytPlayer.setVolume(volume);
+
+    const angle = (volume / 100) * 270 - 135;
+    dialPointer.style.transform = `rotate(${angle}deg) translateY(-40px)`;
   });
 
-  // Seek when user drags progress
-  progSlider.addEventListener('input', () => {
-    const duration = ytPlayer.getDuration() || 0;
-    if (duration) {
-      ytPlayer.seekTo((progSlider.value / 100) * duration, true);
-    }
-  });
-
-  // Update UI every 250ms
-  setInterval(() => {
-    const state    = ytPlayer.getPlayerState();
-    const duration = ytPlayer.getDuration() || 0;
-    const current  = ytPlayer.getCurrentTime() || 0;
-    const pct = duration ? (current / duration) : 0;
-    
-    canvas.style.width = (pct * 100) + '%';
-
-    // 1) Play/Pause icon
-    playBtn.textContent = (state === YT.PlayerState.PLAYING) ? '⏸️' : '▶️';
-
-    // 2) Progress slider
-    progSlider.value = duration ? (current / duration) * 100 : 0;
-
-    // 3) Track title
-    if (state === YT.PlayerState.PLAYING) {
-      const { title } = ytPlayer.getVideoData();
-      trackInfo.textContent = title;
-    }
-  }, 250);
+  animateWaveform(); // Start animation loop
 }
 
-// 4) Loop playlist & refresh title on video end
-function onPlayerStateChange(event) {
-  if (event.data === YT.PlayerState.ENDED) {
-    // Jump back to first video in the playlist
-    ytPlayer.playVideoAt(0);
+function animateWaveform() {
+  const canvas = document.getElementById('waveform');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  function draw() {
+    requestAnimationFrame(draw);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw horizontal center line
+    ctx.beginPath();
+    ctx.strokeStyle = '#444';
+    ctx.lineWidth = 1;
+    ctx.moveTo(0, canvas.height / 2);
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.stroke();
+
+    // Draw waveform
+    ctx.beginPath();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = isPlaying ? '#fff' : '#888';
+
+    const frequency = isPlaying ? 0.10 + Math.random() * 0.01 : 0.03;
+    const dynamicAmplitude = isPlaying ? amplitude + Math.random() * 40 : amplitude / 2;
+
+    for (let x = 0; x < canvas.width; x++) {
+      const y = canvas.height / 2 + Math.sin((x + phase) * frequency) * dynamicAmplitude;
+      ctx.lineTo(x, y);
+    }
+
+    ctx.stroke();
+    phase += 4;
   }
 
+  draw();
+}
+
+function onPlayerStateChange(event) {
+  console.log("🔄 Player state changed:", event.data);
+
+  const trackInfo = document.getElementById('track-info');
+
   if (event.data === YT.PlayerState.PLAYING) {
-    // Ensure title is up to date upon start
-    const trackInfo = document.getElementById('track-info');
-    const { title } = ytPlayer.getVideoData();
-    trackInfo.textContent = title;
+    isPlaying = true;
+    const videoData = ytPlayer.getVideoData();
+    trackInfo.textContent = `🎵 Now Playing: ${videoData.title}`;
+  } else {
+    isPlaying = false;
+    if (event.data === YT.PlayerState.PAUSED) {
+      trackInfo.textContent = '⏸️ Paused';
+    } else if (event.data === YT.PlayerState.ENDED) {
+      trackInfo.textContent = '✅ Finished';
+    } else {
+      trackInfo.textContent = '🚫 Not playing';
+    }
   }
 }
