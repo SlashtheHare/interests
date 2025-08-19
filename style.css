@@ -20,6 +20,127 @@ body {
   overflow-x: hidden;
 }
 
+/*Spinning CD */
+/* 1. Wrapper floats on the left middle */
+.side-widget {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 2. Spinning CD styles */
+.cd-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.cd-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: spin 7s linear infinite;
+  transform-origin: center center;
+}
+
+.cd-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 40px; height: 40px;
+  background: radial-gradient(
+    circle at center,
+    black   0%,   black 60%,
+    #333   61%,   #333  70%,
+    black   71%,  black 100%
+  );
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+/* 3. Retro player styles */
+.player {
+  width: 300px;
+  margin-top: 16px;
+  background: #ddd;
+  border: 2px inset #fff;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+}
+
+.player button {
+  width: 36px; height: 36px;
+  background: #eee;
+  border: 2px outset #fff;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+.player button:active {
+  border-style: inset;
+}
+
+.player .slider {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+/* Progress bar expands */
+#progress {
+  flex: 1;
+  margin: 0 8px;
+}
+#progress::-webkit-slider-runnable-track {
+  height: 6px; background: #bbb; border: 1px solid #999;
+}
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px; height: 12px;
+  background: #444; border: 2px solid #fff;
+  margin-top: -4px;
+}
+
+/* Volume slider */
+#volume {
+  width: 60px;
+}
+#volume::-webkit-slider-runnable-track {
+  height: 4px; background: #ccc; border: 1px solid #aaa;
+}
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px; height: 10px;
+  background: #444; border: 1px solid #fff;
+  margin-top: -3px;
+}
+
+#yt-player {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 input, button, textarea, select {
   font-family: inherit;
 }
