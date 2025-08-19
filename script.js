@@ -29,7 +29,7 @@ function onPlayerReady(event) {
   const playBtn = document.getElementById('play-pause');
   const trackInfo = document.getElementById('track-info');
   const volumeSlider = document.getElementById('volume');
-  const dialPointer = document.querySelector('.dial-pointer');
+  const tickContainer = document.querySelector('.tick-container');
 
   playBtn.addEventListener('click', () => {
     const state = ytPlayer.getPlayerState();
@@ -44,15 +44,15 @@ function onPlayerReady(event) {
   const initialVolume = parseInt(volumeSlider.value);
   ytPlayer.setVolume(initialVolume);
   const initialAngle = (initialVolume / 100) * 270 - 135;
-  dialPointer.style.transform = `rotate(${initialAngle}deg) translateY(-40px)`;
+  tickContainer.style.transform = `rotate(${initialAngle}deg)`;
 
-  // Update volume and rotate tick on input
+  // Update volume and rotate tick container on input
   volumeSlider.addEventListener('input', () => {
     const volume = parseInt(volumeSlider.value);
     ytPlayer.setVolume(volume);
 
     const angle = (volume / 100) * 270 - 135;
-    dialPointer.style.transform = `rotate(${angle}deg) translateY(-40px)`;
+    tickContainer.style.transform = `rotate(${angle}deg)`;
   });
 
   animateWaveform(); // Start animation loop
