@@ -347,7 +347,7 @@ html, body {
 .site-title {
   position: absolute;
   top: 50%;
-  left: 45.5%;
+  left: 45.1%;
   transform: translate(-50%, -50%);
   z-index: 2;
   margin: 0;
@@ -393,30 +393,37 @@ html, body {
   background: rgba(0,0,0,0.4);
  z-index: 2;
 }
-.social-nav a:hover {
-  text-decoration: underline;
-}
+
 
 .social-nav a {
+position: relative;
+  display: inline-block;
   color: white;
   text-decoration: none;
-  font-size: 1rem;
- /* make sure it’s inline-block so the gradient only spans the link text */
-  display: inline-block;
-
-
-  /* optional padding to give the line room to breathe */
-  padding: 0.25rem 0;
- z-index: 3; 
-   
+  padding: 0.5em 1em;
+  z-index: 1;
 }
 
-.social-nav::before {
-  display: none !important;
+.social-nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: #00f; /* Blue line */
+  box-shadow: 0 0 8px #00f, 0 0 16px #00f; /* Glowy effect */
+  transform: translateY(-50%);
+  z-index: -1;
+  border-radius: 2px;
 }
 
 
-
+.social-nav a:hover::before {
+  height: 4px;
+  box-shadow: 0 0 12px #00f, 0 0 24px #00f;
+  transition: all 0.3s ease;
+}
 
 
 
@@ -425,25 +432,80 @@ html, body {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin: 1rem 0; 
+  margin: 1rem 0;
+  position: relative; 
 }
 
 .tab-btn {
-  background: rgba(15, 15, 15, 0.82);
-  border: none;
-  padding: 0.5rem 1rem;  
-  color: rgb(255, 255, 255);  
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s; 
+  position: relative;
+  background: rgb(0, 0, 0);
+  border: 2px solid #706fb7; /* Light blue border */ 
+  color: white;
+  padding: 0.5rem 1rem;
   font-family: var(--track-font);
   font-size: 16px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.3s;
+  z-index: 1;
+  overflow: visible;
 }
 
 .tab-btn.active,
 .tab-btn:hover {
-  background: rgba(78, 78, 78, 0.4);
+  background: rgb(0, 0, 0);  
 }
+
+/* Only show corner accents on active tab */
+.tab-btn.active::before,
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+}
+
+/* Top-left L accent */
+.tab-btn.active::before {
+  top: -6px;
+  left: -6px;
+  border-top: 2px solid #928fc1;
+  border-left: 2px solid #928fc1;
+}
+
+/* Bottom-right L accent */
+.tab-btn.active::after {
+  bottom: -6px;
+  right: -6px;
+  border-bottom: 2px solid #928fc1;
+  border-right: 2px solid #928fc1;
+}
+
+.tab-highlight {
+  position: absolute;
+  border: 2px solid #928fc1;
+  pointer-events: none;
+  z-index: 0;
+ transition: left 0.3s ease, top 0.3s ease, width 0.3s ease, height 0.3s ease;
+
+}
+
+.tab-btn img {
+  display: block;
+  width: 47px;
+  height: 47px;
+  object-fit: contain;
+  margin: auto;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  pointer-events: none; /* prevents accidental clicks on the image */
+}
+
+.tab-btn:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
 
 .tab-content {
   display: none;
