@@ -1,3 +1,8 @@
+window.onYouTubeIframeAPIReady = function() {
+  console.log("API is ready");
+  // your existing player setup here
+};
+
 // 1) Dynamically inject the YouTube IFrame API
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -7,6 +12,7 @@ let ytPlayer;
 
 // 2) Called by the API once it’s loaded
 function onYouTubeIframeAPIReady() {
+    console.log("YouTube API is ready");
   ytPlayer = new YT.Player('yt-player', {
     playerVars: {
       listType: 'playlist',
@@ -28,7 +34,45 @@ function onPlayerReady() {
   const nextBtn    = document.getElementById('next');
   const volSlider  = document.getElementById('volume');
   const progSlider = document.getElementById('progress');
+  const canvas      = document.getElementById('progressWave');
+  const ctx         = canvas.getContext('2d');
   const trackInfo  = document.getElementById('track-info');
+
+  function resizeWave() {
+  const box = document.querySelector('.radio-progress');
+  canvas.width  = box.clientWidth;
+  canvas.height = box.clientHeight;
+}
+window.addEventListener('resize', resizeWave);
+resizeWave();
+
+// draw a “static” wave each frame
+function drawWave() {
+  const w = canvas.width;
+  const h = canvas.height;
+  ctx.clearRect(0, 0, w, h);
+  ctx.lineWidth   = 2;
+  ctx.strokeStyle = 'white';
+  ctx.beginPath();
+
+  // generate a quick noise-jagged sine
+  const slices = 50;
+  let x = 0;
+  const dx = w / slices;
+  for (let i = 0; i <= slices; i++) {
+    const norm = i / slices;
+    const sine = Math.sin(norm * Math.PI * 2 + performance.now() * 0.002);
+    const noise = (Math.random() - 0.5) * 0.4;
+    const y = (h/2) + (sine * 0.5 + noise) * (h/2);
+    if (i === 0) ctx.moveTo(x, y);
+    else        ctx.lineTo(x, y);
+    x += dx;
+  }
+
+  ctx.stroke();
+  requestAnimationFrame(drawWave);
+}
+drawWave();
 
   // Sync initial volume (YT volume 0–100 → slider 0–1)
   volSlider.value = ytPlayer.getVolume() / 100;
@@ -65,6 +109,9 @@ function onPlayerReady() {
     const state    = ytPlayer.getPlayerState();
     const duration = ytPlayer.getDuration() || 0;
     const current  = ytPlayer.getCurrentTime() || 0;
+    const pct = duration ? (current / duration) : 0;
+    
+    canvas.style.width = (pct * 100) + '%';
 
     // 1) Play/Pause icon
     playBtn.textContent = (state === YT.PlayerState.PLAYING) ? '⏸️' : '▶️';
