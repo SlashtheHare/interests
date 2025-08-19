@@ -143,13 +143,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelector('.tab-btn.active')?.classList.remove('active');
-      tab.classList.add('active');
-      moveHighlight(tab);
-    });
+  tab.addEventListener('click', () => {
+    document.querySelector('.tab-btn.active')?.classList.remove('active');
+    tab.classList.add('active');
+    moveHighlight(tab);
+
+    // 🔊 Play tab click sound
+    const tabSound = document.getElementById('tab-sound');
+    tabSound.volume = 0.1; // Adjust volume here (0.0 to 1.0)
+    tabSound.currentTime = 0;
+    tabSound.play();
   });
+});
 
   const activeTab = document.querySelector('.tab-btn.active');
   if (activeTab) moveHighlight(activeTab);
+    // ——— Social Nav Click Sound ———
+  const socialLinks = document.querySelectorAll('.social-nav');
+  const socialSound = document.getElementById('social-sound'); // or 'tab-sound' if reusing
+
+  socialLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      socialSound.volume = 0.1; // Adjust to taste
+      socialSound.currentTime = 0;
+      socialSound.play();
+    });
+  });
 });
