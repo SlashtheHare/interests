@@ -32,9 +32,9 @@ body {
 /* Floating image now outside the wrapper */
 #floating-img {
   position: absolute;
-  top: 50px;
-  right: 40px;
-  width: 330px;
+  top: 200px;
+  right: 5px;
+  width: 400px;
   border-radius: 8px;
   z-index: 10;
 }
