@@ -48,7 +48,7 @@ body {
 /* Radio background */
 .radio-bg {
   position: absolute;
-  top: -520px;
+  top: 370px;
   left: 40px;
   width: 360px;
   height: 360px;
@@ -61,7 +61,7 @@ body {
 /* Side widget */
 .side-widget {
   position: absolute;
-  top: -650px;
+  top: 200px;
   left: 85px;
   transform: translateY(-50%);
   width: 300px;
@@ -73,8 +73,8 @@ body {
 /* CD wrapper */
 .cd-wrapper {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   overflow: hidden;
   background: #fafafa;
@@ -682,4 +682,3 @@ main, section {
   max-width: 1000px;
   margin: 0 auto;
 }
-
