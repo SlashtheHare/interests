@@ -114,15 +114,14 @@ function updateTrackTitle(title) {
 
   // Strip HTML tags for comparison
   const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = title;
-  const plainText = tempDiv.textContent || tempDiv.innerText || '';
+tempDiv.innerHTML = title;
+const plainText = tempDiv.textContent || tempDiv.innerText || '';
 
-  const statusMessages = ['Paused', 'Finished', 'Not Playing'];
-
-  if (statusMessages.some(msg => plainText.includes(msg))) {
-    scrollText.classList.add('centered');
-    return;
-  }
+const statusMessages = ['Paused', 'Finished', 'Not Playing'];
+if (statusMessages.some(msg => plainText.includes(msg))) {
+  scrollText.classList.add('centered');
+  return;
+}
 
   // Measure actual text width
   const tempSpan = document.createElement('span');
@@ -235,4 +234,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
