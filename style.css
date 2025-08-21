@@ -49,7 +49,7 @@ body {
 .radio-bg {
   position: absolute;
   top: 370px;
-  left: 50px;
+  left: 55px;
   width: 360px;
   height: 360px;
   background: url('https://i.postimg.cc/wMcYb5Yh/sh1radio.png') center center no-repeat;
@@ -120,7 +120,7 @@ body {
 .controls-column {
   position: absolute;
   bottom: -260px;
-  left: -10px;
+  left: -4px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -194,7 +194,7 @@ body {
 .waveform-zone {
   position: absolute;
   bottom: -240px;
-  left: 77px;
+  left: 83px;
   width: 200px;
   text-align: center;
   z-index: 2;
@@ -212,7 +212,7 @@ body {
 .knob-zone {
   position: absolute;
   top: 490px;
-  left: -18px;
+  left: -13px;
   width: 30px;
   height: 30px;
   z-index: 2;
@@ -333,7 +333,7 @@ body {
   padding-left: 4px;
   line-height: 30px;
   text-align: left;
-  left: 40px;
+  left: 42px;
 }
 
 .scroll-text {
