@@ -177,10 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
     anime: "Anime",
     podcasts: "Podcasts",
     tvshows: "TV shows",
-    youtubers: "Youtubers and Streamers",
+    youtubers: "Youtubers, streamers and youtube series",
     manga: "Manga",
     cartoons: "Cartoons",
-    reads: "Literature (Online & Books)"
+    reads: "Webcomics, books, creepypastas"
   };
 
   function moveHighlight(target) {
