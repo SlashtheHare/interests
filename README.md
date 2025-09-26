@@ -1,2 +1,2 @@
 # teddygray
-https://giobrauer.github.io/teddygray/
+https://slashthehare.github.io/interests/
