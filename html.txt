@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TeddyGray’s Interests</title>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+  
+
+
+
+
+  <!-- Hero header with overlaid title -->
+  <header class="hero">
+    <h1 class="site-title">
+      <img
+        src="https://i.postimg.cc/Jn15jF01/7487ec412bc594d741aca505fb0a63e2.png"
+        alt="TeddyGray’s Interests"
+      />
+    </h1>
+  </header>
+
+   
+
+  <!-- row of social-media links -->
+  <nav class="social-nav">
+    <a href="https://giobrauer.com" target="_blank">🟥 Website</a>
+    <a href="https://giobrauer.github.io/teddysartprefs/" target="_blank">🌫️ Art Prefs</a>
+    <a href="https://bsky.app/profile/giobrauer.com" target="_blank">🏚️ Bluesky</a>
+    <a href="https://www.furaffinity.net/user/giobrauer/" target="_blank">🏥 FurAffinity</a>
+    <a href="https://toyhou.se/TeddyGray" target="_blank">📼 ToyHouse</a>
+    <a href="https://xcreativeclashx.net/profile/1382-teddygray/" target="_blank">🩻 CreativeClash</a>
+    <a href="https://aethy.com/@GioBrauer" target="_blank">📻 Aethy</a>
+  </nav>
+
+
+<div class="radio-wrapper">
+  <!-- Background image layer (optional) -->
+  <div class="radio-bg"></div>
+
+  <aside class="side-widget">
+    <!-- CD Cover -->
+    <div class="cd-wrapper">
+      <img src="https://i.postimg.cc/2StLmJm3/harrymason.gif" alt="CD Cover" />
+    </div>
+
+   
+
+     <!-- Volume knob (top left) -->
+  <div class="knob-zone">
+    <div id="volume-dial">
+      <input type="range" id="volume" min="0" max="100" value="50" />
+      <div class="tick-container">
+        <div class="dial-pointer"></div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Controls column (bottom left) -->
+  <div class="controls-column">
+    <button id="back"><i class="fas fa-backward"></i></button>
+    <button id="play-pause"><i class="fas fa-play"></i></button>
+    <button id="forward"><i class="fas fa-forward"></i></button>
+  </div>
+
+<div class="track-info-zone">
+  <div id="track-info">
+    <div class="scroll-text"><i class="fas fa-ban"></i> Not playing</div>
+  </div>
+</div>
+
+<!-- Waveform (positioned lower) -->
+<div class="waveform-zone">
+  <canvas id="waveform" width="300" height="50"></canvas>
+</div>
+  </aside>
+</div>
+
+  <div class="content-wrap">
+  <!-- tab buttons -->
+ <div class="tabs">
+  <button class="tab-btn active" data-tab="games">
+    <img src="https://i.postimg.cc/qBjW5vPV/Bloodpack.gif" alt="Games" title="Games" />
+  </button>
+  <button class="tab-btn" data-tab="movies">
+    <img src="https://static.wikia.nocookie.net/silent/images/5/58/Videotape.gif" alt="Movies" title="Movies" />
+  </button>
+   <button class="tab-btn" data-tab="tvshows">
+    <img src="https://i.postimg.cc/Gm80YnS0/Gold-Med-Inventory.gif" alt="TV Shows" title="TV Shows" />
+  </button>
+    <button class="tab-btn" data-tab="cartoons">
+    <img src="https://i.postimg.cc/JnQSmrtX/Ball.gif" alt="Cartoons" title="Cartoons" />
+  </button>
+    <button class="tab-btn" data-tab="anime">
+    <img src="https://i.postimg.cc/7ZdkQZTY/Ampoule-Inventory.gif" alt="Anime" title="Anime" />
+  </button>
+    <button class="tab-btn" data-tab="manga">
+    <img src="https://i.postimg.cc/3NsX1rr5/KeyCard.gif" alt="Manga" title="Manga" />
+  </button>
+    <button class="tab-btn" data-tab="reads">
+    <img src="https://i.postimg.cc/v8ktbhrq/Flauros-Item.gif" alt="Reads" title="Reads" />
+  </button>
+  <button class="tab-btn" data-tab="music">
+    <img src="https://i.postimg.cc/KYD039FS/Lighter.gif" alt="Music" title="Music" />
+  </button>
+ 
+  <button class="tab-btn" data-tab="podcasts">
+    <img src="https://i.postimg.cc/g2Py60B3/Radio.gif" alt="Podcasts" title="Podcasts" />
+  </button>
+  
+  <button class="tab-btn" data-tab="youtubers">
+    <img src="https://i.postimg.cc/d3kRGZYj/Camera.gif" alt="YouTubers" title="YouTubers" />
+  </button>
+ 
+ 
+ 
+  <div class="tab-highlight"></div>
+</div>
+
+<div id="tab-title" class="tab-title">Welcome</div>
+
+  <!-- tab contents -->
+  <!-- Games Tab Content -->
+<div class="tab-content active" id="games">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="Portal">
+  <img src="https://i.postimg.cc/T3DM2Lj6/Portal.gif" alt="Portal">
+</div>
+<div class="stamp" data-title="Half-Life 2">
+  <img src="https://i.postimg.cc/Yqyb9tMf/HL2.gif" alt="Half-Life 2">
+</div>
+<div class="stamp" data-title="Left 4 Dead 2">
+  <img src="https://i.postimg.cc/JnmG5W7s/l4d2.gif" alt="Left 4 Dead 2">
+</div>
+<div class="stamp" data-title="Team Fortress 2">
+  <img src="https://i.postimg.cc/WzjLXZ4V/TF2.gif" alt="Team Fortress 2">
+</div>
+
+<div class="stamp" data-title="The Stanley Parable">
+  <img src="https://i.postimg.cc/135BMLtY/StanleyParable.gif" alt="The Stanley Parable">
+</div>
+<div class="stamp" data-title="Heavy Rain">
+  <img src="https://i.postimg.cc/dt05whPV/HeavyRain.gif" alt="Heavy Rain">
+</div>
+<div class="stamp" data-title="Detroit: Become Human">
+  <img src="https://i.postimg.cc/j2MvybNT/DBH.gif" alt="Detroit: Become Human">
+</div>
+<div class="stamp" data-title="The Wolf Among Us">
+  <img src="https://i.postimg.cc/Qtkfx5dH/TWAU.gif" alt="The Wolf Among Us">
+</div>
+<div class="stamp" data-title="Telltale's The Walking Dead">
+  <img src="https://i.postimg.cc/26QLs78X/TWD.gif" alt="Telltale's The Walking Dead">
+</div>
+<div class="stamp" data-title="Disco Elysium">
+  <img src="https://i.postimg.cc/TYRnXFbj/Disco-Elysium.gif" alt="Disco Elysium">
+</div>
+<div class="stamp" data-title="Immortality">
+  <img src="https://i.postimg.cc/BvL06szr/IMMORTALITY.gif" alt="Immortality">
+</div>
+<div class="stamp" data-title="Danganronpa (Mikan)">
+  <img src="https://i.postimg.cc/GtjYyJWs/Danganronpa.gif" alt="Danganronpa">
+</div>
+
+<div class="stamp" data-title="Zero Escape (Clover)">
+  <img src="https://i.postimg.cc/sX75VRKm/999-Clover.gif" alt="Zero Escape">
+</div>
+<div class="stamp" data-title="Zero Escape (Snake)">
+  <img src="https://i.postimg.cc/7Lpg8L1b/999Snake.gif" alt="Zero Escape">
+</div>
+<div class="stamp" data-title="Persona 3 (Chidori)">
+  <img src="https://i.postimg.cc/44vpqsYN/Persona3.gif" alt="Persona 3">
+</div>
+<div class="stamp" data-title="Persona 5 (Akira and Akechi)">
+  <img src="https://i.postimg.cc/3NhmNbcT/Persona5.gif" alt="Persona 5">
+</div>
+<div class="stamp" data-title="Catherine (Rin)">
+  <img src="https://i.postimg.cc/2SJgL4F6/Catherine.gif" alt="Catherine">
+</div>
+<div class="stamp" data-title="Ace Attorney (Miles Edgeworth)">
+  <img src="https://i.postimg.cc/zfLnchg9/Ace-Attorney.gif" alt="Ace Attorney (Miles Edgeworth)">
+</div>
+<div class="stamp" data-title="The House in Fata Morgana (Michel Bollinger)">
+  <img src="https://i.postimg.cc/YSCZH1cT/Fata-Morgana.gif" alt="The House in Fata Morgana (Michel Bollinger)">
+</div>
+<div class="stamp" data-title="Splatoon 2">
+  <img src="https://i.postimg.cc/cHGjX0zG/Splatoon2.gif" alt="Splatoon 2">
+</div>
+<div class="stamp" data-title="Splatoon 3">
+  <img src="https://i.postimg.cc/bvtWxs3R/Splatoon3.gif" alt="Splatoon 3">
+</div>
+<div class="stamp" data-title="Silent Hill 1">
+  <img src="https://i.postimg.cc/T34vq8GT/SH1.gif" alt="Silent Hill 1">
+</div>
+<div class="stamp" data-title="Silent Hill 2">
+  <img src="https://i.postimg.cc/J4KL0D2D/SH2.gif" alt="Silent Hill 2">
+</div>
+<div class="stamp" data-title="Silent Hill 3">
+  <img src="https://i.postimg.cc/yY7K7XvC/SH3.gif" alt="Silent Hill 3">
+</div>
+<div class="stamp" data-title="Fatal Frame">
+  <img src="https://i.postimg.cc/gJ99Qvn5/Fatal-Frame.gif" alt="Fatal Frame">
+</div>
+<div class="stamp" data-title="Corpse Party">
+  <img src="https://i.postimg.cc/x1CSzfws/Corpse-Party.gif" alt="Corpse Party">
+</div>
+<div class="stamp" data-title="Alice: Madness Returns">
+  <img src="https://i.postimg.cc/6QGv0XsK/ALICE.gif" alt="Alice: Madness Returns">
+</div>
+<div class="stamp" data-title="Fran Bow">
+  <img src="https://i.postimg.cc/G3Fr0SPj/FranBow.gif" alt="Fran Bow">
+</div>
+<div class="stamp" data-title="The Cat Lady">
+  <img src="https://i.postimg.cc/y6c61NKc/CatLady.gif" alt="The Cat Lady">
+</div>
+<div class="stamp" data-title="Saya No Uta">
+  <img src="https://i.postimg.cc/G2sLsLy0/Saya-No-Uta.gif" alt="Saya No Uta">
+</div>
+<div class="stamp" data-title="Yume Nikki">
+  <img src="https://i.postimg.cc/JhTVxGXD/YN.gif" alt="Yume Nikki">
+</div>
+<div class="stamp" data-title="The Witch’s House">
+  <img src="https://i.postimg.cc/QCJrpHNz/Witchs-House.gif" alt="The Witch’s House">
+</div>
+<div class="stamp" data-title="Mad Father">
+  <img src="https://i.postimg.cc/2ScrcbdR/Mad-Father.gif" alt="Mad Father">
+</div>
+<div class="stamp" data-title="Misao">
+  <img src="https://i.postimg.cc/B6D3nmr4/Misao.gif" alt="Misao">
+</div>
+    <div class="stamp" data-title="Needy Streamer Overload/Needy Girl Overdose">
+  <img src="https://i.postimg.cc/W3Jg62Gd/needygirloverdose.gif" alt="Needy Streamer Overload/Needy Girl Overdose">
+</div>
+<div class="stamp" data-title="Rusty Lake">
+  <img src="https://i.postimg.cc/J0mf4M35/Rusty-Lake.gif" alt="Rusty Lake">
+</div>
+<div class="stamp" data-title="Garage: Bad Dream Adventure">
+  <img src="https://i.postimg.cc/KY3S09vB/Garage.gif" alt="Garage: Bad Dream Adventure">
+</div>
+<div class="stamp" data-title="Mouthwashing">
+  <img src="https://i.postimg.cc/0QpgsbSN/Mouthwashing.gif" alt="Mouthwashing">
+</div>
+<div class="stamp" data-title="Alan Wake">
+  <img src="https://i.postimg.cc/Y9KmDskW/AlanWake.gif" alt="Alan Wake">
+</div>
+<div class="stamp" data-title="Control">
+  <img src="https://i.postimg.cc/PrXggf5t/Control.gif" alt="Control">
+</div>
+<div class="stamp" data-title="Majora’s Mask">
+  <img src="https://i.postimg.cc/3xNpkGnd/Majora.gif" alt="Majora’s Mask">
+</div>
+<div class="stamp" data-title="Breath of the Wild">
+  <img src="https://i.postimg.cc/NF4WKSpq/BOTW.gif" alt="Breath of the Wild">
+</div>
+<div class="stamp" data-title="Undertale (Metatton)">
+  <img src="https://i.postimg.cc/905Wd6dD/Undertale.gif" alt="Undertale">
+</div>
+<div class="stamp" data-title="Deltarune (Mr. 'Ant' Tenna)">
+  <img src="https://i.postimg.cc/65KWyN6S/Deltarune.gif" alt="Deltarune">
+</div>
+<div class="stamp" data-title="The Sims 1">
+  <img src="https://i.postimg.cc/YqxpFyhS/Sims1.gif" alt="The Sims 1">
+</div>
+<div class="stamp" data-title="The Sims 2">
+  <img src="https://i.postimg.cc/YCPFYSs8/Sims2.gif" alt="The Sims 2">
+</div>
+<div class="stamp" data-title="LittleBigPlanet">
+  <img src="https://i.postimg.cc/zvz0LByp/LBP.gif" alt="LittleBigPlanet">
+</div>
+<div class="stamp" data-title="BioShock">
+  <img src="https://i.postimg.cc/CMsyrnYP/Bioshock.gif" alt="BioShock">
+</div>
+    <div class="stamp" data-title="KinitoPET">
+  <img src="https://i.postimg.cc/HWwNSyvk/kinitopet.gif" alt="KinitoPET">
+</div>
+<div class="stamp" data-title="Doki Doki Literature Club (Yuri)">
+  <img src="https://i.postimg.cc/Jz1N8nyz/ddlcyuri.gif" alt="Doki Doki Literature Club">
+</div>
+<div class="stamp" data-title="Five Nights at Freddy’s (Springtrap)">
+  <img src="https://i.postimg.cc/g01dpCBg/FNAF.gif" alt="Five Nights at Freddy’s">
+</div>
+<div class="stamp" data-title="Devil May Cry">
+  <img src="https://i.postimg.cc/Kj22knbL/DMC.gif" alt="Devil May Cry">
+</div>
+<div class="stamp" data-title="Castlevania">
+  <img src="https://i.postimg.cc/cL4dBMnB/Castlevania.gif" alt="Castlevania">
+</div>
+<div class="stamp" data-title="Cookie Run">
+  <img src="https://i.postimg.cc/tC2WRkdK/Cookie-Run.gif" alt="Cookie Run">
+</div>
+<div class="stamp" data-title="POSTAL">
+  <img src="https://i.postimg.cc/BvjsdSN8/POSTAL.gif" alt="POSTAL">
+</div>
+<div class="stamp" data-title="Journey">
+  <img src="https://i.postimg.cc/fT8GD4VY/Journey.gif" alt="Journey">
+</div>
+<div class="stamp" data-title="ENA Dream BBQ">
+  <img src="https://i.postimg.cc/q7Pd6SVz/ENADBBQ.gif" alt="ENA Dream BBQ">
+</div>
+<div class="stamp" data-title="Funeralopolis">
+  <img src="https://i.postimg.cc/y8NKM0yY/FUNERALOPOLIS.gif" alt="Funeralopolis">
+</div>
+    <div class="stamp" data-title="Pressure (Sebastian)">
+  <img src="https://i.postimg.cc/ZRncCqRs/Pressure.gif" alt="Pressure (Sebastian)">
+</div>
+<div class="stamp" data-title="Hades">
+  <img src="https://i.postimg.cc/KzthPfxQ/Hades.gif" alt="Hades">
+</div>
+<div class="stamp" data-title="Miside (Creepy Mita)">
+  <img src="https://i.postimg.cc/ZYrJpbqZ/Mita.gif" alt="Miside">
+</div>
+<div class="stamp" data-title="M.R.O.I.">
+  <img src="https://i.postimg.cc/GhKrgXY5/MROI.gif" alt="M.R.O.I.">
+</div>
+<div class="stamp" data-title="SIGNALIS">
+  <img src="https://i.postimg.cc/02PPCT6S/SIGNALIS.gif" alt="SIGNALIS">
+</div>
+<div class="stamp" data-title="The World Ends With You">
+  <img src="https://i.postimg.cc/tJtyj5c7/twewy.gif" alt="The World Ends With You">
+</div>
+<div class="stamp" data-title="Transistor">
+  <img src="https://i.postimg.cc/qqspj1wj/Transistor.gif" alt="Transistor">
+</div>
+
+<div class="stamp" data-title="Vampire The Masquerade: Bloodlines">
+  <img src="https://i.postimg.cc/fbPWLtkj/VTMB.gif" alt="Vampire The Masquerade: Bloodlines">
+</div>
+<div class="stamp" data-title="Baroque">
+  <img src="https://i.postimg.cc/Z5dG2xtj/baroque.gif" alt="Baroque">
+</div>
+    <div class="stamp" data-title="Hello Kitty Roller Rescue">
+  <img src="https://i.postimg.cc/63f0tZHk/hellokittyrollerrescue.gif" alt="Hello Kitty Roller Rescue">
+</div>
+<div class="stamp" data-title="The Dark Pictures: The Devil in Me">
+  <img src="https://i.postimg.cc/CLXyc6tz/darkpicturesdevilinme.gif" alt="The Dark Pictures: The Devil in Me">
+</div>
+<div class="stamp" data-title="Disney Universe">
+  <img src="https://i.postimg.cc/SKbBhYm4/disneyuniverse.gif" alt="Disney Universe">
+</div>
+<div class="stamp" data-title="Do No Harm">
+  <img src="https://i.postimg.cc/xC0BkrkF/donoharm.gif" alt="Do No Harm">
+</div>
+<div class="stamp" data-title="Dragon's Crown (Wizard)">
+  <img src="https://i.postimg.cc/FKb2sFKL/dragonscrown-wizard.gif" alt="Dragon's Crown (Wizard)">
+</div>
+<div class="stamp" data-title="Epic Mickey">
+  <img src="https://i.postimg.cc/hjp6TCT4/epicmickey.gif" alt="Epic Mickey">
+</div>
+<div class="stamp" data-title="Hatred">
+  <img src="https://i.postimg.cc/vTTjzWtr/hatred.gif" alt="Hatred">
+</div>
+<div class="stamp" data-title="Hollow Knight">
+  <img src="https://i.postimg.cc/026FK0Qx/hollowknight.gif" alt="Hollow Knight">
+</div>
+<div class="stamp" data-title="Inscryption">
+  <img src="https://i.postimg.cc/kMYL5p7f/inscryption.gif" alt="Inscryption">
+</div>
+<div class="stamp" data-title="Lily's Well">
+  <img src="https://i.postimg.cc/BbzzwXmd/lilyswell.gif" alt="Lily's Well">
+</div>
+<div class="stamp" data-title="Ōkami">
+  <img src="https://i.postimg.cc/QxRPQK97/okami.gif" alt="Ōkami">
+</div>
+<div class="stamp" data-title="Omori">
+  <img src="https://i.postimg.cc/Cxk2mMkQ/omori.gif" alt="Omori">
+</div>
+<div class="stamp" data-title="Pathologic Classic HD">
+  <img src="https://i.postimg.cc/25YKJpx8/pathologicclassic.gif" alt="Pathologic Classic HD">
+</div>
+<div class="stamp" data-title="Planescape: Torment">
+  <img src="https://i.postimg.cc/B64fxLzp/planescapetorment.gif" alt="Planescape: Torment">
+</div>
+<div class="stamp" data-title="Raving Rabbids">
+  <img src="https://i.postimg.cc/nL8JhwY6/ravingrabbids.gif" alt="Raving Rabbids">
+</div>
+<div class="stamp" data-title="Rayman">
+  <img src="https://i.postimg.cc/0NpqMdVr/rayman.gif" alt="Rayman">
+</div>
+<div class="stamp" data-title="Reader Rabbit">
+  <img src="https://i.postimg.cc/SxY4qp86/readerrabbit.gif" alt="Reader Rabbit">
+</div>
+<div class="stamp" data-title="Spiritfarer">
+  <img src="https://i.postimg.cc/DfC3XzPQ/spiritfarer.gif" alt="Spiritfarer">
+</div>
+<div class="stamp" data-title="Splatterhouse (2010)">
+  <img src="https://i.postimg.cc/90f3k3Cq/splatterhouse2010.gif" alt="Splatterhouse (2010)">
+</div>
+<div class="stamp" data-title="S.P.L.I.T">
+  <img src="https://i.postimg.cc/3NbM5Lxf/split.gif" alt="S.P.L.I.T">
+</div>
+<div class="stamp" data-title="Super Mario Galaxy">
+  <img src="https://i.postimg.cc/cHhyT1yS/supermariogalaxy.gif" alt="Super Mario Galaxy">
+</div>
+<div class="stamp" data-title="The Darkness II">
+  <img src="https://i.postimg.cc/BQX9cGmr/thedarkness2.gif" alt="The Darkness II">
+</div>
+<div class="stamp" data-title="BarbieGirls.com">
+  <img src="https://i.postimg.cc/0jFz21kL/barbiegirlsdotcom.gif" alt="BarbieGirls.com">
+</div>
+
+
+
+<div class="stamp" data-title="Club Penguin">
+  <img src="https://i.postimg.cc/KcHk5BPJ/clup-penguin.gif" alt="Club Penguin">
+</div>
+
+
+
+<div class="stamp" data-title="Fantage">
+  <img src="https://i.postimg.cc/CxjRY2WQ/fantage.gif" alt="Fantage">
+</div>
+
+<div class="stamp" data-title="Habbo Hotel">
+  <img src="https://i.postimg.cc/YSMhS37q/habbo.gif" alt="Habbo Hotel">
+</div>
+
+<div class="stamp" data-title="Neopets">
+  <img src="https://i.postimg.cc/mDdcJF0Z/neopets.gif" alt="Neopets">
+</div>
+<div class="stamp" data-title="Call of Duty: Black Ops II">
+  <img src="https://i.postimg.cc/7YJCthXD/codbo2.gif" alt="Call of Duty: Black Ops II">
+</div>
+
+<div class="stamp" data-title="Call of Duty: Black Ops II – Zombies">
+  <img src="https://i.postimg.cc/g29xCpBh/codbo2zombies.gif" alt="Call of Duty: Black Ops II – Zombies">
+</div>
+
+    <div class="stamp" data-title="Battlefield 3">
+  <img src="https://i.postimg.cc/tJY1j4j3/bf3.gif" alt="Battlefield 3">
+</div>
+
+</div>
+</div>
+
+  </section>
+<section id="movies" class="tab-content">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="Eraserhead">
+  <img src="https://i.postimg.cc/d1HXJFSp/Eraserhead.gif" alt="Eraserhead">
+</div>
+<div class="stamp" data-title="Blue Velvet">
+  <img src="https://i.postimg.cc/dtzb7qtK/Blue-Velvet.gif" alt="Blue Velvet">
+</div>
+<div class="stamp" data-title="Mulholland Drive">
+  <img src="https://i.postimg.cc/KYqS8t10/Mulholland-Drive.gif" alt="Mulholland Drive">
+</div>
+<div class="stamp" data-title="Lost Highway">
+  <img src="https://i.postimg.cc/WtR541mW/Lost-Highway.gif" alt="Lost Highway">
+</div>
+<div class="stamp" data-title="Inland Empire">
+  <img src="https://i.postimg.cc/4x6SmVSz/Inland-Empire.gif" alt="Inland Empire">
+</div>
+<div class="stamp" data-title="Wild at Heart">
+  <img src="https://i.postimg.cc/vT70cdPG/Wild-At-Heart.gif" alt="Wild at Heart">
+</div>
+<div class="stamp" data-title="Rabbits">
+  <img src="https://i.postimg.cc/hP9k7kJz/Rabbits.gif" alt="Rabbits">
+</div>
+<div class="stamp" data-title="Audition">
+  <img src="https://i.postimg.cc/RVRPm46R/Audition.gif" alt="Audition">
+</div>
+<div class="stamp" data-title="Possession">
+  <img src="https://i.postimg.cc/6QDccQg9/Possession.gif" alt="Possession">
+</div>
+<div class="stamp" data-title="Stalker">
+  <img src="https://i.postimg.cc/pTzZ6HMK/Stalker.gif" alt="Stalker">
+</div>
+<div class="stamp" data-title="Vital">
+  <img src="https://i.postimg.cc/wMYWqBQW/Vital.gif" alt="Vital">
+</div>
+<div class="stamp" data-title="Substance">
+  <img src="https://i.postimg.cc/nVm56yGR/Substance.gif" alt="Substance">
+</div>
+<div class="stamp" data-title="Perfect Blue">
+  <img src="https://i.postimg.cc/bYKTjdwk/Perfect-Blue.gif" alt="Perfect Blue">
+</div>
+<div class="stamp" data-title="Paprika">
+  <img src="https://i.postimg.cc/C1RyBdDS/Paprika.gif" alt="Paprika">
+</div>
+<div class="stamp" data-title="Phenomena">
+  <img src="https://i.postimg.cc/3NGP16nq/Phenomena.gif" alt="Phenomena">
+</div>
+<div class="stamp" data-title="Emesis Blue">
+  <img src="https://i.postimg.cc/CxRtC74D/Emesis.gif" alt="Emesis Blue">
+</div>
+<div class="stamp" data-title="The Cabinet of Dr. Caligari">
+  <img src="https://i.postimg.cc/KjWdDbPB/Caligari.gif" alt="The Cabinet of Dr. Caligari">
+</div>
+<div class="stamp" data-title="A Clockwork Orange">
+  <img src="https://i.postimg.cc/PfFsjWgJ/Clockwork-Orange.gif" alt="A Clockwork Orange">
+</div>
+<div class="stamp" data-title="American Psycho">
+  <img src="https://i.postimg.cc/kgSdw2h4/American-Psycho.gif" alt="American Psycho">
+</div>
+<div class="stamp" data-title="Fight Club">
+  <img src="https://i.postimg.cc/BbRV1g3C/Fight-Club.gif" alt="Fight Club">
+</div>
+<div class="stamp" data-title="The Shining">
+  <img src="https://i.postimg.cc/T1n4gbPM/Shining.gif" alt="The Shining">
+</div>
+<div class="stamp" data-title="Scream">
+  <img src="https://i.postimg.cc/cHpzvh0B/Scream.gif" alt="Scream">
+</div>
+<div class="stamp" data-title="Rear Window">
+  <img src="https://i.postimg.cc/tggww7BW/Rear-Window.gif" alt="Rear Window">
+</div>
+<div class="stamp" data-title="Vertigo">
+  <img src="https://i.postimg.cc/SsMTb9C2/Vertigo.gif" alt="Vertigo">
+</div>
+<div class="stamp" data-title="Train to Busan">
+  <img src="https://i.postimg.cc/Z5bMvCt2/Trainto-Busan.gif" alt="Train to Busan">
+</div>
+<div class="stamp" data-title="Dune">
+  <img src="https://i.postimg.cc/zBX6mvpT/Dune.gif" alt="Dune">
+</div>
+<div class="stamp" data-title="Everything Everywhere All at Once">
+  <img src="https://i.postimg.cc/W47Cfgm2/EEAAO.gif" alt="Everything Everywhere All at Once">
+</div>
+<div class="stamp" data-title="No Country for Old Men">
+  <img src="https://i.postimg.cc/vmyCz3Vq/Country.gif" alt="No Country for Old Men">
+</div>
+<div class="stamp" data-title="The Matrix">
+  <img src="https://i.postimg.cc/KcdbT7JV/Matrix.gif" alt="The Matrix">
+</div>
+<div class="stamp" data-title="Mickey 17">
+  <img src="https://i.postimg.cc/VLn8WShN/Mickey17.gif" alt="Mickey 17">
+</div>
+<div class="stamp" data-title="The Big Lebowski">
+  <img src="https://i.postimg.cc/Jnn66g4q/Lebowski.gif" alt="The Big Lebowski">
+</div>
+<div class="stamp" data-title="Poor Things">
+  <img src="https://i.postimg.cc/8zXtF4bf/Poor-Things.gif" alt="Poor Things">
+</div>
+<div class="stamp" data-title="I Saw The TV Glow">
+  <img src="https://i.postimg.cc/2S0XQrC6/TvGlow.gif" alt="I Saw The TV Glow">
+</div>
+<div class="stamp" data-title="The Truman Show">
+  <img src="https://i.postimg.cc/HLjv3RLt/Truman-Show.gif" alt="The Truman Show">
+</div>
+<div class="stamp" data-title="Reflections of a Blender">
+  <img src="https://i.postimg.cc/vTTJnTVG/Blender.gif" alt="Reflections of a Blender">
+</div>
+<div class="stamp" data-title="REPO! The Genetic Opera">
+  <img src="https://i.postimg.cc/YSyZHkPV/REPO.gif" alt="REPO! The Genetic Opera">
+</div>
+<div class="stamp" data-title="Sweeney Todd">
+  <img src="https://i.postimg.cc/HsCKH6Sp/Sweeney-Todd.gif" alt="Sweeney Todd">
+</div>
+    <div class="stamp" data-title="Labyrinth (Jareth)">
+  <img src="https://i.postimg.cc/HLXDDNZ5/Labyrinth-Jareth.gif" alt="Labyrinth (Jareth)">
+</div>
+    <div class="stamp" data-title="Re-Animator">
+  <img src="https://i.postimg.cc/gJ5DPRD7/Re-Animator.gif" alt="Re-Animator">
+</div>
+    <div class="stamp" data-title="2001: A Space Odyssey (HAL9000)">
+  <img src="https://i.postimg.cc/ryWRXpZf/2001-HAL9000.gif" alt="2001 HAL9000">
+</div>
+<div class="stamp" data-title="28 Days Later">
+  <img src="https://i.postimg.cc/6qd8dH4k/28-Days-Later.gif" alt="28 Days Later">
+</div>
+<div class="stamp" data-title="Anastasia 1997">
+  <img src="https://i.postimg.cc/YqHGpwJM/Anastasia97.gif" alt="Anastasia97">
+</div>
+<div class="stamp" data-title="Bandersnatch">
+  <img src="https://i.postimg.cc/5NSHyRVv/Bandersnatch.gif" alt="Bandersnatch">
+</div>
+<div class="stamp" data-title="Blade 1998">
+  <img src="https://i.postimg.cc/kgM2bvJH/Blade98.gif" alt="Blade98">
+</div>
+<div class="stamp" data-title="Donnie Darko">
+  <img src="https://i.postimg.cc/QMHV6NWk/Donnie-Darko.gif" alt="Donnie Darko">
+</div>
+<div class="stamp" data-title="Eternal Sunshine of the Spotless Mind">
+  <img src="https://i.postimg.cc/Pq9J0GWG/Eternal-Sunshineof-The-Spotless-Mind.gif" alt="Eternal Sunshine of the Spotless Mind">
+</div>
+<div class="stamp" data-title="Ichi The Killer (Kakihara)">
+  <img src="https://i.postimg.cc/BnhXcPtn/Ichi-The-Killer-Kakihara.gif" alt="Ichi The Killer Kakihara">
+</div>
+<div class="stamp" data-title="Klaus 2019">
+  <img src="https://i.postimg.cc/zBhvrd7y/Klaus2019.gif" alt="Klaus2019">
+</div>
+<div class="stamp" data-title="Look Back (Kyomoto)">
+  <img src="https://i.postimg.cc/zv1BXn20/Look-Back-Kyomoto.gif" alt="Look Back Kyomoto">
+</div>
+<div class="stamp" data-title="Merry Christmas Mr Lawrence">
+  <img src="https://i.postimg.cc/8cBCFjqD/Mr-Xmas-Mr-Lawrence.gif" alt="Merry Christmas Mr Lawrence">
+</div>
+<div class="stamp" data-title="My Bloody Valentine 2002">
+  <img src="https://i.postimg.cc/Dfq0pMmD/My-Bloody-Valentine2002.gif" alt="My Bloody Valentine 2002">
+</div>
+<div class="stamp" data-title="My Bloody Valentine 1981">
+  <img src="https://i.postimg.cc/YqM95zWS/My-Blood-YValentine81.gif" alt="My Bloody Valentine 1981">
+</div>
+<div class="stamp" data-title="NOPE">
+  <img src="https://i.postimg.cc/Dy6Zn4rP/NOPE.gif" alt="NOPE">
+</div>
+<div class="stamp" data-title="Nosferatu 2024">
+  <img src="https://i.postimg.cc/hGyTj3VM/Nosferatu2024.gif" alt="Nosferatu 2024">
+</div>
+<div class="stamp" data-title="Nosferatu 1922">
+  <img src="https://i.postimg.cc/fRbbLW5n/Nosferatu22.gif" alt="Nosferatu 1922">
+</div>
+<div class="stamp" data-title="Psycho">
+  <img src="https://i.postimg.cc/yx9ZL1tr/Psycho.gif" alt="Psycho">
+</div>
+<div class="stamp" data-title="Pulp Fiction">
+  <img src="https://i.postimg.cc/xCXHbyRQ/Pulp-Fiction.gif" alt="Pulp Fiction">
+</div>
+<div class="stamp" data-title="Puparia">
+  <img src="https://i.postimg.cc/Qtv7g94T/Puparia.gif" alt="Puparia">
+</div>
+<div class="stamp" data-title="Puss in Boots 2 (Death)">
+  <img src="https://i.postimg.cc/66GnWcqL/Pussin-Boots2-Death.gif" alt="Puss in Boots 2 Death">
+</div>
+<div class="stamp" data-title="Ringu 1998">
+  <img src="https://i.postimg.cc/3J5pdGDM/Ringu98.gif" alt="Ringu 1998">
+</div>
+    <div class="stamp" data-title="SAW">
+  <img src="https://i.postimg.cc/xTNR71JY/SAW1.gif" alt="SAW">
+</div>
+<div class="stamp" data-title="Scooby-Doo 2002">
+  <img src="https://i.postimg.cc/DyrGszqS/Scooby-Doo2002.gif" alt="Scooby-Doo 2002">
+</div>
+<div class="stamp" data-title="Silence of the Lambs">
+  <img src="https://i.postimg.cc/SxmMGprD/Silenceofthe-Lambs.gif" alt="Silence of the Lambs">
+</div>
+<div class="stamp" data-title="Song of the Sea">
+  <img src="https://i.postimg.cc/NjbrJPCY/Songofthe-Sea.gif" alt="Song of the Sea">
+</div>
+<div class="stamp" data-title="The Dark Crystal">
+  <img src="https://i.postimg.cc/wBvRScnN/The-Dark-Crystal.gif" alt="The Dark Crystal">
+</div>
+<div class="stamp" data-title="The Menu">
+  <img src="https://i.postimg.cc/DzM4F4KM/TheMenu.gif" alt="The Menu">
+</div>
+<div class="stamp" data-title="The Seventh Seal">
+  <img src="https://i.postimg.cc/sXGQ2fjD/The-Seventh-Seal.gif" alt="The Seventh Seal">
+</div>
+<div class="stamp" data-title="Vivarium">
+  <img src="https://i.postimg.cc/KjXK3Xj7/Vivarium.gif" alt="Vivarium">
+</div>
+<div class="stamp" data-title="Matilda">
+  <img src="https://i.postimg.cc/9X4VzgtZ/Matilda.gif" alt="Matilda">
+</div>
+<div class="stamp" data-title="Yoton Yo">
+  <img src="https://i.postimg.cc/7PSsBgqj/YotonYo.gif" alt="Yoton Yo">
+</div>
+<div class="stamp" data-title="Labyrinth of Dreams">
+  <img src="https://i.postimg.cc/sXNntcMR/Labyrinth.gif" alt="Labyrinth of Dreams">
+</div>
+<div class="stamp" data-title="Barbie's Twelve Dancing Princesses">
+  <img src="https://i.postimg.cc/J4G8D6Nj/12-Dancing.gif" alt="Barbie's Twelve Dancing Princesses">
+</div>
+<div class="stamp" data-title="Barbie's Fairytopia">
+  <img src="https://i.postimg.cc/sXjdVwfQ/Barbie-Fairy.gif" alt="Barbie's Fairytopia">
+</div>
+<div class="stamp" data-title="Barbie's Fairytopia: Mermaidia">
+  <img src="https://i.postimg.cc/tgtGQLbG/Barbie-Mermaid.gif" alt="Barbie's Fairytopia: Mermaidia">
+</div>
+<div class="stamp" data-title="Barbie's Rapunzel">
+  <img src="https://i.postimg.cc/9fjHkcvB/Barbie-Rapunzel.gif" alt="Barbie's Rapunzel">
+</div>
+<div class="stamp" data-title="Barbie's Swan Lake">
+  <img src="https://i.postimg.cc/8PBYCL3L/SwanLake.gif" alt="Barbie's Swan Lake">
+</div>
+<div class="stamp" data-title="The Barbie Diaries">
+  <img src="https://i.postimg.cc/X73C3yPs/Barbie-Diaries.gif" alt="The Barbie Diaries">
+</div>
+<div class="stamp" data-title="Barbie's Island Princess">
+  <img src="https://i.postimg.cc/GhQspmwd/Barbie-Island-Princess.gif" alt="Barbie's Island Princess">
+</div>
+<div class="stamp" data-title="Barbie's the Princess and the Pauper">
+  <img src="https://i.postimg.cc/bY1tKRmG/Barbie-Princessandthe-Pauper.gif" alt="Barbie's the Princess and the Pauper">
+</div>
+<div class="stamp" data-title="Beauty and the Beast">
+  <img src="https://i.postimg.cc/XJsMXdX2/Beauty.gif" alt="Beauty and the Beast">
+</div>
+<div class="stamp" data-title="Brave">
+  <img src="https://i.postimg.cc/8PJ8PFGH/Brave.gif" alt="Brave">
+</div>
+<div class="stamp" data-title="Princess and the Frog (Charlotte)">
+  <img src="https://i.postimg.cc/jdJ9YG63/Frog.gif" alt="Princess and the Frog">
+</div>
+<div class="stamp" data-title="The Little Mermaid">
+  <img src="https://i.postimg.cc/ht4fGLWf/Ariel.gif" alt="The Little Mermaid">
+</div>
+<div class="stamp" data-title="Moana">
+  <img src="https://i.postimg.cc/CLsRYv23/Moana.gif" alt="Moana">
+</div>
+<div class="stamp" data-title="Tangled">
+  <img src="https://i.postimg.cc/4xsrvWt8/Rapunzel.gif" alt="Tangled">
+</div>
+<div class="stamp" data-title="Raya and the Last Dragon">
+  <img src="https://i.postimg.cc/x15B6L39/Raya.gif" alt="Raya and the Last Dragon">
+</div>
+<div class="stamp" data-title="Disney's Robin Hood">
+  <img src="https://i.postimg.cc/nzj5VgbL/Robin-Hood.gif" alt="Disney's Robin Hood">
+</div>
+<div class="stamp" data-title="Lilo and Stitch">
+  <img src="https://i.postimg.cc/x8NsYzmN/Lilo.gif" alt="Lilo and Stitch">
+</div>
+
+    <div class="stamp" data-title="Alice in Wonderland">
+  <img src="https://i.postimg.cc/gcTsNZ0N/aliceinwonderland.gif" alt="Alice in Wonderland">
+</div>
+
+
+<div class="stamp" data-title="Fantasia 2000">
+  <img src="https://i.postimg.cc/j2D151p5/Fantasia.gif" alt="Fantasia">
+</div>
+  <div class="stamp" data-title="Atlantis: The Lost Empire">
+  <img src="https://i.postimg.cc/nL1PfddK/atlantisthelostempire.gif" alt="Atlantis: The Lost Empire">
+</div>
+<div class="stamp" data-title="Bolt">
+  <img src="https://i.postimg.cc/G27gH4nH/bolt.gif" alt="Bolt">
+</div>
+<div class="stamp" data-title="Kung Fu Panda">
+  <img src="https://i.postimg.cc/0jzWm99Z/kungfupanda.gif" alt="Kung Fu Panda">
+</div>
+<div class="stamp" data-title="Treasure Planet">
+  <img src="https://i.postimg.cc/qRMZJ8YP/treasureplanet.gif" alt="Treasure Planet">
+</div>
+
+
+<div class="stamp" data-title="Howl's Moving Castle">
+  <img src="https://i.postimg.cc/YCKPrbbr/Howl.gif" alt="Howl's Moving Castle">
+</div>
+<div class="stamp" data-title="Princess Mononoke">
+  <img src="https://i.postimg.cc/mgSWKvBf/Mononoke.gif" alt="Princess Mononoke">
+</div>
+<div class="stamp" data-title="Ponyo (Granmamare)">
+  <img src="https://i.postimg.cc/bY2cqDpR/Ponyo.gif" alt="Ponyo (Granmamare)">
+</div>
+<div class="stamp" data-title="Ponyo (Fujimoto)">
+  <img src="https://i.postimg.cc/fTn4yzbQ/Ponyo2.gif" alt="Ponyo (Fujimoto)">
+</div>
+<div class="stamp" data-title="Kiki's Delivery Service">
+  <img src="https://i.postimg.cc/SKV1GqqR/Kiki.gif" alt="Kiki's Delivery Service">
+</div>
+<div class="stamp" data-title="Spiderverse (Peter B Parker)">
+  <img src="https://i.postimg.cc/0QFTpxdm/Peter-BParker.gif" alt="Spiderverse (Peter B Parker)">
+</div>
+<div class="stamp" data-title="Spiderverse (SpiderNoir)">
+  <img src="https://i.postimg.cc/SKNb4gxX/Noir.gif" alt="Spiderverse (SpiderNoir)">
+</div>
+<div class="stamp" data-title="Spiderverse (SpiderPunk)">
+  <img src="https://i.postimg.cc/054338SJ/Hobie.gif" alt="Spiderverse (SpiderPunk)">
+</div>
+ <div class="stamp" data-title="Big Hero 6">
+  <img src="https://i.postimg.cc/rwwRR2MW/BigHero6.gif" alt="Big Hero 6">
+</div>
+<div class="stamp" data-title="Coraline">
+  <img src="https://i.postimg.cc/fRm6m6JS/Coraline.gif" alt="Coraline">
+</div>
+<div class="stamp" data-title="How to Train Your Dragon">
+  <img src="https://i.postimg.cc/FKhnczMw/HTTYD.gif" alt="How to Train Your Dragon">
+</div>
+
+
+
+  </div>
+</section>
+
+
+  <section id="music" class="tab-content">
+    <div class="stamp-grid">
+      <div class="stamp" data-title="Yuzuki Yukari">
+        <img src="https://i.postimg.cc/0NPNn2TK/Yuzuki-Yukari.gif" alt="Yuzuki Yukari">
+      </div>
+        <div class="stamp" data-title="V Flower">
+        <img src="https://i.postimg.cc/TwvBgpFB/VFlower.gif" alt="V Flower">
+      </div>
+      <div class="stamp" data-title="Gakupo">
+        <img src="https://i.postimg.cc/xCYZL2Cp/Gakupo.gif" alt="Gakupo">
+      </div>
+        <div class="stamp" data-title="Gahata Meiji">
+        <img src="https://i.postimg.cc/HkGnJt32/Gahata-Meiji.gif" alt="Gahata Meiji">
+      </div>
+       <div class="stamp" data-title="Kagerou Days">
+        <img src="https://i.postimg.cc/05XtympB/KageDays.gif" alt="Kagerou Days">
+      </div>
+      
+      <div class="stamp" data-title="Spoken For by Flavor Foley">
+        <img src="https://i.postimg.cc/YSQV49pm/Spoken.gif" alt="Spoken For by Flavor Foley">
+      </div>
+       <div class="stamp" data-title="Gorillaz">
+        <img src="https://i.postimg.cc/3wV3CWpr/Gorillaz.gif" alt="Gorillaz">
+      </div>
+
+      <div class="stamp" data-title="100 gecs">
+  <img src="https://i.postimg.cc/L5vRQ9RN/100gecs.gif" alt="100 gecs">
+</div>
+<div class="stamp" data-title="Alt-J">
+  <img src="https://i.postimg.cc/KvvmkMrV/AltJ.gif" alt="Alt-J">
+</div>
+<div class="stamp" data-title="Ana Frango Elétrico">
+  <img src="https://i.postimg.cc/BnjsNfzB/Ana-Frango-El-trico.gif" alt="Ana Frango Elétrico">
+</div>
+<div class="stamp" data-title="Aphex Twin">
+  <img src="https://i.postimg.cc/FsWNjHTK/Aphex-Twin.gif" alt="Aphex Twin">
+</div>
+<div class="stamp" data-title="Ashbury Heights">
+  <img src="https://i.postimg.cc/bvFypN2M/Ashbury-Heights.gif" alt="Ashbury Heights">
+</div>
+<div class="stamp" data-title="Aurora">
+  <img src="https://i.postimg.cc/j5ws50Hj/Aurora.gif" alt="Aurora">
+</div>
+<div class="stamp" data-title="Autoheart">
+  <img src="https://i.postimg.cc/Y95tLnRz/Autoheart.gif" alt="Autoheart">
+</div>
+<div class="stamp" data-title="AWOLNATION">
+  <img src="https://i.postimg.cc/9X9mH2X8/AWOLNATION.gif" alt="AWOLNATION">
+</div>
+<div class="stamp" data-title="Azari">
+  <img src="https://i.postimg.cc/zXSq3kgT/Azari.gif" alt="Azari">
+</div>
+<div class="stamp" data-title="Bacterial Contamination">
+  <img src="https://i.postimg.cc/P5XTD8W9/Bacterial-Contamination.gif" alt="Bacterial Contamination">
+</div>
+<div class="stamp" data-title="Beastie Boys">
+  <img src="https://i.postimg.cc/dV5vjtn1/Beastie-Boys.gif" alt="Beastie Boys">
+</div>
+
+      
+<div class="stamp" data-title="Muse">
+  <img src="https://i.postimg.cc/3J2GJWG1/muse.gif" alt="Muse">
+</div>
+
+<div class="stamp" data-title="Pink Floyd">
+  <img src="https://i.postimg.cc/vZMV1MLs/pinkfloyd.gif" alt="Pink Floyd">
+</div>
+<div class="stamp" data-title="Big Fun">
+  <img src="https://i.postimg.cc/s21z6d0J/BigFun.gif" alt="Big Fun">
+</div>
+<div class="stamp" data-title="Björk">
+  <img src="https://i.postimg.cc/0QwsvGvM/Bjork.gif" alt="Björk">
+</div>
+<div class="stamp" data-title="Black Eyed Peas">
+  <img src="https://i.postimg.cc/HLKgFZq1/Black-Eyed-Peas.gif" alt="Black Eyed Peas">
+</div>
+<div class="stamp" data-title="Block B">
+  <img src="https://i.postimg.cc/cCGNLK1D/Block-B.gif" alt="Block B">
+</div>
+ <div class="stamp" data-title="2ne1">
+  <img src="https://i.postimg.cc/rwTSY48G/2ne1.gif" alt="2ne1">
+</div>
+<div class="stamp" data-title="G-Idle">
+  <img src="https://i.postimg.cc/jjdyRrnL/G-Idle.gif" alt="G-Idle">
+</div>
+<div class="stamp" data-title="Girls Generation">
+  <img src="https://i.postimg.cc/qMysLwdM/Girls-Generation.gif" alt="Girls Generation">
+</div>
+<div class="stamp" data-title="Twice">
+  <img src="https://i.postimg.cc/2Sx4p56s/Twice.gif" alt="Twice">
+</div>
+<div class="stamp" data-title="Blonde Redhead">
+  <img src="https://i.postimg.cc/X73bMyzq/Blonde-Redhead.gif" alt="Blonde Redhead">
+</div>
+<div class="stamp" data-title="Bring Me The Horizon">
+  <img src="https://i.postimg.cc/NF8v9g5Q/Bring-Me-The-Horizon.gif" alt="Bring Me The Horizon">
+</div>
+<div class="stamp" data-title="BROCKHAMPTON">
+  <img src="https://i.postimg.cc/GhQ1bhWQ/BROCKHAMPTON.gif" alt="BROCKHAMPTON">
+</div>
+<div class="stamp" data-title="Cage The Elephant">
+  <img src="https://i.postimg.cc/RZZxhx9z/Cage-The-Elephant.gif" alt="Cage The Elephant">
+</div>
+<div class="stamp" data-title="Capital Cities">
+  <img src="https://i.postimg.cc/nhSbQSc9/Capital-Cities.gif" alt="Capital Cities">
+</div>
+<div class="stamp" data-title="Chico Buarque">
+  <img src="https://i.postimg.cc/bvGX00sC/Chico-Buarque.gif" alt="Chico Buarque">
+</div>
+<div class="stamp" data-title="Childish Gambino">
+  <img src="https://i.postimg.cc/3NTPHP9V/Childish-Gambino.gif" alt="Childish Gambino">
+</div>
+<div class="stamp" data-title="Crusher-P">
+  <img src="https://i.postimg.cc/3wzstyGK/Crusher-P.gif" alt="Crusher-P">
+</div>
+<div class="stamp" data-title="Death Grips">
+  <img src="https://i.postimg.cc/C1DWXFCb/Death-Grips.gif" alt="Death Grips">
+</div>
+<div class="stamp" data-title="DECO*27">
+  <img src="https://i.postimg.cc/pXPgcMmn/DECO-27.gif" alt="DECO*27">
+</div>
+<div class="stamp" data-title="Etsuko Yakushimaru">
+  <img src="https://i.postimg.cc/P5R9qL2m/Etsuko-Yakushimaru.gif" alt="Etsuko Yakushimaru">
+</div>
+<div class="stamp" data-title="EVE">
+  <img src="https://i.postimg.cc/SNVHw191/EVE.gif" alt="EVE">
+</div>
+<div class="stamp" data-title="FAKE TYPE.">
+  <img src="https://i.postimg.cc/cLHPZ7Mx/FAKETYPE.gif" alt="FAKETYPE">
+</div>
+<div class="stamp" data-title="Fall Out Boy">
+  <img src="https://i.postimg.cc/sXFLpkFx/Fall-Out-Boy.gif" alt="Fall Out Boy">
+</div>
+<div class="stamp" data-title="Fangclub">
+  <img src="https://i.postimg.cc/Twr4QtG9/FangClub.gif" alt="Fangclub">
+</div>
+<div class="stamp" data-title="Fiona Apple">
+  <img src="https://i.postimg.cc/yN353Vb2/Fionna-Apple.gif" alt="Fiona Apple">
+</div>
+<div class="stamp" data-title="Fish in a Birdcage">
+  <img src="https://i.postimg.cc/Kjfsh413/Fish-In-ABirdcage.gif" alt="Fish in a Birdcage">
+</div>
+<div class="stamp" data-title="FKA Twigs">
+  <img src="https://i.postimg.cc/L64bBkWt/FKA-Twigs.gif" alt="FKA Twigs">
+</div>
+<div class="stamp" data-title="Foo Fighters">
+  <img src="https://i.postimg.cc/vHPSPgRp/Foo-Fighters.gif" alt="Foo Fighters">
+</div>
+<div class="stamp" data-title="Foster The People">
+  <img src="https://i.postimg.cc/sf4LhHTf/Foster-The-People.gif" alt="Foster The People">
+</div>
+<div class="stamp" data-title="Franz Ferdinand">
+  <img src="https://i.postimg.cc/bwsV4ypd/Franz-Ferdinand.gif" alt="Franz Ferdinand">
+</div>
+<div class="stamp" data-title="Freak Kitchen">
+  <img src="https://i.postimg.cc/kgzYm0gs/Freak-Kitchen.gif" alt="Freak Kitchen">
+</div>
+<div class="stamp" data-title="Genitorturers">
+  <img src="https://i.postimg.cc/ydzfJ09S/Genitorturers.gif" alt="Genitorturers">
+</div>
+<div class="stamp" data-title="Glass Animals">
+  <img src="https://i.postimg.cc/ydXL0WXp/Glass-Animals.gif" alt="Glass Animals">
+</div>
+<div class="stamp" data-title="Green Day">
+  <img src="https://i.postimg.cc/6QZj5M7X/GreenDay.gif" alt="Green Day">
+</div>
+<div class="stamp" data-title="Grimes">
+  <img src="https://i.postimg.cc/cCxXhZFx/GRIMES.gif" alt="Grimes">
+</div>
+<div class="stamp" data-title="Hachi">
+  <img src="https://i.postimg.cc/MH9tr4Ly/Hachi.gif" alt="Hachi">
+</div>
+<div class="stamp" data-title="Half Alive">
+  <img src="https://i.postimg.cc/y6jfdgNk/Half-Alive.gif" alt="Half Alive">
+</div>
+<div class="stamp" data-title="Hard Life">
+  <img src="https://i.postimg.cc/FK0pQ1qF/HardLife.gif" alt="Hard Life">
+</div>
+<div class="stamp" data-title="Hiiragi Kirai">
+  <img src="https://i.postimg.cc/9fHP1Cf6/Hiiragi-Kirai.gif" alt="Hiiragi Kirai">
+</div>
+<div class="stamp" data-title="Hozier">
+  <img src="https://i.postimg.cc/L55jhsy1/Hozier.gif" alt="Hozier">
+</div>
+<div class="stamp" data-title="IAMX">
+  <img src="https://i.postimg.cc/L81Bznmk/IAMX.gif" alt="IAMX">
+</div>
+<div class="stamp" data-title="IC3PEAK">
+  <img src="https://i.postimg.cc/8kXh9h5B/IC3PEAK.gif" alt="IC3PEAK">
+</div>
+<div class="stamp" data-title="Imogen Heap">
+  <img src="https://i.postimg.cc/026psbKg/Imogen-Heap.gif" alt="Imogen Heap">
+</div>
+<div class="stamp" data-title="Junie & The Hut Friends">
+  <img src="https://i.postimg.cc/4NrpNspY/Junie-The-Hut-Friends.gif" alt="Junie & The Hut Friends">
+</div>
+<div class="stamp" data-title="Justice">
+  <img src="https://i.postimg.cc/fRmmVpvB/Justice.gif" alt="Justice">
+</div>
+<div class="stamp" data-title="Kate Bush">
+  <img src="https://i.postimg.cc/VNwMngG1/KateBush.gif" alt="Kate Bush">
+</div>
+<div class="stamp" data-title="Kendrick Lamar">
+  <img src="https://i.postimg.cc/ZqLNcN2N/Kendrick-Lamar.gif" alt="Kendrick Lamar">
+</div>
+<div class="stamp" data-title="Kesha">
+  <img src="https://i.postimg.cc/G2hyS2n5/Kesha.gif" alt="Kesha">
+</div>
+<div class="stamp" data-title="Korn">
+  <img src="https://i.postimg.cc/W3WkRv2b/Korn.gif" alt="Korn">
+</div>
+<div class="stamp" data-title="Kraftwerk">
+  <img src="https://i.postimg.cc/gjx6mTJy/Kraftwerk.gif" alt="Kraftwerk">
+</div>
+<div class="stamp" data-title="Lady Gaga">
+  <img src="https://i.postimg.cc/KjC3zDk6/LadyGaga.gif" alt="Lady Gaga">
+</div>
+<div class="stamp" data-title="Legião Urbana">
+  <img src="https://i.postimg.cc/QxWWzwvh/Legiao-Urbana.gif" alt="Legião Urbana">
+</div>
+<div class="stamp" data-title="Le Sserafim">
+  <img src="https://i.postimg.cc/Pf7w2T3S/Le-Sserafim.gif" alt="Le Sserafim">
+</div>
+<div class="stamp" data-title="Linkin Park">
+  <img src="https://i.postimg.cc/0yRJ1Zqm/Linkin-Park.gif" alt="Linkin Park">
+</div>
+<div class="stamp" data-title="Malice Mizer">
+  <img src="https://i.postimg.cc/nh49F7HW/Malice-Mizer.gif" alt="Malice Mizer">
+</div>
+<div class="stamp" data-title="Maretu">
+  <img src="https://i.postimg.cc/V66JWVjy/Maretu.gif" alt="Maretu">
+</div>
+<div class="stamp" data-title="Massive Attack">
+  <img src="https://i.postimg.cc/jjRwL52S/Massive-Attack.gif" alt="Massive Attack">
+</div>
+<div class="stamp" data-title="MGMT">
+  <img src="https://i.postimg.cc/k5wV8mRF/MGMT.gif" alt="MGMT">
+</div>
+<div class="stamp" data-title="Miike Snow">
+  <img src="https://i.postimg.cc/Hn8jf8ZB/Miike-Snow.gif" alt="Miike Snow">
+</div>
+<div class="stamp" data-title="Miss Construction">
+  <img src="https://i.postimg.cc/Y9shnz3v/Miss-Construction.gif" alt="Miss Construction">
+</div>
+<div class="stamp" data-title="Mitski">
+  <img src="https://i.postimg.cc/vDRDM8CM/Mitski.gif" alt="Mitski">
+</div>
+<div class="stamp" data-title="Mystery Skulls">
+  <img src="https://i.postimg.cc/59X3xPDk/Mystery-Skulls.gif" alt="Mystery Skulls">
+</div>
+<div class="stamp" data-title="Nero's Day at Disneyland">
+  <img src="https://i.postimg.cc/T2BchV62/Nero-s-Day-At-Disneyland.gif" alt="Nero's Day at Disneyland">
+</div>
+<div class="stamp" data-title="Night Club">
+  <img src="https://i.postimg.cc/5NvSzX4B/Night-Club.gif" alt="Night Club">
+</div>
+<div class="stamp" data-title="Nirvana">
+  <img src="https://i.postimg.cc/dVjRWgTD/Nirvana.gif" alt="Nirvana">
+</div>
+<div class="stamp" data-title="Nothing But Thieves">
+  <img src="https://i.postimg.cc/x12y398W/Nothing-But-Thieves.gif" alt="Nothing But Thieves">
+</div>
+<div class="stamp" data-title="Of Monsters And Men">
+  <img src="https://i.postimg.cc/CKMG9Jj7/Of-Monsters-And-Men.gif" alt="Of Monsters And Men">
+</div>
+<div class="stamp" data-title="Oingo Boingo">
+  <img src="https://i.postimg.cc/ydt0gH2p/Oingo-Boingo.gif" alt="Oingo Boingo">
+</div>
+<div class="stamp" data-title="Orange Caramel">
+  <img src="https://i.postimg.cc/pTpDLTcn/Orange-Caramel.gif" alt="Orange Caramel">
+</div>
+<div class="stamp" data-title="Os Mutantes">
+  <img src="https://i.postimg.cc/bv6xPbgh/Os-Mutantes.gif" alt="Os Mutantes">
+</div>
+<div class="stamp" data-title="Panic! At The Disco">
+  <img src="https://i.postimg.cc/mZ1YxPFv/P-ATD.gif" alt="Panic! At The Disco">
+</div>
+<div class="stamp" data-title="Poe">
+  <img src="https://i.postimg.cc/j2fPy1bx/Poe.gif" alt="Poe">
+</div>
+<div class="stamp" data-title="Portishead">
+  <img src="https://i.postimg.cc/Fstjhhy7/Portishead.gif" alt="Portishead">
+</div>
+<div class="stamp" data-title="Portugal. The Man">
+  <img src="https://i.postimg.cc/TYrnwB0Q/Portugal-The-Man.gif" alt="Portugal. The Man">
+</div>
+<div class="stamp" data-title="Queen">
+  <img src="https://i.postimg.cc/2SGvdvPZ/Queen.gif" alt="Queen">
+</div>
+<div class="stamp" data-title="Radiohead">
+  <img src="https://i.postimg.cc/GppDXtCS/Radiohead.gif" alt="Radiohead">
+</div>
+<div class="stamp" data-title="Red Vox">
+  <img src="https://i.postimg.cc/xdFzhQjj/RedVox.gif" alt="Red Vox">
+</div>
+<div class="stamp" data-title="Red Hot Chili Peppers">
+  <img src="https://i.postimg.cc/k46bdHDQ/RHCP.gif" alt="Red Hot Chili Peppers">
+</div>
+<div class="stamp" data-title="Rita Lee">
+  <img src="https://i.postimg.cc/TwzW2cWZ/RitaLee.gif" alt="Rita Lee">
+</div>
+<div class="stamp" data-title="Rob Zombie">
+  <img src="https://i.postimg.cc/nVmDRNyZ/Rob-Zombie.gif" alt="Rob Zombie">
+</div>
+<div class="stamp" data-title="Saint Motel">
+  <img src="https://i.postimg.cc/8cLf7rRs/Saint-Motel.gif" alt="Saint Motel">
+</div>
+<div class="stamp" data-title="SEDO Sounder">
+  <img src="https://i.postimg.cc/J4WB9P8X/SEDOSounder.gif" alt="SEDO Sounder">
+</div>
+<div class="stamp" data-title="Self">
+  <img src="https://i.postimg.cc/ZKFyZpYM/Self.gif" alt="Self">
+</div>
+<div class="stamp" data-title="Shayfer James">
+  <img src="https://i.postimg.cc/L8xYgS1k/Shayfer-James.gif" alt="Shayfer James">
+</div>
+<div class="stamp" data-title="Skylab">
+  <img src="https://i.postimg.cc/Njs20F5f/Skylab.gif" alt="Skylab">
+</div>
+<div class="stamp" data-title="SLAVE V.V.R">
+  <img src="https://i.postimg.cc/SK5nVGVJ/SLAVE-V-V-R.gif" alt="SLAVE V.V.R">
+</div>
+<div class="stamp" data-title="Snake River Conspiracy">
+  <img src="https://i.postimg.cc/cJ6KQzRp/Snake-River-Conspiracy.gif" alt="Snake River Conspiracy">
+</div>
+<div class="stamp" data-title="Sparkbird">
+  <img src="https://i.postimg.cc/xCzcZbFg/Sparkbird.gif" alt="Sparkbird">
+</div>
+<div class="stamp" data-title="Stella Jang">
+  <img src="https://i.postimg.cc/VvPdPLxw/Stella-Jang.gif" alt="Stella Jang">
+</div>
+<div class="stamp" data-title="Stromae">
+  <img src="https://i.postimg.cc/2yd3kNYZ/Stromae.gif" alt="Stromae">
+</div>
+<div class="stamp" data-title="Sub Urban">
+  <img src="https://i.postimg.cc/pVKmYzjL/SubUrban.gif" alt="Sub Urban">
+</div>
+<div class="stamp" data-title="syudou">
+  <img src="https://i.postimg.cc/KvFR9j7r/syudou.gif" alt="syudou">
+</div>
+<div class="stamp" data-title="Tame Impala">
+  <img src="https://i.postimg.cc/TY9hBxC8/Tame-Impala.gif" alt="Tame Impala">
+</div>
+<div class="stamp" data-title="That Handsome Devil">
+  <img src="https://i.postimg.cc/8zzsSY07/That-Handsome-Devil.gif" alt="That Handsome Devil">
+</div>
+<div class="stamp" data-title="The Correspondents">
+  <img src="https://i.postimg.cc/XY1q7gRQ/The-Correspondents.gif" alt="The Correspondents">
+</div>
+<div class="stamp" data-title="The Cure">
+  <img src="https://i.postimg.cc/s2BXBhyy/TheCure.gif" alt="The Cure">
+</div>
+<div class="stamp" data-title="The GazettE">
+  <img src="https://i.postimg.cc/g0f032kh/The-Gazett-E.gif" alt="The GazettE">
+</div>
+<div class="stamp" data-title="The Living Tombstone">
+  <img src="https://i.postimg.cc/cCc4q777/The-Living-Tombstone.gif" alt="The Living Tombstone">
+</div>
+<div class="stamp" data-title="The Offspring">
+  <img src="https://i.postimg.cc/Bb3Qw7FQ/The-Offspring.gif" alt="The Offspring">
+</div>
+<div class="stamp" data-title="The xx">
+  <img src="https://i.postimg.cc/j5PScYLF/TheXX.gif" alt="The xx">
+</div>
+<div class="stamp" data-title="They Might Be Giants">
+  <img src="https://i.postimg.cc/QNgMWsLB/They-Might-Be-Giants.gif" alt="They Might Be Giants">
+</div>
+<div class="stamp" data-title="Twenty One Pilots">
+  <img src="https://i.postimg.cc/FH6FQHS6/Twenty-One-Pilots.gif" alt="Twenty One Pilots">
+</div>
+<div class="stamp" data-title="Tyler, The Creator">
+  <img src="https://i.postimg.cc/9fqmXHtQ/Tyler-The-Creator.gif" alt="Tyler, The Creator">
+</div>
+<div class="stamp" data-title="Unter Null">
+  <img src="https://i.postimg.cc/7YmYmVZw/Unter-Null.gif" alt="Unter Null">
+</div>
+<div class="stamp" data-title="Vision Video">
+  <img src="https://i.postimg.cc/J0RMQDws/Vision-Video.gif" alt="Vision Video">
+</div>
+<div class="stamp" data-title="We Were Promised Jetpacks">
+  <img src="https://i.postimg.cc/9M5WrgJt/We-Were-Promised-Jetpacks.gif" alt="We Were Promised Jetpacks">
+</div>
+      <div class="stamp" data-title="Devi McCallion">
+  <img src="https://i.postimg.cc/m2JnR1TD/devimccallion.gif" alt="Devi McCallion">
+</div>
+      <div class="stamp" data-title="Charli XCX">
+  <img src="https://i.postimg.cc/9FrkvY5K/charlixcx.gif" alt="Charli XCX">
+</div>
+<div class="stamp" data-title="xo0ox">
+  <img src="https://i.postimg.cc/7PNxZV70/xo0ox.gif" alt="xo0ox">
+</div>
+
+
+      <div class="stamp" data-title="And One">
+  <img src="https://i.postimg.cc/NLhmQPbr/AndOne.gif" alt="And One">
+</div>
+<div class="stamp" data-title="Cosmo Sheldrake">
+  <img src="https://i.postimg.cc/7ZnsQgYN/Cosmo-Sheldrake.gif" alt="Cosmo Sheldrake">
+</div>
+<div class="stamp" data-title="Cyriak">
+  <img src="https://i.postimg.cc/k4zftsf7/Cyriak.gif" alt="Cyriak">
+</div>
+<div class="stamp" data-title="Everything Everything">
+  <img src="https://i.postimg.cc/X7FDdRRm/Everything-Everything.gif" alt="Everything Everything">
+</div>
+<div class="stamp" data-title="Femtanyl">
+  <img src="https://i.postimg.cc/63mCmQvc/Femtanyl.gif" alt="Femtanyl">
+</div>
+<div class="stamp" data-title="Ghost and Pals">
+  <img src="https://i.postimg.cc/05hB6kB7/Ghostand-Pals.gif" alt="Ghost and Pals">
+</div>
+<div class="stamp" data-title="I DON'T KNOW HOW BUT THEY FOUND ME">
+  <img src="https://i.postimg.cc/dQf9W5RF/IDKHBTFM.gif" alt="I DON'T KNOW HOW BUT THEY FOUND ME">
+</div>
+<div class="stamp" data-title="Ikigusare Idols">
+  <img src="https://i.postimg.cc/hP71NVMd/Ikigusare-Idols.gif" alt="Ikigusare Idols">
+</div>
+<div class="stamp" data-title="Jack Stauber">
+  <img src="https://i.postimg.cc/x1D3QqFF/Jack-Stauber.gif" alt="Jack Stauber">
+</div>
+<div class="stamp" data-title="Kikuo">
+  <img src="https://i.postimg.cc/vZrLZMJ8/Kikuo.gif" alt="Kikuo">
+</div>
+<div class="stamp" data-title="KMFDM">
+  <img src="https://i.postimg.cc/Kj3tSy72/KMFDM.gif" alt="KMFDM">
+</div>
+<div class="stamp" data-title="Lemon Demon">
+  <img src="https://i.postimg.cc/mrddTB9z/Lemon-Demon.gif" alt="Lemon Demon">
+</div>
+<div class="stamp" data-title="Machine Girl">
+  <img src="https://i.postimg.cc/500wgz6j/Machine-Girl.gif" alt="Machine Girl">
+</div>
+<div class="stamp" data-title="MF DOOM">
+  <img src="https://i.postimg.cc/hGK8J6nL/MFDOOM.gif" alt="MF DOOM">
+</div>
+<div class="stamp" data-title="Mother Mother">
+  <img src="https://i.postimg.cc/qBNFMhjk/Mother-Mother.gif" alt="Mother Mother">
+</div>
+<div class="stamp" data-title="Nine Inch Nails">
+  <img src="https://i.postimg.cc/V6GFPR3j/NIN.gif" alt="Nine Inch Nails">
+</div>
+<div class="stamp" data-title="Rammstein">
+  <img src="https://i.postimg.cc/pr3YpdVr/Rammstein.gif" alt="Rammstein">
+</div>
+<div class="stamp" data-title="System of a Down">
+  <img src="https://i.postimg.cc/QMSQcmNR/SOAD.gif" alt="System of a Down">
+</div>
+<div class="stamp" data-title="Sodikken">
+  <img src="https://i.postimg.cc/8c7mpvSx/Sodikken.gif" alt="Sodikken">
+</div>
+<div class="stamp" data-title="Tally Hall">
+  <img src="https://i.postimg.cc/QMN4LHFZ/Tally-Hall.gif" alt="Tally Hall">
+</div>
+<div class="stamp" data-title="Will Wood">
+  <img src="https://i.postimg.cc/MTv9TN0s/WillWood.gif" alt="Will Wood">
+</div>
+
+      <!-- more stamps -->
+    </div>
+  </section>
+
+  <section id="anime" class="tab-content">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="Another">
+      <img src="https://i.postimg.cc/pVszKsjC/Another.gif" alt="Another">
+    </div>
+
+    <div class="stamp" data-title="Elfen Lied">
+      <img src="https://i.postimg.cc/hGnfkmxh/Elfen-Lied.gif" alt="Elfen Lied">
+    </div>
+
+    <div class="stamp" data-title="Gakko Gurashi">
+      <img src="https://i.postimg.cc/d3h12jMN/Gakko-Gurashi.gif" alt="Gakko Gurashi">
+    </div>
+
+    <div class="stamp" data-title="Higurashi (Shion Sonozaki)">
+      <img src="https://i.postimg.cc/vmvcbmLh/Higurashi1.gif" alt="Higurashi (Shion Sonozaki)">
+    </div>
+
+    <div class="stamp" data-title="Higurashi (Rena Ryuguu)">
+      <img src="https://i.postimg.cc/sxb2wGsj/Higurashi2.gif" alt="Higurashi (Rena Ryuguu)">
+    </div>
+
+    <div class="stamp" data-title="The Summer Hikaru Died">
+      <img src="https://i.postimg.cc/tCVJ7kNY/Hikaru.gif" alt="The Summer Hikaru Died">
+    </div>
+
+    <div class="stamp" data-title="School Days">
+      <img src="https://i.postimg.cc/kg47PZbz/School-Days.gif" alt="School Days">
+    </div>
+
+    <div class="stamp" data-title="Mirai Nikki">
+      <img src="https://i.postimg.cc/x13zTg9L/Mirai-Nikki.gif" alt="Mirai Nikki">
+    </div>
+
+    <div class="stamp" data-title="Mahou Shoujo Madoka Magica">
+      <img src="https://i.postimg.cc/t4j6j8GX/Madoka.gif" alt="Mahou Shoujo Madoka Magica">
+    </div>
+
+    <div class="stamp" data-title="Mahou Shoujo Site (Kosame Amagai)">
+      <img src="https://i.postimg.cc/c1PYDrDt/MHSite1.gif" alt="MHSite 1">
+    </div>
+
+    <div class="stamp" data-title="Mahou Shoujo Site (Kiyoharu Suirenji)">
+      <img src="https://i.postimg.cc/bvY2GbvW/MHSite2.gif" alt="MHSite 2">
+    </div>
+
+    <div class="stamp" data-title="Mahou Shoujo Raising Project (Nemurin)">
+      <img src="https://i.postimg.cc/xCcJ52MP/MSRProject1.gif" alt="MSRProject 1">
+    </div>
+
+    <div class="stamp" data-title="Mahou Shoujo Raising Project (Hardgore Alice)">
+      <img src="https://i.postimg.cc/FFkkJh9r/MSRProject2.gif" alt="MSRProject 2">
+    </div>
+
+    <div class="stamp" data-title="CardCaptor Sakura (Sakura Kinomoto)">
+      <img src="https://i.postimg.cc/yxRJqyfg/Sakura.gif" alt="Sakura">
+    </div>
+
+    <div class="stamp" data-title="CardCaptor Sakura (Yukito and Touya)">
+      <img src="https://i.postimg.cc/CxSRtDb5/Sakura2.gif" alt="Sakura 2">
+    </div>
+
+    <div class="stamp" data-title="CardCaptor Sakura (Yue)">
+      <img src="https://i.postimg.cc/vHW13XgC/Sakura3.gif" alt="Sakura 3">
+    </div>
+
+    <div class="stamp" data-title="Sailor Moon (Sailor Neptune and Uranus)">
+      <img src="https://i.postimg.cc/kMSDgwcD/SM1.gif" alt="SM 1">
+    </div>
+
+    <div class="stamp" data-title="Sailor Moon (Sailor Saturn)">
+      <img src="https://i.postimg.cc/ZKhnB37H/SM2.gif" alt="SM 2">
+    </div>
+
+    <div class="stamp" data-title="Ojamajo Doremi (Onpu Segawa)">
+      <img src="https://i.postimg.cc/1t2gYjK1/Ojamajo.gif" alt="Ojamajo">
+    </div>
+
+    <div class="stamp" data-title="AnoHana">
+      <img src="https://i.postimg.cc/ZnsNZqm2/AnoHana.gif" alt="AnoHana">
+    </div>
+
+    <div class="stamp" data-title="Death Parade">
+      <img src="https://i.postimg.cc/CMrnRzy6/Death-Parade.gif" alt="Death Parade">
+    </div>
+
+    <div class="stamp" data-title="Ao no Exorcist">
+      <img src="https://i.postimg.cc/jdCNcyQb/Aono-Exorcist.gif" alt="Ao no Exorcist">
+    </div>
+
+    <div class="stamp" data-title="Beastars (Louis and Haru)">
+      <img src="https://i.postimg.cc/WbKZHtXJ/Beastars.gif" alt="Beastars (Louis and Haru)">
+    </div>
+
+    <div class="stamp" data-title="Beastars (Melon)">
+      <img src="https://i.postimg.cc/k5Pb7zrJ/Beastars2.gif" alt="Beastars (Melon)">
+    </div>
+
+    <div class="stamp" data-title="Black Butler (Undertaker)">
+      <img src="https://i.postimg.cc/25dByGm4/Black-Butler1.gif" alt="Black Butler (Undertaker)">
+    </div>
+
+    <div class="stamp" data-title="Black Butler (Claude Faustus)">
+      <img src="https://i.postimg.cc/0ywSRxBX/Black-Butler2.gif" alt="Black Butler (Claude Faustus)">
+    </div>
+
+    <div class="stamp" data-title="Black Butler (Grell Sutcliff)">
+      <img src="https://i.postimg.cc/4dJH9cNj/Black-Butler3.gif" alt="Black Butler (Grell Sutcliff)">
+    </div>
+
+    <div class="stamp" data-title="Fullmetal Alchemist (Roy Mustang)">
+      <img src="https://i.postimg.cc/63jq41PG/FMA.gif" alt="Fullmetal Alchemist (Roy Mustang)">
+    </div>
+
+    <div class="stamp" data-title="Serial Experiments Lain">
+      <img src="https://i.postimg.cc/Qx57vhP4/Lain.gif" alt="Serial Experiments Lain">
+    </div>
+
+    <div class="stamp" data-title="Dungeon Meshi (Falin/Marcille)">
+      <img src="https://i.postimg.cc/d0GRRZZw/DUNMESHI1.gif" alt="Dungeon Meshi (Falin/Marcille)">
+    </div>
+
+    <div class="stamp" data-title="Dungeon Meshi (Chimera Falin Touden)">
+      <img src="https://i.postimg.cc/NFj1wNJj/DUNMESHI4.gif" alt="Dungeon Meshi (Chimera Falin Touden)">
+    </div>
+
+    <div class="stamp" data-title="Dungeon Meshi (Laios Touden)">
+      <img src="https://i.postimg.cc/LXRtx4jf/DUNMESHI2.gif" alt="Dungeon Meshi (Laios Touden)">
+    </div>
+
+    <div class="stamp" data-title="Dungeon Meshi (Senshi)">
+      <img src="https://i.postimg.cc/4d5zqC10/DUNMESHI3.gif" alt="Dungeon Meshi (Senshi)">
+    </div>
+
+    <div class="stamp" data-title="Mob Psycho 100 (Reigen Arataka)">
+      <img src="https://i.postimg.cc/CKvnb1B1/Mob-Psycho100.gif" alt="Mob Psycho 100 (Reigen Arataka)">
+    </div>
+
+    <div class="stamp" data-title="Inuyasha (Sesshoumaru)">
+      <img src="https://i.postimg.cc/D01zpyZ1/Sesshoumaru.gif" alt="Inuyasha (Sesshoumaru)">
+    </div>
+
+    <div class="stamp" data-title="Owari no Seraph (Mikaela Hyakuya)">
+      <img src="https://i.postimg.cc/YSyjhsZL/Sekaino-Owari1.gif" alt="Owari no Seraph ()">
+    </div>
+
+    <div class="stamp" data-title="Owari no Seraph (Shinoa Hiragi)">
+      <img src="https://i.postimg.cc/cHgCYcG9/Sekaino-Owari2.gif" alt="Owari no Seraph (Shinoa Hiragi)">
+    </div>
+
+    <div class="stamp" data-title="Owari no Seraph (Guren Ichinose)">
+      <img src="https://i.postimg.cc/JnfnQB11/Sekaino-Owari3.gif" alt="Owari no Seraph (Guren Ichinose)">
+    </div>
+
+    <div class="stamp" data-title="Kimetsu no Yaiba (Giyu Tomioka)">
+      <img src="https://i.postimg.cc/Gpbm7Cwy/KNY1.gif" alt="Kimetsu no Yaiba (Giyu Tomioka)">
+    </div>
+
+    <div class="stamp" data-title="Kimetsu no Yaiba (Shinobu Kocho)">
+      <img src="https://i.postimg.cc/FKGswBNn/KNY2.gif" alt="Kimetsu no Yaiba (Shinobu Kocho)">
+    </div>
+
+    <div class="stamp" data-title="Kimetsu no Yaiba (Muichiro Tokito)">
+      <img src="https://i.postimg.cc/2668Y75j/KNY3.gif" alt="Kimetsu no Yaiba (Muichiro Tokito)">
+    </div>
+
+    <div class="stamp" data-title="Kimetsu no Yaiba (Zenitsu Agatsuma)">
+      <img src="https://i.postimg.cc/LXb48gqt/KNY4.gif" alt="Kimetsu no Yaiba (Zenitsu Agatsuma)">
+    </div>
+
+    <div class="stamp" data-title="Kimetsu no Yaiba (Doma)">
+      <img src="https://i.postimg.cc/PJvXpfZB/KNY5.gif" alt="Kimetsu no Yaiba (Doma)">
+    </div>
+
+    <div class="stamp" data-title="Kimetsu no Yaiba (Mitsuki Kanroji)">
+      <img src="https://i.postimg.cc/hhFS9F1h/KNY6.gif" alt="Kimetsu no Yaiba (Mitsuki Kanroji)">
+    </div>
+
+    <div class="stamp" data-title="Kimetsu no Yaiba (Hotaru Haganezuka)">
+      <img src="https://i.postimg.cc/FFY3gjxQ/KNY7.gif" alt="Kimetsu no Yaiba (Hotaru Haganezuka)">
+    </div>
+
+     <div class="stamp" data-title="Panty and Stocking with Garterbelt (Stocking)">
+      <img src="https://i.postimg.cc/2yyzYv4D/Stocking.gif" alt="Panty and Stocking with Garterbelt (Stocking)">
+    </div>
+    
+    <div class="stamp" data-title="Kiznaiver (Noriko Sonozaki)">
+      <img src="https://i.postimg.cc/T3MwbbtQ/Kiznaiver.gif" alt="Kiznaiver">
+    </div>
+
+     <div class="stamp" data-title="Kiznaiver (Yoshiharu Hisomu)">
+      <img src="https://i.postimg.cc/kMfrmKcj/Kiznaiver(YoshiharuHisomu).gif" alt="Kiznaiver (Yoshiharu Hisomu)">
+    </div>
+
+    <div class="stamp" data-title="Gatchaman Crowds">
+      <img src="https://i.postimg.cc/PxrNxkSj/Gatchaman.gif" alt="Gatchaman Crowds">
+    </div>
+
+    <div class="stamp" data-title="Hunter x Hunter (Kurapika Kurta)">
+      <img src="https://i.postimg.cc/G3f9cVYW/hxh.gif" alt="Hunter x Hunter (Kurapika Kurta)">
+    </div>
+
+    <div class="stamp" data-title="Kakegurui">
+      <img src="https://i.postimg.cc/DwrzPzDh/Kakegurui.gif" alt="Kakegurui">
+    </div>
+
+    <div class="stamp" data-title="Durarara!!! (Celty Stulruson)">
+      <img src="https://i.postimg.cc/K8B1pf1d/DRRR.gif" alt="Durarara!!! (Celty Stulruson)">
+    </div>
+
+    <div class="stamp" data-title="Death Note (Near)">
+      <img src="https://i.postimg.cc/C55ZvV8N/Death-Note1.gif" alt="Death Note (Near)">
+    </div>
+
+    <div class="stamp" data-title="Death Note (Teru Mikami)">
+      <img src="https://i.postimg.cc/k4f6F52G/Death-Note2.gif" alt="Death Note (Teru Mikami)">
+    </div>
+
+    <div class="stamp" data-title="Death Note (Light and L)">
+      <img src="https://i.postimg.cc/m2czCBBZ/Death-Note3.gif" alt="Death Note (Light and L)">
+    </div>
+
+    <div class="stamp" data-title="Devilman Crybaby">
+      <img src="https://i.postimg.cc/X7TZgmYf/Devilman.gif" alt="Devilman Crybaby">
+    </div>
+
+    <div class="stamp" data-title="Black Rock Shooter (Dead Master)">
+      <img src="https://i.postimg.cc/ZnQW2DFh/blackrockshooter.gif" alt="Black Rock Shooter (Dead Master)">
+    </div>
+
+    <div class="stamp" data-title="Takopi's Original Sin">
+      <img src="https://i.postimg.cc/vHLBWBCs/Takopi.gif" alt="Takopi's Original Sin">
+    </div>
+
+    <div class="stamp" data-title="Tsuritama">
+      <img src="https://i.postimg.cc/7ZHLX4yT/Tsuritama.gif" alt="Tsuritama">
+    </div>
+
+    <div class="stamp" data-title="Zombieland Saga (Tae Yamada)">
+      <img src="https://i.postimg.cc/Jzpz2F1Y/Zombieland1.gif" alt="Zombieland Saga (Tae Yamada)">
+    </div>
+
+    <div class="stamp" data-title="Zombieland Saga (Ai Mizuno and Junko Konno)">
+      <img src="https://i.postimg.cc/FKqs9Jkj/Zombieland2.gif" alt="Zombieland 2">
+    </div>
+
+    <div class="stamp" data-title="Zombieland Saga (Yugiri)">
+      <img src="https://i.postimg.cc/tTxR7CF8/Zombieland3.gif" alt="Zombieland 3">
+    </div>
+
+    <div class="stamp" data-title="Zombieland Saga (Lily Hoshikawa)">
+      <img src="https://i.postimg.cc/vTwYnFzT/Zombieland4.gif" alt="Zombieland 4">
+    </div>
+
+  </div>
+</section>
+
+
+ <section id="podcasts" class="tab-content">
+  <div class="stamp-grid">
+
+    <!-- The Magnus Archives -->
+    <div class="stamp" data-title="The Magnus Archives">
+      <img src="https://i.postimg.cc/J7xfcGjN/TMA.gif" alt="The Magnus Archives">
+         <a
+        class="credit-icon"
+        href="https://www.tumblr.com/st4r-t3ars/760625361321132032/the-archivist-ver-2"
+        target="_blank"
+        rel="noopener"
+        aria-label="Art by st4r-t3ars">
+        🔗
+      </a>
+     
+    </div>
+
+    <!-- Welcome to Night Vale -->
+    <div class="stamp" data-title="Welcome to Night Vale">
+      <img src="https://i.postimg.cc/285PHrxP/WTNV.gif" alt="Welcome to Night Vale">
+        <a
+        class="credit-icon"
+        href="https://www.tumblr.com/echeveriia-moved-accounts/161019493106/a-friendly-desert-community-where-the-sun-is-hot"
+        target="_blank"
+        rel="noopener"
+        aria-label="Art by echeveriia">
+        🔗
+      </a>
+    
+    </div>
+
+    <!-- EOS -->
+    <div class="stamp" data-title="Edge of Sleep">
+      <img src="https://i.postimg.cc/X7DtmmHX/EOS.gif" alt="Edge of Sleep" >
+    </div>
+
+  </div>
+</section>
+
+
+   
+<section id="tvshows" class="tab-content">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="Twin Peaks">
+      <img src="https://i.postimg.cc/15KfK54D/Twin-Peaks.gif" alt="Twin Peaks">
+    </div>
+
+    <div class="stamp" data-title="The X-Files (Fox Mulder)">
+      <img src="https://i.postimg.cc/6Q8qwrch/XFiles.gif" alt="The X-Files">
+    </div>
+
+    <div class="stamp" data-title="Supernatural (Dean/Castiel)">
+      <img src="https://i.postimg.cc/rF5S2ksp/destielspn.gif" alt="Supernatural (Destiel)">
+    </div>
+
+    <div class="stamp" data-title="Hannibal (Hannibal/Will Graham)">
+      <img src="https://i.postimg.cc/7LtznPsK/Hannibal.gif" alt="Hannibal">
+    </div>
+
+<div class="stamp" data-title="Severance (Burt/Irving)">
+  <img src="https://i.postimg.cc/907WbR2n/severance-burt-irving.gif" alt="Severance (Burt/Irving)">
+</div>
+    
+    <div class="stamp" data-title="House M.D. (House/Wilson)">
+      <img src="https://i.postimg.cc/hGg1dB83/HouseMD.gif" alt="House M.D.">
+    </div>
+
+    <div class="stamp" data-title="Good Omens (Aziraphale/Crowley)">
+      <img src="https://i.postimg.cc/3xBmWFg5/Good-Omens.gif" alt="Good Omens">
+    </div>
+
+    <div class="stamp" data-title="Sandman">
+      <img src="https://i.postimg.cc/MKY4Xjms/Sandman.gif" alt="Sandman">
+    </div>
+
+    <div class="stamp" data-title="American Gods (Odin/Wednesday)">
+      <img src="https://i.postimg.cc/15S29Kwn/American-Gods.gif" alt="American Gods (Odin/Wednesday)">
+    </div>
+
+    <div class="stamp" data-title="Dokkaebi/Goblin (Goblin & Reaper)">
+      <img src="https://i.postimg.cc/DwF12M4P/Dokkaebi.gif" alt="Dokkaebi (Goblin)">
+    </div>
+
+    <div class="stamp" data-title="NBC's Constantine">
+      <img src="https://i.postimg.cc/HkjPfJtQ/Constantine.gif" alt="NBC's Constantine">
+    </div>
+
+    <div class="stamp" data-title="Disney's Loki (Loki/Mobius)">
+      <img src="https://i.postimg.cc/KzKMqXCx/Loki.gif" alt="Disney's Loki">
+    </div>
+
+    <div class="stamp" data-title="The Last of Us (Bill/Frank)">
+  <img src="https://i.postimg.cc/Dy2wrDFx/TLOU-Billand-Frank.gif" alt="The Last of Us – Bill & Frank">
+</div>
+
+    <div class="stamp" data-title="The Good Place (Michael)">
+      <img src="https://i.postimg.cc/VNkMt0RS/goodplace.gif" alt="The Good Place (Michael)">
+    </div>
+
+    <div class="stamp" data-title="Our Flag Means Death (Stede/Edward)">
+      <img src="https://i.postimg.cc/MGHMH26V/OFMD.gif" alt="Our Flag Means Death (Stede/Edward)">
+    </div>
+
+    <div class="stamp" data-title="Stranger Things (Steve/Eddie)">
+      <img src="https://i.postimg.cc/T3NBD6Sn/Stranger-Things.gif" alt="Stranger Things (Steve and Eddie)">
+    </div>
+
+    <div class="stamp" data-title="Stranger Things (Robin/Nancy)">
+      <img src="https://i.postimg.cc/ZntCwWrx/Stranger-Things2.gif" alt="Stranger Things (Robin and Nancy)">
+    </div>
+
+    <div class="stamp" data-title="MindHunter">
+      <img src="https://i.postimg.cc/8k6vLShb/Mind-Hunter.gif" alt="MindHunter">
+    </div>
+
+    <div class="stamp" data-title="Chilling Adventures of Sabrina (Ambrose)">
+      <img src="https://i.postimg.cc/JhFyB60g/Sabrina.gif" alt="Chilling Adventures of Sabrina (Ambrose)">
+    </div>
+
+    <div class="stamp" data-title="Lucifer">
+      <img src="https://i.postimg.cc/QtRWv4r5/Lucifer.gif" alt="Lucifer">
+    </div>
+
+    <div class="stamp" data-title="The Haunting of Bly Manor">
+      <img src="https://i.postimg.cc/RVsWKYQc/THOBM.gif" alt="The Haunting of Bly Manor">
+    </div>
+
+    <div class="stamp" data-title="The Haunting of Hill House">
+      <img src="https://i.postimg.cc/DwS8gcBR/THOHH.gif" alt="The Haunting of Hill House">
+    </div>
+
+    <div class="stamp" data-title="The Umbrella Academy (Five Hargreeves)">
+      <img src="https://i.postimg.cc/C5GdXw7T/TUA1.gif" alt="The Umbrella Academy (Five Hargreeves)">
+    </div>
+
+    <div class="stamp" data-title="The Umbrella Academy (Klaus Hargreeves)">
+      <img src="https://i.postimg.cc/HWXJVtgZ/TUA2.gif" alt="The Umbrella Academy (Klaus Hargreeves)">
+    </div>
+
+    <div class="stamp" data-title="The Umbrella Academy (Viktor Hargreeves)">
+      <img src="https://i.postimg.cc/gkpxR6cY/TUA3.gif" alt="The Umbrella Academy (Viktor Hargreeves)">
+    </div>
+
+     <div class="stamp" data-title="Black Mirror (Thronglets)">
+      <img src="https://i.postimg.cc/3wkvYKbt/thronglets.gif" alt="Black Mirror (Thronglets)">
+    </div>
+
+    <div class="stamp" data-title="What We Do in the Shadows (Guillermo de la Cruz)">
+      <img src="https://i.postimg.cc/GmmZt2Mc/wwdits1.gif" alt="What We Do in the Shadows (Guillermo de la Cruz)">
+    </div>
+
+    <div class="stamp" data-title="What We Do in the Shadows (Baron Afanas)">
+      <img src="https://i.postimg.cc/X78RnFkH/WWDITS2.gif" alt="What We Do in the Shadows (Baron Afanas)">
+    </div>
+
+    <div class="stamp" data-title="How to Get Away with Murder">
+      <img src="https://i.postimg.cc/bJRKBMnV/HTGAWM.gif" alt="How to Get Away with Murder">
+    </div>
+<div class="stamp" data-title="Drake & Josh">
+  <img src="https://i.postimg.cc/zGZtbm6S/drakeandjosh.gif" alt="Drake & Josh">
+</div>
+<div class="stamp" data-title="The Fresh Prince of Bel-Air">
+  <img src="https://i.postimg.cc/2SQHncfp/freshprince.gif" alt="The Fresh Prince of Bel-Air">
+</div>
+<div class="stamp" data-title="iCarly (Spencer Shay)">
+  <img src="https://i.postimg.cc/HWNPm8tN/icarly-spencershay.gif" alt="iCarly (Spencer Shay)">
+</div>
+<div class="stamp" data-title="Kenan & Kel">
+  <img src="https://i.postimg.cc/8Cwt075t/kenanandkel.gif" alt="Kenan & Kel">
+</div>
+<div class="stamp" data-title="Ned's Declassified School Survival Guide">
+  <img src="https://i.postimg.cc/0QQcR9Kx/nedsdeclassified.gif" alt="Ned's Declassified School Survival Guide">
+</div>
+<div class="stamp" data-title="The OA">
+  <img src="https://i.postimg.cc/1XVBXMKj/TheOA.gif" alt="The OA">
+</div>
+<div class="stamp" data-title="Zeke and Luther">
+  <img src="https://i.postimg.cc/Pr8V5f35/zekeandluther.gif" alt="Zeke and Luther">
+</div>
+<div class="stamp" data-title="Dark (2017)">
+  <img src="https://i.postimg.cc/NGTYWt6R/dark2017.gif" alt="Dark (2017)">
+</div>
+
+<div class="stamp" data-title="iZombie">
+  <img src="https://i.postimg.cc/Y01HgNrd/izombie.gif" alt="iZombie">
+</div>
+
+    <div class="stamp" data-title="American Horror Story">
+  <img src="https://i.postimg.cc/02ht2wRb/AHS.gif" alt="American Horror Story">
+</div>
+
+<div class="stamp" data-title="Alice in Borderland (Kuina & Chishiya)">
+  <img src="https://i.postimg.cc/t4PB14pD/aliceinborderland.gif" alt="Alice in Borderland (Kuina & Chishiya)">
+</div>
+
+<div class="stamp" data-title="The Boys (Butcher & Soldier Boy)">
+  <img src="https://i.postimg.cc/8kKK9YZd/theboys.gif" alt="The Boys (Butcher & Soldier Boy)">
+</div>
+
+<div class="stamp" data-title="The Walking Dead">
+  <img src="https://i.postimg.cc/YqvnHxP5/twd.gif" alt="The Walking Dead">
+</div>
+
+<div class="stamp" data-title="Sex Education">
+  <img src="https://i.postimg.cc/T18xpN6y/SexEd.gif" alt="Sex Education">
+</div>
+    <div class="stamp" data-title="Brooklyn Nine-Nine (Captain Holt)">
+  <img src="https://i.postimg.cc/43zZY7Zf/b99-captholt.gif" alt="Brooklyn Nine-Nine (Captain Holt)">
+</div>
+
+<div class="stamp" data-title="Grimm">
+  <img src="https://i.postimg.cc/pTRvzWXD/grimm.gif" alt="Grimm">
+</div>
+
+<div class="stamp" data-title="Russian Doll">
+  <img src="https://i.postimg.cc/vmRb87J2/russiandoll.gif" alt="Russian Doll">
+</div>
+<div class="stamp" data-title="Happy!">
+  <img src="https://i.postimg.cc/TPHSYT5d/happy.gif" alt="Happy!">
+</div>
+
+  </div>
+</section>
+
+
+<section id="youtubers" class="tab-content">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="Darkiplier">
+      <img src="https://i.postimg.cc/nzHmvRtG/Dark.gif" alt="Darkiplier">
+    </div>
+
+    <div class="stamp" data-title="Warfstache">
+      <img src="https://i.postimg.cc/KzJMQPGS/Warf.gif" alt="Warfstache">
+    </div>
+
+    <div class="stamp" data-title="Markiplier">
+      <img src="https://i.postimg.cc/J00BFs0y/Mark.gif" alt="Markiplier">
+    </div>
+
+    <div class="stamp" data-title="Jerma985">
+      <img src="https://i.postimg.cc/C52fpwnc/Jerma.gif" alt="Jerma985">
+    </div>
+
+    <div class="stamp" data-title="Felps">
+      <img src="https://i.postimg.cc/T247WdpT/Felps.gif" alt="Felps">
+    </div>
+
+    <div class="stamp" data-title="Vargskelethor Joel">
+      <img src="https://i.postimg.cc/m21dYvHC/Joel.gif" alt="Vargskelethor Joel">
+    </div>
+  
+       <div class="stamp" data-title="Vinny Vinesauce">
+      <img src="https://i.postimg.cc/Fz8TtZ2Y/Vinny.gif" alt="Vinny Vinesauce">
+    </div>
+
+    <div class="stamp" data-title="Brian David Gilbert">
+      <img src="https://i.postimg.cc/ZRyNpQ8f/Brian-David-Gilbert.gif" alt="Brian David Gilbert">
+    </div>
+
+  </div>
+</section>
+
+
+<section id="manga" class="tab-content">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="Battle Angel Alita">
+      <img src="https://i.postimg.cc/QC36ZHfm/Alita.gif" alt="Battle Angel Alita">
+    </div>
+
+    <div class="stamp" data-title="Chainsaw Man (Makima)">
+      <img src="https://i.postimg.cc/DyhNtYDh/CSM.gif" alt="Chainsaw Man (Makima)">
+    </div>
+
+    <div class="stamp" data-title="Houseki no Kuni (Diamond, Bort, Padparascha, Antarcticite)">
+      <img src="https://i.postimg.cc/YSvD6c46/HNK.gif" alt="Houseki no Kuni (Diamond, Bort, Padparascha, Antarcticite)">
+    </div>
+
+    <div class="stamp" data-title="Junji Ito's Uzumaki">
+      <img src="https://i.postimg.cc/mDMdnQyh/JunjiIto.gif" alt="Junji Ito's Uzumaki">
+    </div>
+
+    <div class="stamp" data-title="Witch Hat Atelier">
+      <img src="https://i.postimg.cc/rp7nghWv/WHA.gif" alt="Witch Hat Atelier">
+    </div>
+
+     <div class="stamp" data-title="Tokyo Ghoul (Uta)">
+      <img src="https://i.postimg.cc/2y4m5y1Y/Tokyo-Ghoul.gif" alt="Tokyo Ghoul (Uta)">
+    </div>
+
+  </div>
+</section>
+
+
+<section id="cartoons" class="tab-content">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="Aggretsuko (Shikabana)">
+      <img src="https://i.postimg.cc/bJQnn7MJ/AGRTSK1.gif" alt="Aggretsuko (Shikabana)">
+    </div>
+
+    <div class="stamp" data-title="Aggretsuko (Fenneko)">
+      <img src="https://i.postimg.cc/FzNLVP5x/AGRTSK2.gif" alt="Aggretsuko (Fenneko)">
+    </div>
+
+    <div class="stamp" data-title="Aggretsuko (Seiya)">
+      <img src="https://i.postimg.cc/8c4rKhTg/AGRTSK3.gif" alt="Aggretsuko (Seiya)">
+    </div>
+
+    <div class="stamp" data-title="Aggretsuko (Inui)">
+      <img src="https://i.postimg.cc/T2Jm3XgN/AGRTSK4.gif" alt="Aggretsuko (Inui)">
+    </div>
+
+    <div class="stamp" data-title="Adventure Time (Canyon)">
+      <img src="https://i.postimg.cc/Gh3DBSjL/AT.gif" alt="Adventure Time (Canyon)">
+    </div>
+
+    <div class="stamp" data-title="Avatar: The Last Airbender (Zuko)">
+      <img src="https://i.postimg.cc/fTH9YjHx/Avatar1.gif" alt="Avatar: The Last Airbender (Zuko)">
+    </div>
+
+    <div class="stamp" data-title="Avatar: The Last Airbender (Toph)">
+      <img src="https://i.postimg.cc/T3F542v1/Avatar4.gif" alt="Avatar: The Last Airbender (Toph)">
+    </div>
+
+    <div class="stamp" data-title="Avatar: The Legend of Korra (General Iroh II)">
+      <img src="https://i.postimg.cc/GmHsK8N6/Avatar2.gif" alt="Avatar: The Legend of Korra (General Iroh II)">
+    </div>
+
+    <div class="stamp" data-title="Avatar: The Legend of Korra (Mako)">
+      <img src="https://i.postimg.cc/q7K6VfpL/Avatar3.gif" alt="Avatar: The Legend of Korra (Mako)">
+    </div>
+
+    <div class="stamp" data-title="Bee and Puppycat">
+      <img src="https://i.postimg.cc/mkLPHtCX/Been-Puppycat.gif" alt="Bee and Puppycat">
+    </div>
+
+    <div class="stamp" data-title="Carmen Sandiego (Chase Devineaux)">
+      <img src="https://i.postimg.cc/mDGzTdDG/Carmen1.gif" alt="Carmen Sandiego (Chase Devineaux)">
+    </div>
+
+    <div class="stamp" data-title="Carmen Sandiego (Shadowsan)">
+      <img src="https://i.postimg.cc/RFQ3hc6J/Carmen2.gif" alt="Carmen Sandiego (Shadowsan)">
+    </div>
+
+    <div class="stamp" data-title="Chowder">
+      <img src="https://i.postimg.cc/sfmQR4Ct/Chowder.gif" alt="Chowder">
+    </div>
+
+    <div class="stamp" data-title="Steven Universe">
+      <img src="https://i.postimg.cc/XqnYM9vF/Steven-Universe.gif" alt="Steven Universe">
+    </div>
+
+    <div class="stamp" data-title="Gravity Falls (Grunkle Ford)">
+      <img src="https://i.postimg.cc/mkmtNBSb/GF1.gif" alt="Gravity Falls (Grunkle Ford)">
+    </div>
+
+    <div class="stamp" data-title="Gravity Falls (Grunkle Stan)">
+      <img src="https://i.postimg.cc/KvYKc3Z4/GF2.gif" alt="Gravity Falls (Grunkle Stan)">
+    </div>
+
+    <div class="stamp" data-title="Hilda">
+      <img src="https://i.postimg.cc/P5pPYGvj/Hilda.gif" alt="Hilda">
+    </div>
+
+    <div class="stamp" data-title="Infinity Train">
+      <img src="https://i.postimg.cc/zXPyyDB7/InfTrain.gif" alt="Infinity Train">
+    </div>
+
+    <div class="stamp" data-title="Inside Job">
+      <img src="https://i.postimg.cc/W1Bt790J/Inside-Job.gif" alt="Inside Job">
+    </div>
+
+    <div class="stamp" data-title="Kids Next Door">
+      <img src="https://i.postimg.cc/SKcR1WG1/KND.gif" alt="Kids Next Door">
+    </div>
+
+    <div class="stamp" data-title="Love Death and Robots: The Tall Grass">
+      <img src="https://i.postimg.cc/KzFz6RqG/LDR1.gif" alt="Love Death and Robots: The Tall Grass">
+    </div>
+
+    <div class="stamp" data-title="Love Death and Robots: Yan">
+      <img src="https://i.postimg.cc/Hx2xddRQ/LDR2.gif" alt="Love Death and Robots: Yan">
+    </div>
+
+    <div class="stamp" data-title="Love Death and Robots: The Witness">
+      <img src="https://i.postimg.cc/sxg22bCb/LDR3.gif" alt="Love Death and Robots: The Witness">
+    </div>
+
+    <div class="stamp" data-title="Monster High (Kieran Valentine)">
+      <img src="https://i.postimg.cc/qqDv6Qkq/MH1.gif" alt="Monster High (Kieran Valentine)">
+    </div>
+
+    <div class="stamp" data-title="Monster High (Twyla Boogey-man)">
+      <img src="https://i.postimg.cc/CLd1pyNq/MH2.gif" alt="Monster High (Twyla Boogey-man)">
+    </div>
+
+    <div class="stamp" data-title="My Little Pony Generation 1">
+      <img src="https://i.postimg.cc/nV3zWVvx/MLPG1.gif" alt="My Little Pony Generation 1">
+    </div>
+
+    <div class="stamp" data-title="My Little Pony Generation 3 (Star Catcher and Skywishes)">
+      <img src="https://i.postimg.cc/m2qrbdX6/MLPG3.gif" alt="My Little Pony Generation 3 (Star Catcher and Skywishes)">
+    </div>
+
+    <div class="stamp" data-title="My Little Pony: Friendship is Magic (Rarity and Twilight Sparkle)">
+      <img src="https://i.postimg.cc/2SZS34gj/MLPG41.gif" alt="My Little Pony: Friendship is Magic (Rarity and Twilight Sparkle)">
+    </div>
+
+    <div class="stamp" data-title="My Little Pony: Friendship is Magic (Fluttershy and Discord)">
+      <img src="https://i.postimg.cc/PqnrDCkW/MLPG42.gif" alt="My Little Pony: Friendship is Magic (Fluttershy and Discord)">
+    </div>
+
+    <div class="stamp" data-title="My Little Pony: Friendship is Magic (Pinkie Pie and Cheese Sandwich)">
+      <img src="https://i.postimg.cc/g0ycHGYf/MLPG43.gif" alt="My Little Pony: Friendship is Magic (Pinkie Pie and Cheese Sandwich)">
+    </div>
+
+    <div class="stamp" data-title="Rick and Morty">
+      <img src="https://i.postimg.cc/B6MqRNPp/Rick.gif" alt="Rick and Morty">
+    </div>
+
+    <div class="stamp" data-title="She-Ra and The Princessses of Power (Double Trouble)">
+      <img src="https://i.postimg.cc/DZ2vCR0m/Shera.gif" alt="She-Ra and The Princessses of Power">
+    </div>
+
+    <div class="stamp" data-title="Star vs The Forces of Evil (Eclipsa Butterfly)">
+      <img src="https://i.postimg.cc/SRPmxsrz/SVTFOE.gif" alt="Star vs The Forces of Evil (Eclipsa Butterfly)">
+    </div>
+
+    <div class="stamp" data-title="The Owl House (Eda Clawthorne and Raine Whispers)">
+      <img src="https://i.postimg.cc/ZYsbc7SK/TOH1.gif" alt="The Owl House (Eda Clawthorne and Raine Whispers)">
+    </div>
+
+    <div class="stamp" data-title="The Owl House (Eda and Lilith Clawthorne)">
+      <img src="https://i.postimg.cc/jdGsVD2p/TOH2.gif" alt="The Owl House (Eda and Lilith Clawthorne)">
+    </div>
+
+    <div class="stamp" data-title="The Amazing Digital Circus">
+      <img src="https://i.postimg.cc/15zf2YXS/TADC.gif" alt="The Amazing Digital Circus">
+    </div>
+
+<div class="stamp" data-title="Babar">
+  <img src="https://i.postimg.cc/Hn0J6yWL/babar.gif" alt="Babar">
+</div>
+<div class="stamp" data-title="Ben 10: Alien Force">
+  <img src="https://i.postimg.cc/GmmBjtWc/ben10alienforce.gif" alt="Ben 10: Alien Force">
+</div>
+<div class="stamp" data-title="The Grim Adventures of Billy and Mandy">
+  <img src="https://i.postimg.cc/0N6bL35F/Billyand-Mandy.gif" alt="The Grim Adventures of Billy and Mandy">
+</div>
+<div class="stamp" data-title="Care Bears">
+  <img src="https://i.postimg.cc/xTRJHMFx/carebears.gif" alt="Care Bears">
+</div>
+<div class="stamp" data-title="Cyberchase">
+  <img src="https://i.postimg.cc/mr0tRwtD/cyberchase.gif" alt="Cyberchase">
+</div>
+<div class="stamp" data-title="Danny Phantom">
+  <img src="https://i.postimg.cc/mDChrHHS/dannyphantom.gif" alt="Danny Phantom">
+</div>
+<div class="stamp" data-title="Disenchantment (Luci)">
+  <img src="https://i.postimg.cc/j2T2nS6Y/disenchantment-luci.gif" alt="Disenchantment (Luci)">
+</div>
+<div class="stamp" data-title="Dragon Tales">
+  <img src="https://i.postimg.cc/J41t1t4b/dragontales.gif" alt="Dragon Tales">
+</div>
+<div class="stamp" data-title="Duck Dodgers">
+  <img src="https://i.postimg.cc/v87cF5MY/duckdodgers.gif" alt="Duck Dodgers">
+</div>
+<div class="stamp" data-title="The Marvelous Misadventures of Flapjack">
+  <img src="https://i.postimg.cc/wMkvXYFy/Flapjack.gif" alt="The Marvelous Misadventures of Flapjack">
+</div>
+<div class="stamp" data-title="Green Eggs and Ham">
+  <img src="https://i.postimg.cc/TYC1hGpB/greeneggsandham.gif" alt="Green Eggs and Ham">
+</div>
+<div class="stamp" data-title="The Amazing World of Gumball">
+  <img src="https://i.postimg.cc/RZhFH8th/gumball.gif" alt="The Amazing World of Gumball">
+</div>
+<div class="stamp" data-title="Johnny Test">
+  <img src="https://i.postimg.cc/cLzJMm7m/johnnytest.gif" alt="Johnny Test">
+</div>
+<div class="stamp" data-title="Kim Possible">
+  <img src="https://i.postimg.cc/KYg89MJy/kimpossible.gif" alt="Kim Possible">
+</div>
+<div class="stamp" data-title="Little Bear">
+  <img src="https://i.postimg.cc/sXdDbgNG/littlebear.gif" alt="Little Bear">
+</div>
+<div class="stamp" data-title="My Life as a Teenage Robot">
+  <img src="https://i.postimg.cc/26Q8YNsc/mylifeasateenagerobot.gif" alt="My Life as a Teenage Robot">
+</div>
+<div class="stamp" data-title="Over The Garden Wall">
+  <img src="https://i.postimg.cc/4ywfKbNp/otgw.gif" alt="Over The Garden Wall">
+</div>
+<div class="stamp" data-title="Pingu">
+  <img src="https://i.postimg.cc/zvqDXP5J/pingu.gif" alt="Pingu">
+</div>
+<div class="stamp" data-title="The Powerpuff Girls">
+  <img src="https://i.postimg.cc/fWdY33Np/PPG.gif" alt="The Powerpuff Girls">
+</div>
+<div class="stamp" data-title="Regular Show">
+  <img src="https://i.postimg.cc/tCHWFXRT/regularshow.gif" alt="Regular Show">
+</div>
+<div class="stamp" data-title="Samurai Jack">
+  <img src="https://i.postimg.cc/wTcJVS3k/samuraijack.gif" alt="Samurai Jack">
+</div>
+<div class="stamp" data-title="Scooby-Doo: Mystery Incorporated">
+  <img src="https://i.postimg.cc/fR8d4mct/scoobydoo.gif" alt="Scooby-Doo: Mystery Incorporated">
+</div>
+<div class="stamp" data-title="Smiling Friends">
+  <img src="https://i.postimg.cc/0ykSHcw1/smilingfriends.gif" alt="Smiling Friends">
+</div>
+<div class="stamp" data-title="Teen Titans">
+  <img src="https://i.postimg.cc/YSjWt0RX/Teen-Titans.gif" alt="Teen Titans">
+</div>
+<div class="stamp" data-title="The Hollow">
+  <img src="https://i.postimg.cc/GpNstRSb/The-Hollow.gif" alt="The Hollow">
+</div>
+<div class="stamp" data-title="Twelve Forever (Butt Witch)">
+  <img src="https://i.postimg.cc/0j1MGfs3/twelveforever-buttwitch.gif" alt="Twelve Forever (Butt Witch)">
+</div>
+<div class="stamp" data-title="Winx Club">
+  <img src="https://i.postimg.cc/QNcW8Rgr/Winx.gif" alt="Winx Club">
+</div>
+<div class="stamp" data-title="W.I.T.C.H.">
+  <img src="https://i.postimg.cc/qR36CF9y/witch.gif" alt="W.I.T.C.H.">
+</div>
+
+
+    
+  </div>
+</section>
+
+
+<section id="reads" class="tab-content">
+  <div class="stamp-grid">
+
+    <div class="stamp" data-title="House of Leaves">
+      <img src="https://i.postimg.cc/DfSZtk5b/HOL.gif" alt="House of Leaves">
+    </div>
+
+    <div class="stamp" data-title="SCP Foundation">
+      <img src="https://i.postimg.cc/3NszqD19/SCP.gif" alt="SCP Foundation">
+    </div>
+
+    <div class="stamp" data-title="I Have No Mouth and I Must Scream">
+      <img src="https://i.postimg.cc/QMjCkrHM/IHNMAIMS.gif" alt="I Have No Mouth and I Must Scream">
+    </div>
+<div class="stamp" data-title="Homestuck (Kanaya Maryam)">
+  <img src="https://i.postimg.cc/CKv9fPjh/homestuck-kanayamaryam.gif" alt="Homestuck (Kanaya Maryam)">
+</div>
+<div class="stamp" data-title="Ava's Demon">
+  <img src="https://i.postimg.cc/BnZ0L1dC/avasdemon.gif" alt="Ava's Demon">
+</div>
+    
+  </div>
+</section>
+
+</div>
+
+
+
+  <!-- YouTube playlist iframe (invisible) -->
+ <iframe
+  id="yt-player"
+  width="0" height="0"
+  src="https://www.youtube.com/embed/videoseries?list=PLoIQJyXr_UzTqDAXEIeG1wvY-thPGN9oJ_ID&enablejsapi=1&autoplay=0&loop=1"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+></iframe>
+  <!-- tab-switching script -->
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // deactivate old
+        document.querySelector('.tab-btn.active').classList.remove('active');
+        document.querySelector('.tab-content.active').classList.remove('active');
+        // activate new
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+  
+ <!-- Radio + Floating Art Wrapper -->
+<!-- Floating image separated from radio wrapper -->
+<img
+  id="floating-img"
+  src="https://64.media.tumblr.com/0f6817bb5301ec49388878799714ff77/fa61e3545c0db6f6-dc/s1280x1920/210a635a35d2f6356ad3d1d81a5ea8a923cbf859.pnj"
+  alt="floating art"
+/>
+
+
+
+<audio id="tab-sound" src="https://github.com/GioBrauer/teddygray/raw/refs/heads/main/SHMenuBlip02.mp3" preload="auto"></audio>
+
+<audio id="social-sound" src="https://github.com/GioBrauer/teddygray/raw/refs/heads/main/SHMenuBlip.mp3" preload="auto"></audio>
+
+
+</body>
+
+
+</html>
